@@ -1,0 +1,15 @@
+[Unit]
+Description=SynthData standalone API (accounts + saved datasets)
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/opt/synthdata/standalone
+EnvironmentFile=/opt/synthdata/standalone/.env
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

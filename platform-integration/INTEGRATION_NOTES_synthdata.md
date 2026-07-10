@@ -84,3 +84,35 @@ curl -X POST localhost:PORT/api/v1/synthdata -H "Authorization: Bearer $TOKEN" \
   -d '{"ddl":"CREATE TABLE t (id INT PRIMARY KEY, v VARCHAR(10) CHECK (v IN ('"'"'A'"'"','"'"'B'"'"')));","rows":50}'
 # expect: 201, {tables:1, rows:50, preview:{...}}
 ```
+
+## Auth, registration, login, forgot-password — REUSE, don't rebuild
+
+The platform already ships everything synthdata needs:
+
+| Capability | Where it lives (already in prod) |
+|---|---|
+| Home page | `platform-ui/src/app/page.tsx` |
+| Register / Login (+ TOTP 2FA) | `/register`, `/login` pages + `auth.routes.ts` |
+| Forgot / reset password | `/forgot-password`, `/reset-password` + rate-limited endpoints |
+| Email sending | `services/email.service.ts` (SMTP_* env vars, nodemailer) |
+| Per-user data | JWT (`jwt-auth` middleware) — synthdata routes already use it |
+
+Strategy:
+1. **Platform = the account experience.** Users register/login at testforge-ai.com;
+   the `/synthdata` page (this kit) saves datasets per user. Zero new auth code.
+2. **Subdomain = public demo / lead-gen.** The static page now carries a
+   "Sign in to save datasets →" link to testforge-ai.com/login.
+3. **(Optional, later)** If the subdomain page should call platform APIs directly
+   (save datasets from the static page while logged in), add the origin to CORS in
+   `apps/framework-generator-api/src/app.ts`:
+
+   ```ts
+   const PROD_DEFAULT_ORIGINS = [
+     'https://app.testforge-ai.com',
+     'https://www.testforge-ai.com',
+     'https://testforge-ai.com',
+     'https://synthdata.testforge-ai.com',   // add this line
+   ];
+   ```
+   Then the static page can call `/api/v1/auth/login` and `/api/v1/synthdata`
+   cross-origin with the JWT in the Authorization header.
