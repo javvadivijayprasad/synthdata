@@ -1,0 +1,35 @@
+BUSINESS CASE — MegaMart online retail (pairs with schema_ecommerce.sql)
+
+MegaMart is a mid-size online retailer in India. We need 12 months of realistic
+test data at roughly this scale: 2,000 customers, 500 products in ~30 categories,
+8,000 orders.
+
+Customers:
+- Loyalty tiers: 70% STANDARD, 15% SILVER, 10% GOLD, 5% PREMIUM.
+- A small number of customers are heavy buyers — order volume should be skewed,
+  not spread evenly (some customers place dozens of orders, many place none).
+- About 5% of accounts are inactive.
+
+Products & inventory:
+- Prices follow a long-tail distribution: most items under Rs 1,000, a few premium
+  items up to Rs 99,999. Minimum price Rs 49.
+- ~5% of products are discontinued but must still appear in old orders.
+- Stock is held in 3 warehouses (WH-BLR, WH-DEL, WH-MUM); one stock row per
+  product per warehouse, reserved quantity always below quantity on hand.
+
+Orders & payments:
+- Status funnel: 5% pending, 8% paid, 12% shipped, 65% delivered, 7% cancelled,
+  3% refunded.
+- Payment mix: UPI 45%, card 30%, COD 15%, wallet 7%, netbanking 3%.
+- Each order has 1-8 line items; discounts of 0/5/10/15% with 0% most common.
+- ~20% of orders carry a coupon code (FEST10 or WELCOME5).
+
+Shipments & reviews:
+- Carriers: Delhivery, BlueDart, Ekart, DTDC, IndiaPost.
+- 83% of shipments delivered, 14% in transit, ~3% returned, 0.1% lost.
+- Ratings skew positive: 45% five-star, 30% four-star, 12% three, 6% two, 7% one.
+
+Data quality expectations:
+- Every foreign key must resolve (no orphan orders, items, payments, shipments).
+- Same seed must reproduce identical data for regression testing.
+- Locale: India (names, addresses, phone formats).

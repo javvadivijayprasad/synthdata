@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+
+# local test outputs — never commit generated data or AI plans
+*.db
+*.sqlite
+csv_out/
+ai_plan.yaml
+*.plan.yaml
+ci_out.sql
+
+# secrets
+.env
+.env.*

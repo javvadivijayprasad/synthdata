@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SynthData · TestForge AI — schema + business case → synthetic test data</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.min.js"></script>
+<style>
+  :root { --bg:#0f1420; --panel:#171e2e; --line:#2a3550; --text:#e8ecf5; --dim:#8b96ad;
+          --accent:#4f8cff; --ok:#3ecf8e; --err:#ff6b6b; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:24px 20px 80px; }
+  header { display:flex; align-items:baseline; gap:14px; margin-bottom:6px; }
+  h1 { font-size:26px; margin:0; } h1 b { color:var(--accent); }
+  .tag { color:var(--dim); font-size:14px; }
+  .steps { display:flex; gap:8px; margin:18px 0; color:var(--dim); font-size:13px; flex-wrap:wrap; }
+  .steps span { border:1px solid var(--line); border-radius:20px; padding:4px 12px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:860px){ .grid { grid-template-columns:1fr; } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px; }
+  .panel h2 { font-size:15px; margin:0 0 10px; color:var(--accent); }
+  textarea, input, select { width:100%; background:#0c111c; color:var(--text);
+    border:1px solid var(--line); border-radius:8px; padding:10px; font:13px/1.45 ui-monospace,Consolas,monospace; }
+  textarea { resize:vertical; }
+  label { display:block; font-size:12px; color:var(--dim); margin:10px 0 4px; }
+  .row { display:flex; gap:10px; } .row > div { flex:1; }
+  button { background:var(--accent); color:#fff; border:0; border-radius:8px;
+    padding:11px 18px; font-size:14px; font-weight:600; cursor:pointer; margin-top:12px; }
+  button.secondary { background:#232d45; }
+  button:disabled { opacity:.5; cursor:default; }
+  .status { margin-top:10px; font-size:13px; min-height:20px; }
+  .status.ok { color:var(--ok); } .status.err { color:var(--err); white-space:pre-wrap; }
+  .note { font-size:12px; color:var(--dim); margin-top:8px; }
+  table { border-collapse:collapse; font:12px ui-monospace,Consolas,monospace; width:100%; margin-top:8px; }
+  th, td { border:1px solid var(--line); padding:4px 8px; text-align:left; max-width:220px;
+           overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  th { background:#0c111c; color:var(--accent); }
+  .preview h3 { font-size:13px; margin:16px 0 2px; color:var(--dim); }
+  .dl { display:flex; gap:10px; flex-wrap:wrap; }
+  footer { margin-top:40px; color:var(--dim); font-size:12px; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>Synth<b>Data</b></h1><span class="tag">part of <a href="https://testforge-ai.com">TestForge AI</a> · schema + business case → realistic relational test data. Runs entirely in your browser.</span></header>
+  <div class="steps"><span>1 · Paste DDL + business case</span><span>2 · AI writes the generation plan (your API key, direct call)</span><span>3 · Data generated locally — nothing leaves your machine</span></div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>1 · Inputs</h2>
+      <label>SQL schema (CREATE TABLE statements)</label>
+      <textarea id="ddl" rows="12" placeholder="CREATE TABLE customers (...);"></textarea>
+      <label>Business case (plain language)</label>
+      <textarea id="bcase" rows="8" placeholder="70% standard customers, UPI is 45% of payments, 65% of orders delivered..."></textarea>
+      <div class="row">
+        <div><label>Provider</label>
+          <select id="provider"><option value="anthropic">Claude (Anthropic)</option><option value="openai">OpenAI</option></select></div>
+        <div><label>Model (optional)</label><input id="model" placeholder="default"></div>
+      </div>
+      <label>API key (kept in memory only, sent directly to the provider)</label>
+      <input id="key" type="password" placeholder="sk-ant-... / sk-...">
+      <button id="btnPlan">Author plan with AI →</button>
+      <button id="btnSample" class="secondary">Load sample (e-commerce)</button>
+      <div id="planStatus" class="status"></div>
+    </div>
+
+    <div class="panel">
+      <h2>2 · Generation plan (review &amp; edit)</h2>
+      <textarea id="plan" rows="22" placeholder="# plan YAML appears here — or paste your own"></textarea>
+      <div class="row">
+        <div><label>Seed</label><input id="seed" value="42"></div>
+        <div><label>&nbsp;</label><button id="btnGen" style="width:100%;margin-top:0">Generate data ⚡</button></div>
+      </div>
+      <div id="genStatus" class="status"></div>
+      <div class="dl" id="downloads"></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:16px">
+    <h2>3 · Preview</h2>
+    <div id="preview" class="preview"><span class="note">Generated tables preview here (first 5 rows each).</span></div>
+  </div>
+
+  <footer>SynthData · TestForge AI · open source (MIT) · data &amp; API keys never touch our servers — the AI call goes straight from your browser to your provider. · <a href="https://www.npmjs.com/package/@vijaypjavvadi/synthdata">npm</a> · <a href="https://testforge-ai.com">platform</a></footer>
+</div>
+
+<script>
+'use strict';
+/* ============ core: parser + engine (mirrors the tested npm package) ============ */
+function splitTopLevel(body){const parts=[];let depth=0,cur='',inStr=false;for(const ch of body){if(ch==="'")inStr=!inStr;if(!inStr){if(ch==='(')depth++;if(ch===')')depth--;if(ch===','&&depth===0){parts.push(cur.trim());cur='';continue;}}cur+=ch;}if(cur.trim())parts.push(cur.trim());return parts;}
+function parseCheck(text,col){const im=text.match(new RegExp(col.name+"\\s+IN\\s*\\(([^)]*)\\)","i"));if(im)col.checkIn=im[1].split(',').map(s=>s.trim().replace(/^'|'$/g,''));const bm=text.match(new RegExp(col.name+"\\s+BETWEEN\\s+(-?[\\d.]+)\\s+AND\\s+(-?[\\d.]+)","i"));if(bm)col.checkRange=[parseFloat(bm[1]),parseFloat(bm[2])];}
+function parseDDL(sql){sql=sql.replace(/--[^\n]*/g,'').replace(/\/\*[\s\S]*?\*\//g,'');const tables={};const re=/CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?["`]?(\w+)["`]?\s*\(/gi;let m;
+while((m=re.exec(sql))!==null){const name=m[1];let depth=1,i=re.lastIndex,inStr=false;
+while(i<sql.length&&depth>0){const ch=sql[i];if(ch==="'")inStr=!inStr;if(!inStr){if(ch==='(')depth++;if(ch===')')depth--;}i++;}
+const body=sql.slice(re.lastIndex,i-1);const table={name,columns:[],uniqueSets:[]};
+for(const part of splitTopLevel(body)){const up=part.toUpperCase();
+if(up.startsWith('PRIMARY KEY')){const cols=(part.match(/\(([^)]*)\)/)||[])[1]||'';for(const cn of cols.split(',').map(s=>s.trim().replace(/["`]/g,''))){const c=table.columns.find(x=>x.name===cn);if(c){c.isPk=true;c.notNull=true;}}}
+else if(up.startsWith('UNIQUE')){const cols=(part.match(/\(([^)]*)\)/)||[])[1]||'';const names=cols.split(',').map(s=>s.trim().replace(/["`]/g,'')).filter(Boolean);if(names.length)table.uniqueSets.push(names);}
+else if(up.startsWith('FOREIGN KEY')){const fk=part.match(/FOREIGN\s+KEY\s*\(([^)]*)\)\s*REFERENCES\s+["`]?(\w+)["`]?\s*(?:\(([^)]*)\))?/i);if(fk){const c=table.columns.find(x=>x.name===fk[1].trim().replace(/["`]/g,''));if(c){c.fkTable=fk[2];c.fkColumn=fk[3]?fk[3].trim():null;}}}
+else if(up.startsWith('CHECK')||up.startsWith('CONSTRAINT')){for(const c of table.columns)parseCheck(part,c);}
+else{const cm=part.match(/^["`]?(\w+)["`]?\s+([A-Za-z]+(?:\s*\(\s*[\d,\s]+\s*\))?)([\s\S]*)$/);if(!cm)continue;
+const col={name:cm[1],dtype:cm[2].toUpperCase().replace(/\s+/g,''),notNull:false,unique:false,isPk:false,fkTable:null,fkColumn:null,checkIn:null,checkRange:null};
+const rest=cm[3]||'';const restUp=rest.toUpperCase();
+if(restUp.includes('PRIMARY KEY')){col.isPk=true;col.notNull=true;}
+if(/\bNOT\s+NULL\b/i.test(rest))col.notNull=true;
+if(/\bUNIQUE\b/i.test(rest))col.unique=true;
+const ref=rest.match(/REFERENCES\s+["`]?(\w+)["`]?\s*(?:\(\s*["`]?(\w+)["`]?\s*\))?/i);
+if(ref){col.fkTable=ref[1];col.fkColumn=ref[2]||null;}
+if(restUp.includes('CHECK'))parseCheck(rest,col);
+table.columns.push(col);}}
+tables[name]=table;}
+for(const t of Object.values(tables))for(const c of t.columns)if(c.fkTable&&!c.fkColumn&&tables[c.fkTable]){const pk=tables[c.fkTable].columns.find(x=>x.isPk);c.fkColumn=pk?pk.name:null;}
+return tables;}
+function topoOrder(tables){const order=[],seen=new Set();function visit(name,stack){if(seen.has(name)||!tables[name])return;if(stack.includes(name))return;for(const c of tables[name].columns)if(c.fkTable&&c.fkTable!==name)visit(c.fkTable,[...stack,name]);if(!seen.has(name)){seen.add(name);order.push(name);}}for(const n of Object.keys(tables))visit(n,[]);return order;}
+
+function makeRng(seed){let a=seed>>>0;const next=()=>{a|=0;a=(a+0x6D2B79F5)|0;let t=Math.imul(a^(a>>>15),1|a);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296;};
+const rng={random:next,randint:(lo,hi)=>lo+Math.floor(next()*(hi-lo+1)),uniform:(lo,hi)=>lo+next()*(hi-lo),
+choice:a=>a[Math.floor(next()*a.length)],
+choices:(a,w)=>{if(!w)return rng.choice(a);const tot=w.reduce((s,x)=>s+x,0);let r=next()*tot;for(let i=0;i<a.length;i++){r-=w[i];if(r<=0)return a[i];}return a[a.length-1];},
+gauss:()=>{const u=Math.max(next(),1e-12),v=next();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);},
+lognormal:(mu,s)=>Math.exp(mu+s*rng.gauss()),pareto:al=>1/Math.pow(1-next(),1/al)};return rng;}
+
+const FIRST=['Aarav','Vivaan','Aditya','Arjun','Reyansh','Ishaan','Kabir','Ananya','Diya','Ira','Myra','Sara','Aadhya','Kiara','James','Mary','John','Priya','Rahul','Sneha','Vikram','Neha','Amit','Pooja','Ravi','Anjali','Karan','Meera','Suresh','Lakshmi'];
+const LAST=['Sharma','Verma','Iyer','Patel','Reddy','Nair','Gupta','Mehta','Singh','Khan','Das','Roy','Chopra','Malhotra','Joshi','Kulkarni','Rao','Menon','Smith','Johnson','Bhat','Pillai','Saxena','Trivedi','Banerjee','Mukherjee','Chatterjee','Desai','Shah','Kapoor'];
+const CITIES=['Bengaluru','Mumbai','Delhi','Hyderabad','Chennai','Pune','Kolkata','Ahmedabad','Jaipur','Kochi','Indore','Nagpur','Lucknow','Surat'];
+const STATES=['Karnataka','Maharashtra','Delhi','Telangana','Tamil Nadu','West Bengal','Gujarat','Rajasthan','Kerala','Madhya Pradesh'];
+const STREETS=['MG Road','Brigade Road','Link Road','Station Road','Mall Road','Ring Road','Church Street','Park Street','Hill Road','Lake View Road'];
+const WORDS=['alpha','vertex','nova','pulse','matrix','orbit','prism','quartz','zenith','delta','ember','flux','harbor','signal','summit','vector','willow','beacon','cascade','meridian'];
+const CA=['Blue','Prime','Nex','Apex','Uni','Meta','Omni','True','Bright','Swift'],CB=['Tech','Soft','Works','Labs','Systems','Solutions','Retail','Traders','Mart','Industries'];
+function fakerValue(method,rng){const p=a=>a[Math.floor(rng.random()*a.length)];switch(method){
+case 'name':case 'fullName':return p(FIRST)+' '+p(LAST);
+case 'first_name':return p(FIRST);case 'last_name':return p(LAST);
+case 'email':return p(FIRST).toLowerCase()+'.'+p(LAST).toLowerCase()+rng.randint(1,9999)+'@example.com';
+case 'phone_number':case 'phone':return '+91-9'+rng.randint(100000000,999999999);
+case 'city':return p(CITIES);case 'state':return p(STATES);
+case 'street_address':return rng.randint(1,999)+', '+p(STREETS);
+case 'postcode':return String(rng.randint(110001,999999));
+case 'company':return p(CA)+p(CB);
+case 'catch_phrase':return p(WORDS)[0].toUpperCase()+p(WORDS).slice(1)+' '+p(WORDS)+' '+p(WORDS);
+case 'word':return p(WORDS);
+case 'sentence':{const n=rng.randint(6,12);const ws=Array.from({length:n},()=>p(WORDS));return ws[0][0].toUpperCase()+ws.join(' ').slice(1)+'.';}
+case 'user_name':return p(FIRST).toLowerCase()+rng.randint(1,999);
+default:return p(WORDS);}}
+
+const MAX_RETRIES=50;
+const round2=(v,d)=>{const p=Math.pow(10,d==null?2:d);return Math.round(v*p)/p;};
+const fmtTpl=(tpl,seq)=>tpl.replace(/\{seq(?::0(\d+)d)?\}/g,(_,w)=>w?String(seq).padStart(+w,'0'):String(seq));
+class Engine{constructor(tables,plan,seed){this.tables=tables;this.plan=plan||{};this.rng=makeRng(seed);this.data={};this.keys={};}
+value(spec,tname,col,seq,row,partial){const rng=this.rng;
+if(spec.null_prob&&rng.random()<spec.null_prob)return null;
+switch(spec.gen||'auto'){
+case 'sequence':return seq;
+case 'faker':return fakerValue(spec.method,rng);
+case 'choice':return rng.choices(spec.values,spec.weights);
+case 'int':return rng.randint(Math.trunc(spec.min??0),Math.trunc(spec.max??100));
+case 'float':return round2(rng.uniform(+(spec.min??0),+(spec.max??100)),spec.round);
+case 'lognormal':{let v=rng.lognormal(spec.mu??6.5,spec.sigma??1.0);if(spec.max!=null)v=Math.min(v,spec.max);if(spec.min!=null)v=Math.max(v,spec.min);return round2(v,spec.round);}
+case 'date':{const s=new Date(String(spec.start??'2024-01-01')+'T00:00:00Z'),e=new Date(String(spec.end??'2026-01-01')+'T00:00:00Z');return new Date(s.getTime()+rng.randint(0,Math.floor((e-s)/86400000))*86400000).toISOString().slice(0,10);}
+case 'datetime':{const s=new Date(String(spec.start??'2024-01-01 00:00').replace(' ','T')+':00Z'),e=new Date(String(spec.end??'2026-01-01 00:00').replace(' ','T')+':00Z');return new Date(s.getTime()+rng.randint(0,Math.floor((e-s)/1000))*1000).toISOString().slice(0,19).replace('T',' ');}
+case 'template':return fmtTpl(spec.format,seq);
+case 'const':return spec.value??null;
+case 'fk':{if(col.fkTable===tname){const pool=partial.map(r=>r[col.fkColumn]).filter(v=>v!=null);if(!pool.length||rng.random()<0.02)return null;return rng.choice(pool);}
+const pool=this.keys[col.fkTable+'.'+col.fkColumn]||[];
+if(!pool.length)throw new Error(tname+'.'+col.name+': no parent keys for '+col.fkTable+'.'+col.fkColumn);
+if(spec.distribution==='zipf'){const idx=Math.min(Math.floor(rng.pareto(1.2))-1,pool.length-1);return pool[Math.max(0,idx)];}
+return rng.choice(pool);}
+case 'expr':{const fn=new Function('row','rng','return ('+spec.code+');');return fn(row,rng);}
+default:throw new Error(tname+'.'+col.name+": unknown generator '"+(spec.gen)+"'");}}
+autoSpec(col){if(col.isPk)return{gen:'sequence'};if(col.fkTable)return{gen:'fk'};if(col.checkIn)return{gen:'choice',values:col.checkIn};const d=col.dtype;
+if(col.checkRange){const[lo,hi]=col.checkRange;return d.includes('INT')?{gen:'int',min:lo,max:hi}:{gen:'float',min:lo,max:hi};}
+if(d.includes('INT'))return{gen:'int',min:0,max:1000};
+if(/NUMERIC|DECIMAL|REAL|FLOAT|DOUBLE/.test(d))return{gen:'float',min:0,max:10000};
+if(d.includes('BOOL'))return{gen:'choice',values:[0,1]};
+if(/TIMESTAMP|DATETIME/.test(d))return{gen:'datetime',start:'2025-01-01 00:00',end:'2026-07-01 00:00'};
+if(d.includes('DATE'))return{gen:'date',start:'2025-01-01',end:'2026-07-01'};
+return{gen:'faker',method:'word'};}
+precomputeUniqueCombos(table,colPlans,nRows,tname){const assigns=[],covered=new Set();
+for(const uset of table.uniqueSets){if(uset.some(c=>covered.has(c)))continue;
+const pools=[];let ok=true;
+for(const cn of uset){const col=table.columns.find(x=>x.name===cn);const spec=colPlans[cn]||this.autoSpec(col);
+if(spec.gen==='fk'&&col.fkTable!==tname)pools.push(this.keys[col.fkTable+'.'+col.fkColumn]||[]);
+else if(spec.gen==='choice')pools.push(spec.values);else{ok=false;break;}}
+if(!ok||pools.some(p=>!p.length))continue;
+const total=pools.reduce((s,p)=>s*p.length,1);
+if(nRows>total)throw new Error(tname+': UNIQUE('+uset+') allows only '+total+' combinations but the plan asks for '+nRows+' rows — reduce rows or grow the parent tables');
+let idxs;
+if(total>nRows*4){const st=new Set();while(st.size<nRows)st.add(this.rng.randint(0,total-1));idxs=[...st];}
+else{idxs=Array.from({length:total},(_,i)=>i);
+for(let i=total-1;i>0;i--){const j=this.rng.randint(0,i);[idxs[i],idxs[j]]=[idxs[j],idxs[i]];}
+idxs=idxs.slice(0,nRows);}
+const combos=idxs.map(ix0=>{let ix=ix0;const vals=[];for(const p of pools){vals.push(p[ix%p.length]);ix=Math.floor(ix/p.length);}return vals;});
+assigns.push({uset,combos});uset.forEach(c=>covered.add(c));}
+for(const col of table.columns){const spec=colPlans[col.name]||this.autoSpec(col);
+const isU=col.unique||(colPlans[col.name]&&colPlans[col.name].unique);
+if(!isU||covered.has(col.name))continue;
+let pool=null;
+if(spec.gen==='fk'&&col.fkTable!==tname)pool=this.keys[col.fkTable+'.'+col.fkColumn]||[];
+else if(spec.gen==='choice')pool=spec.values;
+if(!pool||!pool.length)continue;
+if(nRows>pool.length)throw new Error(tname+'.'+col.name+': UNIQUE allows only '+pool.length+' distinct values but the plan asks for '+nRows+' rows — reduce rows or grow '+(col.fkTable||'the value list'));
+const idxs=Array.from({length:pool.length},(_,i)=>i);
+for(let i=idxs.length-1;i>0;i--){const j=this.rng.randint(0,i);[idxs[i],idxs[j]]=[idxs[j],idxs[i]];}
+assigns.push({uset:[col.name],combos:idxs.slice(0,nRows).map(i=>[pool[i]])});covered.add(col.name);}
+return assigns;}
+generateTable(name){const table=this.tables[name];const tplan=(this.plan.tables||{})[name]||{};
+const nRows=Math.trunc(tplan.rows??100);const colPlans=tplan.columns||{};const rows=[];const uniq={};
+const comboAssigns=this.precomputeUniqueCombos(table,colPlans,nRows,name);const comboCols=new Set(comboAssigns.flatMap(a=>a.uset));
+for(const c of table.columns)if(c.unique||(colPlans[c.name]&&colPlans[c.name].unique))uniq[c.name]=new Set();
+for(let seq=1;seq<=nRows;seq++){const row={};
+for(const col of table.columns){const spec=colPlans[col.name]||this.autoSpec(col);
+let val=this.value(spec,name,col,seq,row,rows);
+if(uniq[col.name]&&!comboCols.has(col.name)&&val!=null){let tries=0;
+while(uniq[col.name].has(val)&&tries<MAX_RETRIES){val=this.value(spec,name,col,seq,row,rows);tries++;}
+if(uniq[col.name].has(val))throw new Error(name+'.'+col.name+": can't satisfy UNIQUE (pool too small)");
+uniq[col.name].add(val);}
+row[col.name]=val;}
+for(const a of comboAssigns)a.uset.forEach((cn,j)=>{row[cn]=a.combos[seq-1][j];});
+for(const uset of table.uniqueSets){const k='U::'+uset.join('::');uniq[k]=uniq[k]||new Set();
+let key=uset.map(c=>row[c]).join('');let tries=0;
+while(uniq[k].has(key)&&tries<MAX_RETRIES){for(const cn of uset){const col=table.columns.find(x=>x.name===cn);const spec=colPlans[cn]||this.autoSpec(col);row[cn]=this.value(spec,name,col,seq,row,rows);}key=uset.map(c=>row[c]).join('');tries++;}
+if(uniq[k].has(key))throw new Error(name+": can't satisfy UNIQUE("+uset+") — reduce rows");
+uniq[k].add(key);}
+rows.push(row);}
+this.data[name]=rows;
+for(const col of table.columns)this.keys[name+'.'+col.name]=rows.map(r=>r[col.name]).filter(v=>v!=null);}
+run(){for(const n of topoOrder(this.tables))this.generateTable(n);return this.data;}}
+
+function ddlToSqlite(ddl){return ddl
+.replace(/(BIGINT|INT|INTEGER)\s+GENERATED\s+ALWAYS\s+AS\s+IDENTITY/gi,'INTEGER')
+.replace(/\bBOOLEAN\b/gi,'INTEGER').replace(/\bTIMESTAMP\b/gi,'TEXT')
+.replace(/DEFAULT\s+CURRENT_TIMESTAMP/gi,"DEFAULT (datetime('now'))");}
+
+/* ============ LLM call (browser -> provider, key never leaves the page) ============ */
+const SYSTEM_PROMPT=`You are a test-data architect. Given SQL DDL and a business case, you write a generation plan in YAML for the testforge engine. Output ONLY valid YAML, no prose, no markdown fences.
+
+Plan format:
+seed: 42
+tables:
+  <table_name>:
+    rows: <int>
+    columns:
+      <col>: {gen: sequence}                          # primary keys
+      <col>: {gen: fk}                                # foreign keys
+      <col>: {gen: fk, distribution: zipf}            # skewed parent pick
+      <col>: {gen: choice, values: [A, B], weights: [70, 30]}
+      <col>: {gen: int, min: 1, max: 10}
+      <col>: {gen: float, min: 0, max: 100, round: 2}
+      <col>: {gen: lognormal, mu: 6.5, sigma: 1.0, round: 2, min: 49, max: 99999}
+      <col>: {gen: date, start: 2025-01-01, end: 2026-07-01}
+      <col>: {gen: datetime, start: 2025-01-01 00:00, end: 2026-07-01 23:59}
+      <col>: {gen: template, format: "SKU-{seq:06d}"}
+      <col>: {gen: const, value: X}
+      <col>: {gen: faker, method: name}   # name, first_name, last_name, email, phone_number, city, state, street_address, postcode, company, catch_phrase, word, sentence, user_name
+      <col>: {gen: expr, code: "row.min_salary * 1.5"}  # JS expression; for cross-column rules
+Any column may add null_prob: 0.1 and unique: true.
+
+Rules: respect every CHECK constraint (enumerations via choice with exact values, BETWEEN via min/max, cross-column via expr). UNIQUE columns use template with {seq} or unique: true; keep composite-UNIQUE row counts well below the combination pool. Weights must reflect business-case percentages. Workflow dates (shipped after ordered) via expr or non-overlapping windows. NOT NULL columns never get null_prob.`;
+
+async function authorPlan(ddl,bcase,provider,key,model){
+  const userMsg='SQL DDL:\n\n'+ddl+'\n\nBUSINESS CASE:\n\n'+bcase+'\n\nWrite the generation plan YAML.';
+  let text;
+  if(provider==='anthropic'){
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',
+      headers:{'content-type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01',
+               'anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:model||'claude-sonnet-5',max_tokens:8000,system:SYSTEM_PROMPT,
+        messages:[{role:'user',content:userMsg}]})});
+    if(!res.ok)throw new Error('Anthropic API '+res.status+': '+await res.text());
+    const j=await res.json();text=j.content.map(b=>b.text||'').join('');
+  }else{
+    const res=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',
+      headers:{'content-type':'application/json',authorization:'Bearer '+key},
+      body:JSON.stringify({model:model||'gpt-4o',
+        messages:[{role:'system',content:SYSTEM_PROMPT},{role:'user',content:userMsg}]})});
+    if(!res.ok)throw new Error('OpenAI API '+res.status+': '+await res.text());
+    const j=await res.json();text=j.choices[0].message.content;
+  }
+  const fence=text.match(/```(?:yaml)?\s*([\s\S]*?)```/);
+  return (fence?fence[1]:text).trim();
+}
+
+/* ============ UI wiring ============ */
+const $=id=>document.getElementById(id);
+const setStatus=(el,msg,cls)=>{el.textContent=msg;el.className='status '+(cls||'');};
+
+$('btnSample').onclick=async()=>{
+  $('ddl').value=SAMPLE_DDL.trim();$('bcase').value=SAMPLE_CASE.trim();
+  setStatus($('planStatus'),'Sample loaded. Add your API key and click "Author plan", or paste a plan directly.','ok');
+};
+
+$('btnPlan').onclick=async()=>{
+  const ddl=$('ddl').value.trim(),bcase=$('bcase').value.trim(),key=$('key').value.trim();
+  if(!ddl||!bcase)return setStatus($('planStatus'),'Paste both the schema and the business case first.','err');
+  if(!key)return setStatus($('planStatus'),'Add your API key (it is only sent to the AI provider, never to us).','err');
+  $('btnPlan').disabled=true;setStatus($('planStatus'),'Asking the model to write the plan…');
+  try{
+    const yamlText=await authorPlan(ddl,bcase,$('provider').value,key,$('model').value.trim());
+    jsyaml.load(yamlText); // validate
+    $('plan').value=yamlText;
+    setStatus($('planStatus'),'Plan ready — review it on the right, then Generate.','ok');
+  }catch(e){setStatus($('planStatus'),e.message,'err');}
+  $('btnPlan').disabled=false;
+};
+
+$('btnGen').onclick=async()=>{
+  const ddl=$('ddl').value.trim(),planText=$('plan').value.trim();
+  if(!ddl||!planText)return setStatus($('genStatus'),'Need the schema (left) and a plan (above).','err');
+  $('btnGen').disabled=true;setStatus($('genStatus'),'Generating…');
+  await new Promise(r=>setTimeout(r,30));
+  try{
+    const plan=jsyaml.load(planText);
+    const tables=parseDDL(ddl);
+    const seed=parseInt($('seed').value)||plan.seed||42;
+    const eng=new Engine(tables,plan,seed);
+    const data=eng.run();
+    const total=Object.values(data).reduce((s,r)=>s+r.length,0);
+    // build SQLite db in browser
+    const SQL=await initSqlJs({locateFile:f=>'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/'+f});
+    const db=new SQL.Database();
+    db.run('PRAGMA foreign_keys=ON;');db.run(ddlToSqlite(ddl));
+    for(const[tname,rows]of Object.entries(data)){if(!rows.length)continue;
+      const cols=Object.keys(rows[0]);
+      const stmt=db.prepare('INSERT INTO '+tname+' ('+cols.join(',')+') VALUES ('+cols.map(()=>'?').join(',')+')');
+      db.run('BEGIN');for(const r of rows)stmt.run(cols.map(c=>r[c]===undefined?null:r[c]));db.run('COMMIT');stmt.free();}
+    const viol=db.exec('PRAGMA foreign_key_check');
+    const bytes=db.export();db.close();
+    // downloads
+    const dl=$('downloads');dl.innerHTML='';
+    const mkBtn=(label,blob,fname)=>{const b=document.createElement('button');b.className='secondary';b.textContent=label;
+      b.onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fname;a.click();};dl.appendChild(b);};
+    mkBtn('⬇ Download .db (SQLite)',new Blob([bytes],{type:'application/octet-stream'}),'testforge_data.db');
+    for(const[tname,rows]of Object.entries(data)){if(!rows.length)continue;
+      const cols=Object.keys(rows[0]);
+      const esc=v=>v==null?'':(/[",\n]/.test(String(v))?'"'+String(v).replace(/"/g,'""')+'"':String(v));
+      const csv=[cols.join(','),...rows.map(r=>cols.map(c=>esc(r[c])).join(','))].join('\n');
+      if(Object.keys(data).indexOf(tname)<3)mkBtn('⬇ '+tname+'.csv',new Blob([csv],{type:'text/csv'}),tname+'.csv');}
+    // preview
+    const pv=$('preview');pv.innerHTML='';
+    for(const[tname,rows]of Object.entries(data)){
+      const h=document.createElement('h3');h.textContent=tname+' — '+rows.length.toLocaleString()+' rows';pv.appendChild(h);
+      if(!rows.length)continue;
+      const cols=Object.keys(rows[0]);const tb=document.createElement('table');
+      tb.innerHTML='<tr>'+cols.map(c=>'<th>'+c+'</th>').join('')+'</tr>'+
+        rows.slice(0,5).map(r=>'<tr>'+cols.map(c=>'<td>'+(r[c]==null?'<i>null</i>':String(r[c]).slice(0,60))+'</td>').join('')+'</tr>').join('');
+      pv.appendChild(tb);}
+    setStatus($('genStatus'),'Done: '+Object.keys(data).length+' tables, '+total.toLocaleString()+' rows, FK violations: '+(viol.length?viol[0].values.length:0)+' (seed '+seed+')',viol.length?'err':'ok');
+  }catch(e){setStatus($('genStatus'),e.message,'err');}
+  $('btnGen').disabled=false;
+};
+
+/* ============ sample data ============ */
+const SAMPLE_DDL=`
+CREATE TABLE customers (
+    customer_id     BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email           VARCHAR(255) NOT NULL UNIQUE,
+    full_name       VARCHAR(120) NOT NULL,
+    customer_tier   VARCHAR(10) NOT NULL DEFAULT 'STANDARD'
+                    CHECK (customer_tier IN ('STANDARD','SILVER','GOLD','PREMIUM')),
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE products (
+    product_id      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    sku             VARCHAR(30) NOT NULL UNIQUE,
+    product_name    VARCHAR(200) NOT NULL,
+    unit_price      NUMERIC(10,2) NOT NULL CHECK (unit_price >= 0)
+);
+CREATE TABLE orders (
+    order_id        BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    customer_id     BIGINT NOT NULL REFERENCES customers(customer_id),
+    order_date      TIMESTAMP NOT NULL,
+    order_status    VARCHAR(15) NOT NULL
+                    CHECK (order_status IN ('PENDING','PAID','SHIPPED','DELIVERED','CANCELLED')),
+    order_total     NUMERIC(12,2) NOT NULL CHECK (order_total >= 0)
+);
+CREATE TABLE order_items (
+    order_item_id   BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    order_id        BIGINT NOT NULL REFERENCES orders(order_id),
+    product_id      BIGINT NOT NULL REFERENCES products(product_id),
+    quantity        INT NOT NULL CHECK (quantity > 0),
+    UNIQUE (order_id, product_id)
+);`;
+const SAMPLE_CASE=`Online retailer, 500 customers, 200 products, 2000 orders over the last 12 months.
+Customer tiers: 70% STANDARD, 15% SILVER, 10% GOLD, 5% PREMIUM. A few heavy buyers
+place many orders (skewed). Prices are long-tail: mostly under Rs 1000, up to Rs 99999.
+Order sta

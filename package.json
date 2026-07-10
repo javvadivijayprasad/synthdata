@@ -1,0 +1,19 @@
+{
+  "name": "@vijaypjavvadi/synthdata",
+  "version": "1.0.0",
+  "description": "SynthData (TestForge AI) — schema + business case + LLM key -> realistic, relationally consistent synthetic test data. No production data required.",
+  "type": "module",
+  "bin": { "synthdata": "bin/cli.js" },
+  "files": ["bin", "src", "README.md"],
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "sql.js": "^1.10.0",
+    "yaml": "^2.4.0"
+  },
+  "keywords": ["synthetic-data", "test-data", "qa", "sqlite", "llm", "faker", "testforge", "referential-integrity"],
+  "license": "MIT",
+  "author": "Vijay Prasad Javvadi <jvijayprasad@gmail.com>",
+  "homepage": "https://synthdata.testforge-ai.com",
+  "repository": { "type": "git", "url": "git+https://github.com/javvadivijayprasad/synthdata.git" },
+  "bugs": { "url": "https://github.com/javvadivijayprasad/synthdata/issues" }
+}

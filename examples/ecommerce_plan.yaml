@@ -1,0 +1,129 @@
+# Generation plan for schema_ecommerce.sql (MegaMart business case).
+# This file is what an LLM authors from your natural-language business case —
+# review it, tweak it, version it. The engine executes it deterministically.
+seed: 42
+tables:
+  customers:
+    rows: 2000
+    columns:
+      customer_id: {gen: sequence}
+      email: {gen: template, format: "user{seq}@example.com", unique: true}
+      full_name: {gen: faker, method: name}
+      phone: {gen: template, format: "+91-98{seq:08d}"}
+      customer_tier:
+        gen: choice
+        values: [STANDARD, SILVER, GOLD, PREMIUM]
+        weights: [70, 15, 10, 5]
+      created_at: {gen: datetime, start: 2023-07-01 00:00, end: 2026-06-01 00:00}
+      is_active: {gen: choice, values: [1, 0], weights: [95, 5]}
+
+  addresses:
+    rows: 3600
+    columns:
+      address_id: {gen: sequence}
+      customer_id: {gen: fk}
+      address_type: {gen: choice, values: [SHIPPING, BILLING], weights: [70, 30]}
+      line1: {gen: faker, method: street_address}
+      line2: {gen: const, value: null, null_prob: 1.0}
+      city: {gen: faker, method: city}
+      state: {gen: faker, method: state}
+      postal_code: {gen: template, format: "{seq:06d}"}
+      country_code: {gen: const, value: IN}
+      is_default: {gen: choice, values: [1, 0], weights: [55, 45]}
+
+  categories:
+    rows: 30
+    columns:
+      category_id: {gen: sequence}
+      parent_id: {gen: const, value: null, null_prob: 1.0}   # flat tree in MVP
+      category_name: {gen: template, format: "Category {seq}"}
+      is_active: {gen: const, value: 1}
+
+  products:
+    rows: 500
+    columns:
+      product_id: {gen: sequence}
+      category_id: {gen: fk}
+      sku: {gen: template, format: "SKU-{seq:06d}", unique: true}
+      product_name: {gen: faker, method: catch_phrase}
+      unit_price: {gen: lognormal, mu: 6.5, sigma: 1.0, round: 2, max: 99999, min: 49}
+      weight_grams: {gen: int, min: 50, max: 20000}
+      status: {gen: choice, values: [ACTIVE, DISCONTINUED], weights: [95, 5]}
+      created_at: {gen: datetime, start: 2023-07-01 00:00, end: 2026-01-01 00:00}
+
+  inventory:
+    rows: 1000   # < 500 products x 3 warehouses; leaves headroom for UNIQUE(product,warehouse)
+    columns:
+      inventory_id: {gen: sequence}
+      product_id: {gen: fk}
+      warehouse_code: {gen: choice, values: [WH-BLR, WH-DEL, WH-MUM]}
+      qty_on_hand: {gen: int, min: 20, max: 500}
+      qty_reserved: {gen: int, min: 0, max: 20}
+      updated_at: {gen: const, value: "2026-07-10"}
+
+  orders:
+    rows: 8000
+    columns:
+      order_id: {gen: sequence}
+      customer_id: {gen: fk, distribution: zipf}   # heavy buyers exist
+      ship_address_id: {gen: fk}
+      order_date: {gen: datetime, start: 2025-07-10 06:00, end: 2026-07-09 23:00}
+      order_status:
+        gen: choice
+        values: [PENDING, PAID, SHIPPED, DELIVERED, CANCELLED, REFUNDED]
+        weights: [5, 8, 12, 65, 7, 3]
+      order_total: {gen: lognormal, mu: 7.6, sigma: 0.9, round: 2, min: 99}
+      coupon_code:
+        gen: choice
+        values: [FEST10, WELCOME5]
+        null_prob: 0.8
+
+  order_items:
+    rows: 24000
+    columns:
+      order_item_id: {gen: sequence}
+      order_id: {gen: fk}
+      product_id: {gen: fk}
+      quantity: {gen: int, min: 1, max: 4}
+      unit_price: {gen: lognormal, mu: 6.5, sigma: 1.0, round: 2, max: 99999, min: 49}
+      discount_pct: {gen: choice, values: [0, 5, 10, 15], weights: [60, 15, 15, 10]}
+
+  payments:
+    rows: 8500
+    columns:
+      payment_id: {gen: sequence}
+      order_id: {gen: fk}
+      payment_method:
+        gen: choice
+        values: [UPI, CARD, COD, WALLET, NETBANKING]
+        weights: [45, 30, 15, 7, 3]
+      amount: {gen: lognormal, mu: 7.6, sigma: 0.9, round: 2, min: 99}
+      payment_status:
+        gen: choice
+        values: [SUCCESS, FAILED, INITIATED, REFUNDED]
+        weights: [82, 6, 8, 4]
+      paid_at: {gen: datetime, start: 2025-07-10 06:00, end: 2026-07-09 23:59, null_prob: 0.1}
+
+  shipments:
+    rows: 6500
+    columns:
+      shipment_id: {gen: sequence}
+      order_id: {gen: fk}
+      carrier: {gen: choice, values: [Delhivery, BlueDart, Ekart, DTDC, IndiaPost]}
+      tracking_number: {gen: template, format: "TRK{seq:010d}", unique: true}
+      shipped_at: {gen: datetime, start: 2025-07-10 12:00, end: 2026-07-05 20:00}
+      delivered_at: {gen: datetime, start: 2026-07-06 08:00, end: 2026-07-09 20:00, null_prob: 0.15}
+      shipment_status:
+        gen: choice
+        values: [DELIVERED, IN_TRANSIT, RETURNED, LOST]
+        weights: [83, 14, 2.9, 0.1]
+
+  reviews:
+    rows: 1800
+    columns:
+      review_id: {gen: sequence}
+      product_id: {gen: fk}
+      customer_id: {gen: fk}
+      rating: {gen: choice, values: [5, 4, 3, 2, 1], weights: [45, 30, 12, 6, 7]}
+      review_text: {gen: faker, method: sentence}
+ 

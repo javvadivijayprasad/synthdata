@@ -1,0 +1,39 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - name: Syntax check
+        run: |
+          node --check bin/cli.js
+          for f in src/*.js; do node --check "$f"; done
+      - name: Smoke test — auto mode (no LLM)
+        run: |
+          node bin/cli.js auto -s examples/schema_ecommerce.sql -o ci.db --rows 200
+          node -e "
+            const initSqlJs = require('sql.js');
+            const fs = require('fs');
+            initSqlJs().then(SQL => {
+              const db = new SQL.Database(fs.readFileSync('ci.db'));
+              const v = db.exec('PRAGMA foreign_key_check');
+              if (v.length) { console.error('FK violations!'); process.exit(1); }
+              console.log('FK check clean');
+            });"
+      - name: Smoke test — plan mode + reproducibility
+        run: |
+          node bin/cli.js generate -s examples/schema_ecommerce.sql -P examples/ecommerce_plan.yaml -o a.db --seed 42
+          node bin/cli.js generate -s examples/schema_ecommerce.sql -P examples/ecommerce_plan.yaml -o b.db --seed 42
+          cmp a.db b.db && echo "byte-identical: reproducibility holds"
