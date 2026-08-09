@@ -12,3 +12,6 @@ ci_out.sql
 # secrets
 .env
 .env.*
+
+# local execution plan (not public)
+ROADMAP.md
