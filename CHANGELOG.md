@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Web app: auto mode when the plan box is empty (schema-only generation, 100 rows/table)
+- Web app: home page, accounts — register / login / forgot-password, saved dataset
+  recipes (schema + plan + seed, regenerated deterministically on download)
+- `standalone/` Express backend for the accounts API
+- Docs: CONTRIBUTING.md, SUPPORT.md, CODE_OF_CONDUCT.md
+
 ## 1.0.0 — 2026-07-10
 
 First public release.
