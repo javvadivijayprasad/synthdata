@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions & support
+    url: https://github.com/javvadivijayprasad/synthdata/blob/main/SUPPORT.md
+    about: How to get help, docs links, and the security contact.
+  - name: Try it in the browser
+    url: https://synthdata.testforge-ai.com
+    about: Reproduce issues quickly without installing anything.

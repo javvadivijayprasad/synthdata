@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a new generator, export target, or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the test-data situation you're stuck on today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should synthdata do? A sample plan YAML snippet or CLI flag sketch helps.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you tried (expr generators, post-processing, other tools).

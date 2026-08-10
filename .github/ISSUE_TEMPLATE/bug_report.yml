@@ -1,0 +1,52 @@
+name: Bug report
+description: Report a problem — schema + plan + seed makes it perfectly reproducible
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you get instead?
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Exact command and full output
+      render: shell
+      placeholder: |
+        node bin/cli.js generate -s schema.sql -P plan.yaml -o out.db --seed 42
+        error: ...
+    validations:
+      required: true
+  - type: textarea
+    id: schema
+    attributes:
+      label: Schema (DDL)
+      description: The CREATE TABLE statements — or a minimal version that reproduces the problem.
+      render: sql
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan YAML + seed (if any)
+      description: Same seed = same output, so schema + plan + seed is a complete repro.
+      render: yaml
+  - type: input
+    id: version
+    attributes:
+      label: synthdata version and Node version
+      placeholder: "@vijaypjavvadi/synthdata 1.0.0, Node 20.11"
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where did it happen?
+      options:
+        - CLI (npm package)
+        - Web app (synthdata.testforge-ai.com)
+        - Both
+    validations:
+      required: true
