@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 — 2026-08-15
 
 - **Test-data profiles** (`--profile functional|edge|negative|volume`):
   edge = valid boundary data (CHECK endpoints, max-length strings, NULLs, full enum
