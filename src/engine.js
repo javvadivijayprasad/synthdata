@@ -44,11 +44,14 @@ function fmtTemplate(tpl, seq) {
   return tpl.replace(/\{seq(?::0(\d+)d)?\}/g, (_, w) => (w ? pad(seq, +w) : String(seq)));
 }
 
+export const PROFILES = ['functional', 'edge', 'negative', 'volume'];
+
 export class Engine {
-  constructor(tables, plan, seed = 42) {
+  constructor(tables, plan, seed = 42, profile = 'functional') {
     this.tables = tables;
     this.plan = plan || {};
     this.seed = seed;
+    this.profile = profile;
     this.rng = makeRng(seed);
     this.data = {};
     this.keys = {};   // "table.column" -> [values]
@@ -60,7 +63,12 @@ export class Engine {
     const rng = this.rng;
     switch (g) {
       case 'sequence': return seq;
-      case 'faker': return fakerValue(spec.method, rng);
+      case 'faker': {
+        let v = fakerValue(spec.method, rng);
+        if (spec.max_len != null && typeof v === 'string' && v.length > spec.max_len)
+          v = v.slice(0, spec.max_len);
+        return v;
+      }
       case 'choice': return rng.choices(spec.values, spec.weights);
       case 'int': return rng.randint(Math.trunc(spec.min ?? 0), Math.trunc(spec.max ?? 100));
       case 'float': return round2(rng.uniform(+(spec.min ?? 0), +(spec.max ?? 100)), spec.round);
@@ -109,8 +117,15 @@ export class Engine {
   autoSpec(col) {
     if (col.isPk) return { gen: 'sequence' };
     if (col.fkTable) return { gen: 'fk' };
-    if (col.unique && !/INT|NUMERIC|DECIMAL|REAL|FLOAT|DATE|TIME/.test(col.dtype))
-      return { gen: 'template', format: col.name + '_{seq}' };
+    // length limit from CHAR(n)/VARCHAR(n) — real databases enforce it
+    const lenM = /^(?:VAR)?CHAR(?:ACTER)?\((\d+)/.exec(col.dtype);
+    const maxLen = lenM ? +lenM[1] : null;
+    if (col.unique && !/INT|NUMERIC|DECIMAL|REAL|FLOAT|DATE|TIME/.test(col.dtype)) {
+      let format = col.name + '_{seq}';
+      if (maxLen != null && maxLen < col.name.length + 7)
+        format = maxLen >= 6 ? '{seq:0' + Math.min(maxLen, 6) + 'd}' : '{seq}';
+      return { gen: 'template', format };
+    }
     if (col.checkIn) return { gen: 'choice', values: col.checkIn };
     const d = col.dtype;
     if (col.checkRange) {
@@ -124,7 +139,76 @@ export class Engine {
     if (d.includes('BOOL')) return { gen: 'choice', values: [0, 1] };
     if (/TIMESTAMP|DATETIME/.test(d)) return { gen: 'datetime', start: '2025-01-01 00:00', end: '2026-07-01 00:00' };
     if (d.includes('DATE')) return { gen: 'date', start: '2025-01-01', end: '2026-07-01' };
-    return { gen: 'faker', method: 'word' };
+    return maxLen != null ? { gen: 'faker', method: 'word', max_len: maxLen }
+                          : { gen: 'faker', method: 'word' };
+  }
+
+  // ---- edge profile: valid boundary values, cycled deterministically ----
+  // Still constraint-clean (loads into a real database) but exercises the
+  // extremes: CHECK-range endpoints, every enum value, max-length strings,
+  // NULL wherever allowed, date-range endpoints.
+  edgeCandidates(col, spec) {
+    const cands = [];
+    const lenM = /^(?:VAR)?CHAR(?:ACTER)?\((\d+)/.exec(col.dtype);
+    const numM = /^(?:NUMERIC|DECIMAL)\((\d+),(\d+)\)/.exec(col.dtype);
+    if (col.checkIn) cands.push(...col.checkIn);
+    else if (spec.gen === 'choice' && spec.values) cands.push(...spec.values);
+    else if (col.checkRange) {
+      const lo = col.checkRange[0] ?? 0;
+      const hi = col.checkRange[1] ?? Math.max(1000, lo + 1000);
+      cands.push(lo, hi, Math.round((lo + hi) / 2));
+    } else if (col.dtype.includes('BOOL')) cands.push(0, 1);
+    else if (col.dtype.startsWith('SMALLINT')) cands.push(0, 1, 32767);
+    else if (col.dtype.includes('INT')) cands.push(0, 1, 2147483647);
+    else if (numM) {
+      const max = Math.pow(10, +numM[1] - +numM[2]) - Math.pow(10, -numM[2]);
+      cands.push(0, +max.toFixed(+numM[2]));
+    } else if (/REAL|FLOAT|DOUBLE/.test(col.dtype)) cands.push(0, 0.01, 999999.99);
+    else if (/TIMESTAMP|DATETIME/.test(col.dtype))
+      cands.push(spec.start ?? '2025-01-01 00:00:00', spec.end ?? '2026-07-01 00:00:00');
+    else if (col.dtype.includes('DATE'))
+      cands.push(spec.start ?? '2025-01-01', spec.end ?? '2026-07-01');
+    else if (lenM) cands.push('A', 'X'.repeat(+lenM[1]));       // min + max length
+    else cands.push('A', 'X'.repeat(1000));                      // unbounded TEXT
+    if (!col.notNull) cands.push(null);
+    return cands;
+  }
+
+  // ---- negative profile: corrupt valid rows, one named violation each ----
+  corruptData() {
+    for (const [tname, rows] of Object.entries(this.data)) {
+      const table = this.tables[tname];
+      const viols = [];
+      for (const c of table.columns) {
+        const lenM = /^(?:VAR)?CHAR(?:ACTER)?\((\d+)/.exec(c.dtype);
+        if (c.fkTable && c.fkTable !== tname) viols.push({ kind: 'fk_dangling', col: c.name });
+        if (c.checkIn) viols.push({ kind: 'check_in', col: c.name });
+        if (c.checkRange) viols.push({ kind: 'check_range', col: c.name });
+        if (c.notNull && !c.isPk) viols.push({ kind: 'not_null', col: c.name });
+        if (lenM) viols.push({ kind: 'too_long', col: c.name, len: +lenM[1] });
+      }
+      for (const rc of table.rowChecks || []) viols.push({ kind: 'cross_column', rc });
+      rows.forEach((row, i) => {
+        if (!viols.length) { row._violation = 'none_applicable'; return; }
+        const v = viols[i % viols.length];
+        if (v.kind === 'fk_dangling') { row[v.col] = 999999999; row._violation = `${v.col}: dangling FK (999999999)`; }
+        else if (v.kind === 'check_in') { row[v.col] = 'INVALID'; row._violation = `${v.col}: value not in allowed set`; }
+        else if (v.kind === 'check_range') {
+          const col = table.columns.find(c => c.name === v.col);
+          const [lo, hi] = col.checkRange;
+          row[v.col] = hi != null ? hi + 1 : (lo ?? 0) - 1;
+          row._violation = `${v.col}: outside CHECK range (${row[v.col]})`;
+        }
+        else if (v.kind === 'not_null') { row[v.col] = null; row._violation = `${v.col}: NULL in NOT NULL column`; }
+        else if (v.kind === 'too_long') { row[v.col] = 'X'.repeat(v.len + 10); row._violation = `${v.col}: exceeds max length ${v.len}`; }
+        else if (v.kind === 'cross_column') {
+          const { left, op, right } = v.rc;
+          if (typeof row[right] === 'number')
+            row[left] = op.startsWith('>') ? row[right] - 1 : row[right] + 1;
+          row._violation = `violates CHECK (${left} ${op} ${right})`;
+        }
+      });
+    }
   }
 
   // For composite UNIQUE sets whose columns are all fk/choice (finite pools),
@@ -203,11 +287,17 @@ export class Engine {
     for (const c of table.columns) {
       if (c.unique || (colPlans[c.name] && colPlans[c.name].unique)) uniq[c.name] = new Set();
     }
+    const edgeCache = {};
     for (let seq = 1; seq <= nRows; seq++) {
       const row = {};
       for (const col of table.columns) {
         const spec = colPlans[col.name] || this.autoSpec(col);
-        let val = this.value(spec, name, col, seq, row, rows);
+        let val;
+        if (this.profile === 'edge' && !col.isPk && !col.fkTable &&
+            !uniq[col.name] && !comboCols.has(col.name)) {
+          const cands = edgeCache[col.name] ??= this.edgeCandidates(col, spec);
+          val = cands[(seq - 1) % cands.length];
+        } else val = this.value(spec, name, col, seq, row, rows);
         if (uniq[col.name] && !comboCols.has(col.name) && val != null) {
           let tries = 0;
           while (uniq[col.name].has(val) && tries < MAX_RETRIES) {
@@ -238,6 +328,22 @@ export class Engine {
           throw new Error(`${name}: can't satisfy UNIQUE(${uset}) — pool too small for ${nRows} rows`);
         uniq[k].add(key);
       }
+      // cross-column CHECK comparisons, e.g. CHECK (max_salary >= min_salary)
+      const cmpOk = (a, op, b) => a == null || b == null ? true
+        : op === '>=' ? a >= b : op === '>' ? a > b : op === '<=' ? a <= b : a < b;
+      for (const rc of table.rowChecks || []) {
+        let tries = 0;
+        while (!cmpOk(row[rc.left], rc.op, row[rc.right]) && tries < MAX_RETRIES) {
+          for (const cn of [rc.left, rc.right]) {
+            if (comboCols.has(cn) || uniq[cn]) continue;  // never disturb unique assignments
+            const col = table.columns.find(x => x.name === cn);
+            row[cn] = this.value(colPlans[cn] || this.autoSpec(col), name, col, seq, row, rows);
+          }
+          tries++;
+        }
+        if (!cmpOk(row[rc.left], rc.op, row[rc.right]))
+          throw new Error(`${name}: can't satisfy CHECK (${rc.left} ${rc.op} ${rc.right}) — widen the plan ranges for those columns`);
+      }
       rows.push(row);
     }
     this.data[name] = rows;
@@ -247,7 +353,10 @@ export class Engine {
   }
 
   run() {
+    if (!PROFILES.includes(this.profile))
+      throw new Error(`unknown profile '${this.profile}' — use ${PROFILES.join('|')}`);
     for (const name of topoOrder(this.tables)) this.generateTable(name);
+    if (this.profile === 'negative') this.corruptData();
     return this.data;
   }
 }

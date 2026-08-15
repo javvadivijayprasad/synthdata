@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+- **Test-data profiles** (`--profile functional|edge|negative|volume`):
+  edge = valid boundary data (CHECK endpoints, max-length strings, NULLs, full enum
+  coverage) that loads clean into a real database; negative = intentionally invalid
+  rows tagged with the rule each one breaks (CSV/SQL export, INSERTs stay runnable
+  with the violation as a SQL comment); volume = 10,000 rows/table default.
+  Verified on PostgreSQL 18: edge loads clean, negative rows individually rejected.
+- **PostgreSQL export target** (`--pg file.sql`): psql-loadable script — DDL + batched
+  INSERTs in FK dependency order, single transaction, `OVERRIDING SYSTEM VALUE` for
+  `GENERATED ALWAYS AS IDENTITY`, `TRUE`/`FALSE` for BOOLEAN columns, `setval()` so
+  identity sequences resume after the loaded data. Verified against PostgreSQL 18.
+- Auto mode respects `CHAR(n)`/`VARCHAR(n)` length limits (real databases enforce them;
+  SQLite doesn't — found by loading generated data into PostgreSQL)
+- Cross-column CHECK constraints supported: `CHECK (max_salary >= min_salary)` parsed
+  from DDL and honored during generation
 - Web app: auto mode when the plan box is empty (schema-only generation, 100 rows/table)
 - Web app: home page, accounts — register / login / forgot-password, saved dataset
   recipes (schema + plan + seed, regenerated deterministically on download)

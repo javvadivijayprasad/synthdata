@@ -54,7 +54,8 @@ export function parseDDL(sql) {
       i++;
     }
     const body = sql.slice(re.lastIndex, i - 1);
-    const table = { name, columns: [], uniqueSets: [] };
+    const table = { name, columns: [], uniqueSets: [], rowChecks: [] };
+    const checkTexts = [];
     for (const part of splitTopLevel(body)) {
       const up = part.toUpperCase();
       if (up.startsWith('PRIMARY KEY')) {
@@ -75,22 +76,34 @@ export function parseDDL(sql) {
         }
       } else if (up.startsWith('CHECK') || up.startsWith('CONSTRAINT')) {
         for (const c of table.columns) parseCheck(part, c);
+        checkTexts.push(part);
       } else {
         // column definition: name TYPE rest
         const cm = part.match(/^["`]?(\w+)["`]?\s+([A-Za-z]+(?:\s*\(\s*[\d,\s]+\s*\))?)([\s\S]*)$/);
         if (!cm) continue;
         const col = { name: cm[1], dtype: cm[2].toUpperCase().replace(/\s+/g, ''),
-                      notNull: false, unique: false, isPk: false,
+                      notNull: false, unique: false, isPk: false, identity: false,
                       fkTable: null, fkColumn: null, checkIn: null, checkRange: null };
         const rest = cm[3] || '';
         const restUp = rest.toUpperCase();
         if (restUp.includes('PRIMARY KEY')) { col.isPk = true; col.notNull = true; }
+        if (/GENERATED\s+ALWAYS\s+AS\s+IDENTITY/i.test(rest)) col.identity = true;
         if (/\bNOT\s+NULL\b/i.test(rest)) col.notNull = true;
         if (/\bUNIQUE\b/i.test(rest)) col.unique = true;
         const ref = rest.match(/REFERENCES\s+["`]?(\w+)["`]?\s*(?:\(\s*["`]?(\w+)["`]?\s*\))?/i);
         if (ref) { col.fkTable = ref[1]; col.fkColumn = ref[2] || null; }
-        if (restUp.includes('CHECK')) parseCheck(rest, col);
+        if (restUp.includes('CHECK')) { parseCheck(rest, col); checkTexts.push(rest); }
         table.columns.push(col);
+      }
+    }
+    // cross-column comparisons: CHECK (max_salary >= min_salary)
+    for (const text of checkTexts) {
+      const rc = /(\w+)\s*(>=|>|<=|<)\s*(\w+)/g;
+      let cm2;
+      while ((cm2 = rc.exec(text)) !== null) {
+        if (table.columns.some(c => c.name === cm2[1]) &&
+            table.columns.some(c => c.name === cm2[3]))
+          table.rowChecks.push({ left: cm2[1], op: cm2[2], right: cm2[3] });
       }
     }
     tables[name] = table;

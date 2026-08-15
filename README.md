@@ -23,8 +23,16 @@ npx @vijaypjavvadi/synthdata generate -s schema.sql -P plan.yaml -o data.db --cs
 - Providers: **Claude** (`sk-ant-...` / `ANTHROPIC_API_KEY`) and **OpenAI** (`sk-...` /
   `OPENAI_API_KEY`); auto-detected from the key, or force with `-p`, model with `-m`.
 - Outputs: SQLite `.db` (verified with `PRAGMA foreign_key_check`), CSV per table
-  (`--csv dir`), SQL inserts (`--sql file`).
+  (`--csv dir`), SQL inserts (`--sql file`), **PostgreSQL load script** (`--pg file.sql`,
+  load with `psql -d your_db -f file.sql` — DDL + data in one transaction, identity
+  columns handled with `OVERRIDING SYSTEM VALUE` and sequences resumed via `setval`).
 - `--seed 42` → byte-identical output every run.
+- `--profile functional|edge|negative|volume` — the four kinds of test data teams need:
+  **functional** realistic happy-path data (default) · **edge** valid boundary data
+  (CHECK-range endpoints, max-length strings, NULLs where allowed, every enum value —
+  still loads clean into a real database) · **negative** intentionally invalid rows for
+  testing your validation, each tagged with a `_violation` column / SQL comment
+  (`--csv`/`--sql` only) · **volume** performance-scale data (10,000 rows/table default).
 - Node 18+, two small dependencies (`sql.js`, `yaml`).
 
 ## Web app — [synthdata.testforge-ai.com](https://synthdata.testforge-ai.com)
@@ -73,7 +81,7 @@ src/schema.js    DDL parser (tables, FKs, CHECK IN/BETWEEN, composite UNIQUE)
 src/engine.js    seeded deterministic engine
 src/fakelite.js  dependency-free fake values (Node + browser identical)
 src/llm.js       Claude/OpenAI plan authoring + system prompt
-src/export.js    SQLite (sql.js) / CSV / SQL inserts
+src/export.js    SQLite (sql.js) / CSV / SQL inserts / PostgreSQL script
 web/index.html   the whole web app (static, single file)
 deploy/          nginx config + steps for synthdata.testforge-ai.com
 ```
