@@ -6,10 +6,16 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    name: node ${{ matrix.node }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
         node: [18, 20, 22]
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,6 +26,9 @@ jobs:
         run: |
           node --check bin/cli.js
           for f in src/*.js; do node --check "$f"; done
+          for f in test/*.js test/*.mjs; do node --check "$f"; done
+      - name: Unit tests — referential-integrity resolver
+        run: npm test
       - name: Smoke test — auto mode (no LLM)
         run: |
           node bin/cli.js auto -s examples/schema_ecommerce.sql -o ci.db --rows 200
@@ -36,4 +45,10 @@ jobs:
         run: |
           node bin/cli.js generate -s examples/schema_ecommerce.sql -P examples/ecommerce_plan.yaml -o a.db --seed 42
           node bin/cli.js generate -s examples/schema_ecommerce.sql -P examples/ecommerce_plan.yaml -o b.db --seed 42
-          cmp a.db b.db && echo "byte-identical: reproducibility holds"
+          node -e "
+            const { createHash } = require('crypto');
+            const fs = require('fs');
+            const h = f => createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+            const [a, b] = [h('a.db'), h('b.db')];
+            if (a !== b) { console.error('NOT reproducible:', a, b); process.exit(1); }
+            console.log('byte-identical: reproducibility holds (' + a.slice(0, 12) + ')');"
