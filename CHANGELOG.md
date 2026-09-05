@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- chore(ci): GitHub Actions matrix — node 18/20/22 × ubuntu/windows/macos (9 jobs),
+  bash shell on all runners, portable sha256 reproducibility check (no `cmp` dependency)
+- test: 33 unit tests for the referential-integrity resolver (`npm test`, node:test,
+  zero new dependencies) — FK target resolution, dependency ordering independent of
+  declaration order, 3-table chains, diamond graphs, self-referencing FKs,
+  unique/composite-unique FK assignment, CHECK + cross-column CHECK, seed determinism,
+  profile integrity, sqlite export FK verification
+
 ## 1.1.0 — 2026-08-15
 
 - **Test-data profiles** (`--profile functional|edge|negative|volume`):
