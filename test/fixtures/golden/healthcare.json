@@ -1,0 +1,2422 @@
+{
+  "departments": [
+    {
+      "department_id": 1,
+      "dept_name": "dept_name_1",
+      "floor_number": 655,
+      "phone_ext": "willow"
+    },
+    {
+      "department_id": 2,
+      "dept_name": "dept_name_2",
+      "floor_number": 521,
+      "phone_ext": "summit"
+    },
+    {
+      "department_id": 3,
+      "dept_name": "dept_name_3",
+      "floor_number": 612,
+      "phone_ext": "beacon"
+    },
+    {
+      "department_id": 4,
+      "dept_name": "dept_name_4",
+      "floor_number": 419,
+      "phone_ext": "flux"
+    },
+    {
+      "department_id": 5,
+      "dept_name": "dept_name_5",
+      "floor_number": 66,
+      "phone_ext": "meridi"
+    },
+    {
+      "department_id": 6,
+      "dept_name": "dept_name_6",
+      "floor_number": 802,
+      "phone_ext": "willow"
+    },
+    {
+      "department_id": 7,
+      "dept_name": "dept_name_7",
+      "floor_number": 193,
+      "phone_ext": "delta"
+    },
+    {
+      "department_id": 8,
+      "dept_name": "dept_name_8",
+      "floor_number": 718,
+      "phone_ext": "delta"
+    },
+    {
+      "department_id": 9,
+      "dept_name": "dept_name_9",
+      "floor_number": 93,
+      "phone_ext": "nova"
+    },
+    {
+      "department_id": 10,
+      "dept_name": "dept_name_10",
+      "floor_number": 504,
+      "phone_ext": "quartz"
+    },
+    {
+      "department_id": 11,
+      "dept_name": "dept_name_11",
+      "floor_number": 331,
+      "phone_ext": "orbit"
+    },
+    {
+      "department_id": 12,
+      "dept_name": "dept_name_12",
+      "floor_number": 457,
+      "phone_ext": "nova"
+    },
+    {
+      "department_id": 13,
+      "dept_name": "dept_name_13",
+      "floor_number": 550,
+      "phone_ext": "delta"
+    },
+    {
+      "department_id": 14,
+      "dept_name": "dept_name_14",
+      "floor_number": 387,
+      "phone_ext": "ember"
+    },
+    {
+      "department_id": 15,
+      "dept_name": "dept_name_15",
+      "floor_number": 211,
+      "phone_ext": "prism"
+    },
+    {
+      "department_id": 16,
+      "dept_name": "dept_name_16",
+      "floor_number": 363,
+      "phone_ext": "orbit"
+    },
+    {
+      "department_id": 17,
+      "dept_name": "dept_name_17",
+      "floor_number": 682,
+      "phone_ext": "harbor"
+    },
+    {
+      "department_id": 18,
+      "dept_name": "dept_name_18",
+      "floor_number": 480,
+      "phone_ext": "prism"
+    },
+    {
+      "department_id": 19,
+      "dept_name": "dept_name_19",
+      "floor_number": 516,
+      "phone_ext": "matrix"
+    },
+    {
+      "department_id": 20,
+      "dept_name": "dept_name_20",
+      "floor_number": 805,
+      "phone_ext": "beacon"
+    },
+    {
+      "department_id": 21,
+      "dept_name": "dept_name_21",
+      "floor_number": 191,
+      "phone_ext": "pulse"
+    },
+    {
+      "department_id": 22,
+      "dept_name": "dept_name_22",
+      "floor_number": 761,
+      "phone_ext": "orbit"
+    },
+    {
+      "department_id": 23,
+      "dept_name": "dept_name_23",
+      "floor_number": 448,
+      "phone_ext": "beacon"
+    },
+    {
+      "department_id": 24,
+      "dept_name": "dept_name_24",
+      "floor_number": 552,
+      "phone_ext": "flux"
+    },
+    {
+      "department_id": 25,
+      "dept_name": "dept_name_25",
+      "floor_number": 551,
+      "phone_ext": "beacon"
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": 1,
+      "department_id": 24,
+      "full_name": "willow",
+      "specialty": "cascade",
+      "license_number": "000001",
+      "provider_type": "RESIDENT",
+      "hired_date": "2025-06-18",
+      "is_active": 0
+    },
+    {
+      "provider_id": 2,
+      "department_id": 19,
+      "full_name": "ember",
+      "specialty": "ember",
+      "license_number": "000002",
+      "provider_type": "SPECIALIST",
+      "hired_date": "2025-03-02",
+      "is_active": 0
+    },
+    {
+      "provider_id": 3,
+      "department_id": 3,
+      "full_name": "pulse",
+      "specialty": "ember",
+      "license_number": "000003",
+      "provider_type": "RESIDENT",
+      "hired_date": "2026-05-20",
+      "is_active": 1
+    },
+    {
+      "provider_id": 4,
+      "department_id": 8,
+      "full_name": "signal",
+      "specialty": "zenith",
+      "license_number": "000004",
+      "provider_type": "PHYSICIAN",
+      "hired_date": "2026-06-12",
+      "is_active": 1
+    },
+    {
+      "provider_id": 5,
+      "department_id": 7,
+      "full_name": "willow",
+      "specialty": "orbit",
+      "license_number": "000005",
+      "provider_type": "NURSE_PRACT",
+      "hired_date": "2026-03-18",
+      "is_active": 0
+    },
+    {
+      "provider_id": 6,
+      "department_id": 5,
+      "full_name": "zenith",
+      "specialty": "vector",
+      "license_number": "000006",
+      "provider_type": "NURSE_PRACT",
+      "hired_date": "2025-02-25",
+      "is_active": 1
+    },
+    {
+      "provider_id": 7,
+      "department_id": 20,
+      "full_name": "cascade",
+      "specialty": "delta",
+      "license_number": "000007",
+      "provider_type": "SPECIALIST",
+      "hired_date": "2026-06-13",
+      "is_active": 0
+    },
+    {
+      "provider_id": 8,
+      "department_id": 25,
+      "full_name": "willow",
+      "specialty": "zenith",
+      "license_number": "000008",
+      "provider_type": "SPECIALIST",
+      "hired_date": "2025-11-22",
+      "is_active": 1
+    },
+    {
+      "provider_id": 9,
+      "department_id": 13,
+      "full_name": "nova",
+      "specialty": "meridian",
+      "license_number": "000009",
+      "provider_type": "RESIDENT",
+      "hired_date": "2025-12-19",
+      "is_active": 1
+    },
+    {
+      "provider_id": 10,
+      "department_id": 2,
+      "full_name": "ember",
+      "specialty": "pulse",
+      "license_number": "000010",
+      "provider_type": "PHYSICIAN",
+      "hired_date": "2025-01-19",
+      "is_active": 0
+    },
+    {
+      "provider_id": 11,
+      "department_id": 16,
+      "full_name": "ember",
+      "specialty": "delta",
+      "license_number": "000011",
+      "provider_type": "NURSE_PRACT",
+      "hired_date": "2025-03-20",
+      "is_active": 0
+    },
+    {
+      "provider_id": 12,
+      "department_id": 13,
+      "full_name": "orbit",
+      "specialty": "orbit",
+      "license_number": "000012",
+      "provider_type": "SPECIALIST",
+      "hired_date": "2025-04-24",
+      "is_active": 0
+    },
+    {
+      "provider_id": 13,
+      "department_id": 11,
+      "full_name": "cascade",
+      "specialty": "zenith",
+      "license_number": "000013",
+      "provider_type": "SPECIALIST",
+      "hired_date": "2026-06-10",
+      "is_active": 0
+    },
+    {
+      "provider_id": 14,
+      "department_id": 15,
+      "full_name": "vector",
+      "specialty": "delta",
+      "license_number": "000014",
+      "provider_type": "PHYSICIAN",
+      "hired_date": "2026-02-03",
+      "is_active": 0
+    },
+    {
+      "provider_id": 15,
+      "department_id": 14,
+      "full_name": "zenith",
+      "specialty": "vector",
+      "license_number": "000015",
+      "provider_type": "RESIDENT",
+      "hired_date": "2025-02-02",
+      "is_active": 0
+    },
+    {
+      "provider_id": 16,
+      "department_id": 1,
+      "full_name": "beacon",
+      "specialty": "nova",
+      "license_number": "000016",
+      "provider_type": "RESIDENT",
+      "hired_date": "2025-04-25",
+      "is_active": 1
+    },
+    {
+      "provider_id": 17,
+      "department_id": 10,
+      "full_name": "quartz",
+      "specialty": "flux",
+      "license_number": "000017",
+      "provider_type": "RESIDENT",
+      "hired_date": "2025-03-21",
+      "is_active": 1
+    },
+    {
+      "provider_id": 18,
+      "department_id": 25,
+      "full_name": "alpha",
+      "specialty": "cascade",
+      "license_number": "000018",
+      "provider_type": "NURSE_PRACT",
+      "hired_date": "2025-04-09",
+      "is_active": 0
+    },
+    {
+      "provider_id": 19,
+      "department_id": 24,
+      "full_name": "pulse",
+      "specialty": "pulse",
+      "license_number": "000019",
+      "provider_type": "PHYSICIAN",
+      "hired_date": "2026-04-15",
+      "is_active": 1
+    },
+    {
+      "provider_id": 20,
+      "department_id": 17,
+      "full_name": "zenith",
+      "specialty": "orbit",
+      "license_number": "000020",
+      "provider_type": "PHYSICIAN",
+      "hired_date": "2025-06-12",
+      "is_active": 0
+    },
+    {
+      "provider_id": 21,
+      "department_id": 5,
+      "full_name": "cascade",
+      "specialty": "matrix",
+      "license_number": "000021",
+      "provider_type": "NURSE_PRACT",
+      "hired_date": "2025-02-21",
+      "is_active": 1
+    },
+    {
+      "provider_id": 22,
+      "department_id": 18,
+      "full_name": "cascade",
+      "specialty": "pulse",
+      "license_number": "000022",
+      "provider_type": "NURSE_PRACT",
+      "hired_date": "2026-06-05",
+      "is_active": 1
+    },
+    {
+      "provider_id": 23,
+      "department_id": 14,
+      "full_name": "cascade",
+      "specialty": "quartz",
+      "license_number": "000023",
+      "provider_type": "NURSE_PRACT",
+      "hired_date": "2026-06-15",
+      "is_active": 1
+    },
+    {
+      "provider_id": 24,
+      "department_id": 25,
+      "full_name": "willow",
+      "specialty": "willow",
+      "license_number": "000024",
+      "provider_type": "PHYSICIAN",
+      "hired_date": "2025-01-13",
+      "is_active": 0
+    },
+    {
+      "provider_id": 25,
+      "department_id": 5,
+      "full_name": "vector",
+      "specialty": "ember",
+      "license_number": "000025",
+      "provider_type": "PHYSICIAN",
+      "hired_date": "2025-08-11",
+      "is_active": 1
+    }
+  ],
+  "patients": [
+    {
+      "patient_id": 1,
+      "mrn": "mrn_1",
+      "full_name": "willow",
+      "date_of_birth": "2025-04-16",
+      "gender": "meridian",
+      "blood_group": "B-",
+      "phone": "meridian",
+      "emergency_contact": "prism",
+      "registered_date": "2026-04-08",
+      "is_deceased": 1
+    },
+    {
+      "patient_id": 2,
+      "mrn": "mrn_2",
+      "full_name": "cascade",
+      "date_of_birth": "2025-02-22",
+      "gender": "matrix",
+      "blood_group": "B-",
+      "phone": "vertex",
+      "emergency_contact": "meridian",
+      "registered_date": "2025-05-05",
+      "is_deceased": 1
+    },
+    {
+      "patient_id": 3,
+      "mrn": "mrn_3",
+      "full_name": "cascade",
+      "date_of_birth": "2025-11-05",
+      "gender": "alpha",
+      "blood_group": "O+",
+      "phone": "delta",
+      "emergency_contact": "meridian",
+      "registered_date": "2025-06-30",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 4,
+      "mrn": "mrn_4",
+      "full_name": "summit",
+      "date_of_birth": "2026-06-01",
+      "gender": "beacon",
+      "blood_group": "A+",
+      "phone": "alpha",
+      "emergency_contact": "summit",
+      "registered_date": "2025-11-22",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 5,
+      "mrn": "mrn_5",
+      "full_name": "nova",
+      "date_of_birth": "2025-09-06",
+      "gender": "prism",
+      "blood_group": "O+",
+      "phone": "ember",
+      "emergency_contact": "quartz",
+      "registered_date": "2026-01-20",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 6,
+      "mrn": "mrn_6",
+      "full_name": "zenith",
+      "date_of_birth": "2026-02-12",
+      "gender": "quartz",
+      "blood_group": "AB-",
+      "phone": "harbor",
+      "emergency_contact": "beacon",
+      "registered_date": "2026-06-20",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 7,
+      "mrn": "mrn_7",
+      "full_name": "vertex",
+      "date_of_birth": "2025-08-11",
+      "gender": "quartz",
+      "blood_group": "A+",
+      "phone": "signal",
+      "emergency_contact": "prism",
+      "registered_date": "2026-06-23",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 8,
+      "mrn": "mrn_8",
+      "full_name": "quartz",
+      "date_of_birth": "2025-04-02",
+      "gender": "quartz",
+      "blood_group": "O+",
+      "phone": "pulse",
+      "emergency_contact": "zenith",
+      "registered_date": "2026-04-18",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 9,
+      "mrn": "mrn_9",
+      "full_name": "alpha",
+      "date_of_birth": "2025-02-21",
+      "gender": "delta",
+      "blood_group": "AB+",
+      "phone": "vector",
+      "emergency_contact": "delta",
+      "registered_date": "2025-10-25",
+      "is_deceased": 1
+    },
+    {
+      "patient_id": 10,
+      "mrn": "mrn_10",
+      "full_name": "matrix",
+      "date_of_birth": "2025-03-19",
+      "gender": "matrix",
+      "blood_group": "B-",
+      "phone": "alpha",
+      "emergency_contact": "cascade",
+      "registered_date": "2025-04-05",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 11,
+      "mrn": "mrn_11",
+      "full_name": "cascade",
+      "date_of_birth": "2025-03-10",
+      "gender": "nova",
+      "blood_group": "A+",
+      "phone": "pulse",
+      "emergency_contact": "meridian",
+      "registered_date": "2025-09-08",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 12,
+      "mrn": "mrn_12",
+      "full_name": "alpha",
+      "date_of_birth": "2026-04-13",
+      "gender": "matrix",
+      "blood_group": "A-",
+      "phone": "willow",
+      "emergency_contact": "vector",
+      "registered_date": "2025-05-06",
+      "is_deceased": 1
+    },
+    {
+      "patient_id": 13,
+      "mrn": "mrn_13",
+      "full_name": "quartz",
+      "date_of_birth": "2026-02-10",
+      "gender": "flux",
+      "blood_group": "A+",
+      "phone": "beacon",
+      "emergency_contact": "signal",
+      "registered_date": "2026-06-05",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 14,
+      "mrn": "mrn_14",
+      "full_name": "vertex",
+      "date_of_birth": "2026-03-26",
+      "gender": "matrix",
+      "blood_group": "AB+",
+      "phone": "vector",
+      "emergency_contact": "delta",
+      "registered_date": "2025-09-17",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 15,
+      "mrn": "mrn_15",
+      "full_name": "vector",
+      "date_of_birth": "2025-05-25",
+      "gender": "beacon",
+      "blood_group": "A+",
+      "phone": "flux",
+      "emergency_contact": "summit",
+      "registered_date": "2025-06-29",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 16,
+      "mrn": "mrn_16",
+      "full_name": "vector",
+      "date_of_birth": "2026-01-26",
+      "gender": "pulse",
+      "blood_group": "B+",
+      "phone": "zenith",
+      "emergency_contact": "nova",
+      "registered_date": "2025-06-10",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 17,
+      "mrn": "mrn_17",
+      "full_name": "summit",
+      "date_of_birth": "2026-06-04",
+      "gender": "meridian",
+      "blood_group": "O+",
+      "phone": "willow",
+      "emergency_contact": "summit",
+      "registered_date": "2025-03-18",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 18,
+      "mrn": "mrn_18",
+      "full_name": "matrix",
+      "date_of_birth": "2025-02-18",
+      "gender": "pulse",
+      "blood_group": "AB+",
+      "phone": "cascade",
+      "emergency_contact": "meridian",
+      "registered_date": "2025-08-05",
+      "is_deceased": 1
+    },
+    {
+      "patient_id": 19,
+      "mrn": "mrn_19",
+      "full_name": "cascade",
+      "date_of_birth": "2025-10-01",
+      "gender": "quartz",
+      "blood_group": "A+",
+      "phone": "matrix",
+      "emergency_contact": "meridian",
+      "registered_date": "2026-01-18",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 20,
+      "mrn": "mrn_20",
+      "full_name": "ember",
+      "date_of_birth": "2025-06-13",
+      "gender": "zenith",
+      "blood_group": "A+",
+      "phone": "cascade",
+      "emergency_contact": "flux",
+      "registered_date": "2025-09-21",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 21,
+      "mrn": "mrn_21",
+      "full_name": "summit",
+      "date_of_birth": "2025-09-01",
+      "gender": "beacon",
+      "blood_group": "A+",
+      "phone": "beacon",
+      "emergency_contact": "nova",
+      "registered_date": "2025-09-27",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 22,
+      "mrn": "mrn_22",
+      "full_name": "vector",
+      "date_of_birth": "2025-06-05",
+      "gender": "signal",
+      "blood_group": "A+",
+      "phone": "prism",
+      "emergency_contact": "prism",
+      "registered_date": "2025-11-02",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 23,
+      "mrn": "mrn_23",
+      "full_name": "vector",
+      "date_of_birth": "2025-07-05",
+      "gender": "vertex",
+      "blood_group": "B+",
+      "phone": "harbor",
+      "emergency_contact": "summit",
+      "registered_date": "2025-08-05",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 24,
+      "mrn": "mrn_24",
+      "full_name": "willow",
+      "date_of_birth": "2025-07-22",
+      "gender": "harbor",
+      "blood_group": "B-",
+      "phone": "vertex",
+      "emergency_contact": "matrix",
+      "registered_date": "2025-08-06",
+      "is_deceased": 0
+    },
+    {
+      "patient_id": 25,
+      "mrn": "mrn_25",
+      "full_name": "vertex",
+      "date_of_birth": "2026-06-17",
+      "gender": "prism",
+      "blood_group": "B+",
+      "phone": "harbor",
+      "emergency_contact": "flux",
+      "registered_date": "2025-07-09",
+      "is_deceased": 0
+    }
+  ],
+  "insurance_policies": [
+    {
+      "policy_id": 1,
+      "patient_id": 21,
+      "payer_name": "willow",
+      "policy_number": "policy_number_1",
+      "coverage_type": "PRIVATE",
+      "valid_from": "2025-07-16",
+      "valid_to": "2025-05-02",
+      "annual_limit": 822.36
+    },
+    {
+      "policy_id": 2,
+      "patient_id": 4,
+      "payer_name": "cascade",
+      "policy_number": "policy_number_2",
+      "coverage_type": "SELF_PAY",
+      "valid_from": "2026-01-12",
+      "valid_to": "2026-02-17",
+      "annual_limit": 170.87
+    },
+    {
+      "policy_id": 3,
+      "patient_id": 16,
+      "payer_name": "willow",
+      "policy_number": "policy_number_3",
+      "coverage_type": "PRIVATE",
+      "valid_from": "2025-04-20",
+      "valid_to": "2026-01-25",
+      "annual_limit": 91.18
+    },
+    {
+      "policy_id": 4,
+      "patient_id": 19,
+      "payer_name": "quartz",
+      "policy_number": "policy_number_4",
+      "coverage_type": "PRIVATE",
+      "valid_from": "2025-08-07",
+      "valid_to": "2025-06-14",
+      "annual_limit": 82.18
+    },
+    {
+      "policy_id": 5,
+      "patient_id": 8,
+      "payer_name": "summit",
+      "policy_number": "policy_number_5",
+      "coverage_type": "CORPORATE",
+      "valid_from": "2025-03-19",
+      "valid_to": "2025-09-12",
+      "annual_limit": 141.76
+    },
+    {
+      "policy_id": 6,
+      "patient_id": 13,
+      "payer_name": "vertex",
+      "policy_number": "policy_number_6",
+      "coverage_type": "GOVT",
+      "valid_from": "2025-07-01",
+      "valid_to": "2026-03-13",
+      "annual_limit": 256.94
+    },
+    {
+      "policy_id": 7,
+      "patient_id": 5,
+      "payer_name": "vector",
+      "policy_number": "policy_number_7",
+      "coverage_type": "CORPORATE",
+      "valid_from": "2026-01-09",
+      "valid_to": "2025-09-18",
+      "annual_limit": 571.49
+    },
+    {
+      "policy_id": 8,
+      "patient_id": 12,
+      "payer_name": "signal",
+      "policy_number": "policy_number_8",
+      "coverage_type": "GOVT",
+      "valid_from": "2026-07-01",
+      "valid_to": "2025-11-24",
+      "annual_limit": 987.9
+    },
+    {
+      "policy_id": 9,
+      "patient_id": 20,
+      "payer_name": "ember",
+      "policy_number": "policy_number_9",
+      "coverage_type": "CORPORATE",
+      "valid_from": "2025-10-04",
+      "valid_to": "2026-01-06",
+      "annual_limit": 78.94
+    },
+    {
+      "policy_id": 10,
+      "patient_id": 18,
+      "payer_name": "orbit",
+      "policy_number": "policy_number_10",
+      "coverage_type": "CORPORATE",
+      "valid_from": "2025-10-30",
+      "valid_to": "2025-03-22",
+      "annual_limit": 719.08
+    },
+    {
+      "policy_id": 11,
+      "patient_id": 22,
+      "payer_name": "harbor",
+      "policy_number": "policy_number_11",
+      "coverage_type": "PRIVATE",
+      "valid_from": "2025-05-04",
+      "valid_to": "2025-10-26",
+      "annual_limit": 171.14
+    },
+    {
+      "policy_id": 12,
+      "patient_id": 17,
+      "payer_name": "nova",
+      "policy_number": "policy_number_12",
+      "coverage_type": "SELF_PAY",
+      "valid_from": "2025-06-09",
+      "valid_to": "2026-02-17",
+      "annual_limit": 435.39
+    },
+    {
+      "policy_id": 13,
+      "patient_id": 4,
+      "payer_name": "vertex",
+      "policy_number": "policy_number_13",
+      "coverage_type": "GOVT",
+      "valid_from": "2025-09-05",
+      "valid_to": "2026-05-02",
+      "annual_limit": 522.99
+    },
+    {
+      "policy_id": 14,
+      "patient_id": 12,
+      "payer_name": "summit",
+      "policy_number": "policy_number_14",
+      "coverage_type": "PRIVATE",
+      "valid_from": "2026-02-27",
+      "valid_to": "2026-03-02",
+      "annual_limit": 584.33
+    },
+    {
+      "policy_id": 15,
+      "patient_id": 22,
+      "payer_name": "ember",
+      "policy_number": "policy_number_15",
+      "coverage_type": "PRIVATE",
+      "valid_from": "2025-09-02",
+      "valid_to": "2026-03-11",
+      "annual_limit": 873.19
+    },
+    {
+      "policy_id": 16,
+      "patient_id": 25,
+      "payer_name": "signal",
+      "policy_number": "policy_number_16",
+      "coverage_type": "GOVT",
+      "valid_from": "2025-07-28",
+      "valid_to": "2026-05-11",
+      "annual_limit": 482.21
+    },
+    {
+      "policy_id": 17,
+      "patient_id": 25,
+      "payer_name": "prism",
+      "policy_number": "policy_number_17",
+      "coverage_type": "PRIVATE",
+      "valid_from": "2025-05-28",
+      "valid_to": "2025-03-02",
+      "annual_limit": 338.01
+    },
+    {
+      "policy_id": 18,
+      "patient_id": 4,
+      "payer_name": "quartz",
+      "policy_number": "policy_number_18",
+      "coverage_type": "SELF_PAY",
+      "valid_from": "2025-09-16",
+      "valid_to": "2025-08-24",
+      "annual_limit": 234.51
+    },
+    {
+      "policy_id": 19,
+      "patient_id": 9,
+      "payer_name": "prism",
+      "policy_number": "policy_number_19",
+      "coverage_type": "CORPORATE",
+      "valid_from": "2025-10-21",
+      "valid_to": "2026-01-13",
+      "annual_limit": 193.56
+    },
+    {
+      "policy_id": 20,
+      "patient_id": 8,
+      "payer_name": "willow",
+      "policy_number": "policy_number_20",
+      "coverage_type": "GOVT",
+      "valid_from": "2025-10-14",
+      "valid_to": "2026-02-16",
+      "annual_limit": 29.03
+    },
+    {
+      "policy_id": 21,
+      "patient_id": 22,
+      "payer_name": "cascade",
+      "policy_number": "policy_number_21",
+      "coverage_type": "SELF_PAY",
+      "valid_from": "2026-03-17",
+      "valid_to": "2025-03-30",
+      "annual_limit": 296.06
+    },
+    {
+      "policy_id": 22,
+      "patient_id": 11,
+      "payer_name": "orbit",
+      "policy_number": "policy_number_22",
+      "coverage_type": "CORPORATE",
+      "valid_from": "2026-01-11",
+      "valid_to": "2025-04-30",
+      "annual_limit": 398.86
+    },
+    {
+      "policy_id": 23,
+      "patient_id": 19,
+      "payer_name": "beacon",
+      "policy_number": "policy_number_23",
+      "coverage_type": "GOVT",
+      "valid_from": "2025-02-02",
+      "valid_to": "2025-05-31",
+      "annual_limit": 9.23
+    },
+    {
+      "policy_id": 24,
+      "patient_id": 23,
+      "payer_name": "meridian",
+      "policy_number": "policy_number_24",
+      "coverage_type": "GOVT",
+      "valid_from": "2026-03-31",
+      "valid_to": "2025-09-21",
+      "annual_limit": 689.09
+    },
+    {
+      "policy_id": 25,
+      "patient_id": 21,
+      "payer_name": "meridian",
+      "policy_number": "policy_number_25",
+      "coverage_type": "CORPORATE",
+      "valid_from": "2025-12-18",
+      "valid_to": "2026-06-08",
+      "annual_limit": 595.04
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": 1,
+      "patient_id": 10,
+      "provider_id": 22,
+      "scheduled_at": "2025-09-14 09:02:42",
+      "appt_status": "COMPLETED",
+      "visit_reason": "quartz",
+      "booked_at": "2025-12-14 16:46:41"
+    },
+    {
+      "appointment_id": 2,
+      "patient_id": 1,
+      "provider_id": 18,
+      "scheduled_at": "2026-01-19 23:40:20",
+      "appt_status": "CANCELLED",
+      "visit_reason": "willow",
+      "booked_at": "2025-07-13 16:13:32"
+    },
+    {
+      "appointment_id": 3,
+      "patient_id": 13,
+      "provider_id": 6,
+      "scheduled_at": "2025-07-17 16:04:01",
+      "appt_status": "SCHEDULED",
+      "visit_reason": "signal",
+      "booked_at": "2026-02-26 15:39:46"
+    },
+    {
+      "appointment_id": 4,
+      "patient_id": 5,
+      "provider_id": 2,
+      "scheduled_at": "2025-08-22 07:22:32",
+      "appt_status": "CHECKED_IN",
+      "visit_reason": "harbor",
+      "booked_at": "2026-03-16 00:47:04"
+    },
+    {
+      "appointment_id": 5,
+      "patient_id": 2,
+      "provider_id": 21,
+      "scheduled_at": "2025-03-29 00:04:15",
+      "appt_status": "CANCELLED",
+      "visit_reason": "quartz",
+      "booked_at": "2025-11-24 23:06:37"
+    },
+    {
+      "appointment_id": 6,
+      "patient_id": 14,
+      "provider_id": 15,
+      "scheduled_at": "2026-03-02 02:31:01",
+      "appt_status": "SCHEDULED",
+      "visit_reason": "meridian",
+      "booked_at": "2026-04-12 12:12:15"
+    },
+    {
+      "appointment_id": 7,
+      "patient_id": 15,
+      "provider_id": 17,
+      "scheduled_at": "2025-10-06 13:25:53",
+      "appt_status": "CHECKED_IN",
+      "visit_reason": "matrix",
+      "booked_at": "2025-09-02 23:12:15"
+    },
+    {
+      "appointment_id": 8,
+      "patient_id": 9,
+      "provider_id": 18,
+      "scheduled_at": "2025-03-17 02:50:00",
+      "appt_status": "COMPLETED",
+      "visit_reason": "ember",
+      "booked_at": "2026-03-26 17:02:12"
+    },
+    {
+      "appointment_id": 9,
+      "patient_id": 4,
+      "provider_id": 24,
+      "scheduled_at": "2026-05-26 13:34:52",
+      "appt_status": "SCHEDULED",
+      "visit_reason": "vector",
+      "booked_at": "2025-11-10 17:11:32"
+    },
+    {
+      "appointment_id": 10,
+      "patient_id": 23,
+      "provider_id": 4,
+      "scheduled_at": "2026-05-29 18:04:30",
+      "appt_status": "COMPLETED",
+      "visit_reason": "quartz",
+      "booked_at": "2025-07-25 13:53:23"
+    },
+    {
+      "appointment_id": 11,
+      "patient_id": 10,
+      "provider_id": 14,
+      "scheduled_at": "2026-05-26 08:49:53",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "cascade",
+      "booked_at": "2026-01-19 16:21:14"
+    },
+    {
+      "appointment_id": 12,
+      "patient_id": 19,
+      "provider_id": 17,
+      "scheduled_at": "2025-12-18 09:33:12",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "quartz",
+      "booked_at": "2025-02-21 19:23:45"
+    },
+    {
+      "appointment_id": 13,
+      "patient_id": 11,
+      "provider_id": 22,
+      "scheduled_at": "2025-12-15 11:38:29",
+      "appt_status": "CHECKED_IN",
+      "visit_reason": "delta",
+      "booked_at": "2025-11-30 00:44:42"
+    },
+    {
+      "appointment_id": 14,
+      "patient_id": 20,
+      "provider_id": 17,
+      "scheduled_at": "2025-04-28 16:54:14",
+      "appt_status": "COMPLETED",
+      "visit_reason": "willow",
+      "booked_at": "2025-08-11 05:43:49"
+    },
+    {
+      "appointment_id": 15,
+      "patient_id": 12,
+      "provider_id": 17,
+      "scheduled_at": "2026-05-12 20:11:25",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "willow",
+      "booked_at": "2026-04-15 19:46:08"
+    },
+    {
+      "appointment_id": 16,
+      "patient_id": 9,
+      "provider_id": 7,
+      "scheduled_at": "2026-01-06 19:42:36",
+      "appt_status": "COMPLETED",
+      "visit_reason": "beacon",
+      "booked_at": "2025-04-20 17:59:40"
+    },
+    {
+      "appointment_id": 17,
+      "patient_id": 15,
+      "provider_id": 6,
+      "scheduled_at": "2025-01-18 02:33:33",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "flux",
+      "booked_at": "2026-03-20 08:30:21"
+    },
+    {
+      "appointment_id": 18,
+      "patient_id": 15,
+      "provider_id": 18,
+      "scheduled_at": "2026-03-21 08:48:47",
+      "appt_status": "CANCELLED",
+      "visit_reason": "signal",
+      "booked_at": "2026-01-26 09:13:38"
+    },
+    {
+      "appointment_id": 19,
+      "patient_id": 16,
+      "provider_id": 17,
+      "scheduled_at": "2025-03-01 06:12:42",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "flux",
+      "booked_at": "2025-04-22 18:39:00"
+    },
+    {
+      "appointment_id": 20,
+      "patient_id": 11,
+      "provider_id": 3,
+      "scheduled_at": "2025-07-12 08:13:18",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "harbor",
+      "booked_at": "2026-04-10 07:15:54"
+    },
+    {
+      "appointment_id": 21,
+      "patient_id": 13,
+      "provider_id": 6,
+      "scheduled_at": "2025-11-20 00:01:43",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "willow",
+      "booked_at": "2026-06-08 22:06:13"
+    },
+    {
+      "appointment_id": 22,
+      "patient_id": 3,
+      "provider_id": 4,
+      "scheduled_at": "2025-05-28 04:01:38",
+      "appt_status": "CHECKED_IN",
+      "visit_reason": "pulse",
+      "booked_at": "2025-07-06 00:45:17"
+    },
+    {
+      "appointment_id": 23,
+      "patient_id": 16,
+      "provider_id": 13,
+      "scheduled_at": "2025-06-17 18:15:42",
+      "appt_status": "CHECKED_IN",
+      "visit_reason": "vertex",
+      "booked_at": "2025-05-23 09:38:22"
+    },
+    {
+      "appointment_id": 24,
+      "patient_id": 18,
+      "provider_id": 21,
+      "scheduled_at": "2025-02-13 04:20:42",
+      "appt_status": "COMPLETED",
+      "visit_reason": "vector",
+      "booked_at": "2025-01-25 18:32:56"
+    },
+    {
+      "appointment_id": 25,
+      "patient_id": 25,
+      "provider_id": 19,
+      "scheduled_at": "2025-11-07 14:16:49",
+      "appt_status": "NO_SHOW",
+      "visit_reason": "vertex",
+      "booked_at": "2026-03-03 01:56:19"
+    }
+  ],
+  "encounters": [
+    {
+      "encounter_id": 1,
+      "appointment_id": 16,
+      "patient_id": 13,
+      "provider_id": 2,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2025-01-23 10:20:30",
+      "ended_at": "2025-09-26 15:21:58",
+      "chief_complaint": "willow"
+    },
+    {
+      "encounter_id": 2,
+      "appointment_id": 4,
+      "patient_id": 19,
+      "provider_id": 1,
+      "encounter_type": "OUTPATIENT",
+      "started_at": "2025-05-09 10:40:03",
+      "ended_at": "2026-03-24 21:02:59",
+      "chief_complaint": "quartz"
+    },
+    {
+      "encounter_id": 3,
+      "appointment_id": 19,
+      "patient_id": 23,
+      "provider_id": 18,
+      "encounter_type": "OUTPATIENT",
+      "started_at": "2026-01-03 21:58:41",
+      "ended_at": "2025-02-16 20:01:12",
+      "chief_complaint": "signal"
+    },
+    {
+      "encounter_id": 4,
+      "appointment_id": 15,
+      "patient_id": 17,
+      "provider_id": 8,
+      "encounter_type": "TELEHEALTH",
+      "started_at": "2025-06-07 21:06:24",
+      "ended_at": "2025-02-06 02:55:43",
+      "chief_complaint": "delta"
+    },
+    {
+      "encounter_id": 5,
+      "appointment_id": 20,
+      "patient_id": 11,
+      "provider_id": 1,
+      "encounter_type": "OUTPATIENT",
+      "started_at": "2025-07-08 05:27:40",
+      "ended_at": "2025-03-02 08:03:43",
+      "chief_complaint": "pulse"
+    },
+    {
+      "encounter_id": 6,
+      "appointment_id": 23,
+      "patient_id": 14,
+      "provider_id": 17,
+      "encounter_type": "OUTPATIENT",
+      "started_at": "2025-09-11 09:20:35",
+      "ended_at": "2026-06-09 04:17:06",
+      "chief_complaint": "vertex"
+    },
+    {
+      "encounter_id": 7,
+      "appointment_id": 16,
+      "patient_id": 1,
+      "provider_id": 6,
+      "encounter_type": "TELEHEALTH",
+      "started_at": "2025-03-27 09:19:04",
+      "ended_at": "2025-04-04 00:04:38",
+      "chief_complaint": "vertex"
+    },
+    {
+      "encounter_id": 8,
+      "appointment_id": 11,
+      "patient_id": 19,
+      "provider_id": 13,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2026-06-16 05:58:44",
+      "ended_at": "2026-02-10 10:48:40",
+      "chief_complaint": "zenith"
+    },
+    {
+      "encounter_id": 9,
+      "appointment_id": 9,
+      "patient_id": 8,
+      "provider_id": 10,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2025-12-29 08:34:20",
+      "ended_at": "2026-03-16 07:43:18",
+      "chief_complaint": "willow"
+    },
+    {
+      "encounter_id": 10,
+      "appointment_id": 3,
+      "patient_id": 2,
+      "provider_id": 1,
+      "encounter_type": "FOLLOW_UP",
+      "started_at": "2025-11-07 17:02:58",
+      "ended_at": "2025-05-29 17:40:46",
+      "chief_complaint": "willow"
+    },
+    {
+      "encounter_id": 11,
+      "appointment_id": 17,
+      "patient_id": 14,
+      "provider_id": 25,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2025-01-10 21:22:36",
+      "ended_at": "2025-11-12 10:02:01",
+      "chief_complaint": "flux"
+    },
+    {
+      "encounter_id": 12,
+      "appointment_id": 8,
+      "patient_id": 10,
+      "provider_id": 5,
+      "encounter_type": "FOLLOW_UP",
+      "started_at": "2025-06-11 12:54:58",
+      "ended_at": "2025-08-21 02:07:58",
+      "chief_complaint": "prism"
+    },
+    {
+      "encounter_id": 13,
+      "appointment_id": 17,
+      "patient_id": 5,
+      "provider_id": 22,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2026-02-22 14:16:10",
+      "ended_at": "2025-07-14 02:24:09",
+      "chief_complaint": "signal"
+    },
+    {
+      "encounter_id": 14,
+      "appointment_id": 18,
+      "patient_id": 1,
+      "provider_id": 6,
+      "encounter_type": "TELEHEALTH",
+      "started_at": "2026-03-23 02:38:09",
+      "ended_at": "2025-03-13 16:36:13",
+      "chief_complaint": "nova"
+    },
+    {
+      "encounter_id": 15,
+      "appointment_id": 25,
+      "patient_id": 2,
+      "provider_id": 12,
+      "encounter_type": "OUTPATIENT",
+      "started_at": "2025-03-30 05:59:23",
+      "ended_at": "2026-01-13 15:02:12",
+      "chief_complaint": "flux"
+    },
+    {
+      "encounter_id": 16,
+      "appointment_id": 12,
+      "patient_id": 6,
+      "provider_id": 13,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2026-05-09 16:17:37",
+      "ended_at": "2026-02-08 15:54:00",
+      "chief_complaint": "orbit"
+    },
+    {
+      "encounter_id": 17,
+      "appointment_id": 8,
+      "patient_id": 9,
+      "provider_id": 6,
+      "encounter_type": "FOLLOW_UP",
+      "started_at": "2026-03-05 02:36:19",
+      "ended_at": "2026-01-23 00:13:30",
+      "chief_complaint": "prism"
+    },
+    {
+      "encounter_id": 18,
+      "appointment_id": 10,
+      "patient_id": 5,
+      "provider_id": 24,
+      "encounter_type": "FOLLOW_UP",
+      "started_at": "2026-04-21 10:00:48",
+      "ended_at": "2026-06-27 19:47:05",
+      "chief_complaint": "summit"
+    },
+    {
+      "encounter_id": 19,
+      "appointment_id": 3,
+      "patient_id": 21,
+      "provider_id": 3,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2025-05-16 10:14:35",
+      "ended_at": "2026-02-10 05:58:35",
+      "chief_complaint": "summit"
+    },
+    {
+      "encounter_id": 20,
+      "appointment_id": 20,
+      "patient_id": 7,
+      "provider_id": 10,
+      "encounter_type": "TELEHEALTH",
+      "started_at": "2026-03-07 14:43:40",
+      "ended_at": "2025-11-21 12:49:47",
+      "chief_complaint": "willow"
+    },
+    {
+      "encounter_id": 21,
+      "appointment_id": 15,
+      "patient_id": 20,
+      "provider_id": 4,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2025-05-26 21:13:16",
+      "ended_at": "2025-02-06 20:51:09",
+      "chief_complaint": "cascade"
+    },
+    {
+      "encounter_id": 22,
+      "appointment_id": 12,
+      "patient_id": 10,
+      "provider_id": 15,
+      "encounter_type": "TELEHEALTH",
+      "started_at": "2025-09-25 03:33:43",
+      "ended_at": "2025-03-21 11:16:27",
+      "chief_complaint": "beacon"
+    },
+    {
+      "encounter_id": 23,
+      "appointment_id": 20,
+      "patient_id": 5,
+      "provider_id": 14,
+      "encounter_type": "OUTPATIENT",
+      "started_at": "2025-11-01 23:41:02",
+      "ended_at": "2025-05-11 01:24:50",
+      "chief_complaint": "vertex"
+    },
+    {
+      "encounter_id": 24,
+      "appointment_id": 6,
+      "patient_id": 14,
+      "provider_id": 13,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2025-02-09 13:02:06",
+      "ended_at": "2026-02-23 10:22:41",
+      "chief_complaint": "flux"
+    },
+    {
+      "encounter_id": 25,
+      "appointment_id": 25,
+      "patient_id": 2,
+      "provider_id": 6,
+      "encounter_type": "EMERGENCY",
+      "started_at": "2026-03-03 09:07:00",
+      "ended_at": "2025-08-31 11:53:28",
+      "chief_complaint": "summit"
+    }
+  ],
+  "diagnoses": [
+    {
+      "diagnosis_id": 1,
+      "encounter_id": 8,
+      "icd10_code": "willow",
+      "description": "vertex",
+      "is_chronic": 0,
+      "diagnosed_at": "2026-05-02 23:11:27"
+    },
+    {
+      "diagnosis_id": 2,
+      "encounter_id": 17,
+      "icd10_code": "willow",
+      "description": "pulse",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-08-01 18:04:09"
+    },
+    {
+      "diagnosis_id": 3,
+      "encounter_id": 17,
+      "icd10_code": "quartz",
+      "description": "nova",
+      "is_chronic": 1,
+      "diagnosed_at": "2026-02-13 18:34:54"
+    },
+    {
+      "diagnosis_id": 4,
+      "encounter_id": 5,
+      "icd10_code": "prism",
+      "description": "willow",
+      "is_chronic": 1,
+      "diagnosed_at": "2025-12-25 09:08:30"
+    },
+    {
+      "diagnosis_id": 5,
+      "encounter_id": 18,
+      "icd10_code": "signal",
+      "description": "matrix",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-06-05 09:01:29"
+    },
+    {
+      "diagnosis_id": 6,
+      "encounter_id": 24,
+      "icd10_code": "pulse",
+      "description": "vector",
+      "is_chronic": 0,
+      "diagnosed_at": "2026-05-14 06:04:53"
+    },
+    {
+      "diagnosis_id": 7,
+      "encounter_id": 9,
+      "icd10_code": "prism",
+      "description": "signal",
+      "is_chronic": 1,
+      "diagnosed_at": "2026-04-28 14:44:10"
+    },
+    {
+      "diagnosis_id": 8,
+      "encounter_id": 10,
+      "icd10_code": "summit",
+      "description": "harbor",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-11-30 19:30:32"
+    },
+    {
+      "diagnosis_id": 9,
+      "encounter_id": 17,
+      "icd10_code": "beacon",
+      "description": "willow",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-08-12 20:31:55"
+    },
+    {
+      "diagnosis_id": 10,
+      "encounter_id": 18,
+      "icd10_code": "prism",
+      "description": "zenith",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-02-09 21:39:47"
+    },
+    {
+      "diagnosis_id": 11,
+      "encounter_id": 22,
+      "icd10_code": "delta",
+      "description": "alpha",
+      "is_chronic": 1,
+      "diagnosed_at": "2025-03-26 16:26:38"
+    },
+    {
+      "diagnosis_id": 12,
+      "encounter_id": 18,
+      "icd10_code": "alpha",
+      "description": "delta",
+      "is_chronic": 1,
+      "diagnosed_at": "2026-01-17 17:40:15"
+    },
+    {
+      "diagnosis_id": 13,
+      "encounter_id": 19,
+      "icd10_code": "zenith",
+      "description": "vector",
+      "is_chronic": 0,
+      "diagnosed_at": "2026-02-22 18:06:43"
+    },
+    {
+      "diagnosis_id": 14,
+      "encounter_id": 9,
+      "icd10_code": "signal",
+      "description": "matrix",
+      "is_chronic": 1,
+      "diagnosed_at": "2025-03-30 14:31:10"
+    },
+    {
+      "diagnosis_id": 15,
+      "encounter_id": 4,
+      "icd10_code": "vector",
+      "description": "alpha",
+      "is_chronic": 1,
+      "diagnosed_at": "2026-01-29 19:32:31"
+    },
+    {
+      "diagnosis_id": 16,
+      "encounter_id": 7,
+      "icd10_code": "ember",
+      "description": "ember",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-04-14 23:29:19"
+    },
+    {
+      "diagnosis_id": 17,
+      "encounter_id": 3,
+      "icd10_code": "harbor",
+      "description": "quartz",
+      "is_chronic": 1,
+      "diagnosed_at": "2025-04-19 19:44:45"
+    },
+    {
+      "diagnosis_id": 18,
+      "encounter_id": 9,
+      "icd10_code": "beacon",
+      "description": "orbit",
+      "is_chronic": 1,
+      "diagnosed_at": "2026-03-21 16:16:02"
+    },
+    {
+      "diagnosis_id": 19,
+      "encounter_id": 24,
+      "icd10_code": "pulse",
+      "description": "matrix",
+      "is_chronic": 0,
+      "diagnosed_at": "2026-01-07 07:13:34"
+    },
+    {
+      "diagnosis_id": 20,
+      "encounter_id": 14,
+      "icd10_code": "alpha",
+      "description": "vector",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-12-24 13:54:26"
+    },
+    {
+      "diagnosis_id": 21,
+      "encounter_id": 19,
+      "icd10_code": "nova",
+      "description": "vector",
+      "is_chronic": 1,
+      "diagnosed_at": "2025-08-20 11:58:32"
+    },
+    {
+      "diagnosis_id": 22,
+      "encounter_id": 14,
+      "icd10_code": "delta",
+      "description": "beacon",
+      "is_chronic": 0,
+      "diagnosed_at": "2025-07-23 18:26:30"
+    },
+    {
+      "diagnosis_id": 23,
+      "encounter_id": 17,
+      "icd10_code": "orbit",
+      "description": "meridian",
+      "is_chronic": 0,
+      "diagnosed_at": "2026-02-04 08:58:30"
+    },
+    {
+      "diagnosis_id": 24,
+      "encounter_id": 1,
+      "icd10_code": "zenith",
+      "description": "matrix",
+      "is_chronic": 0,
+      "diagnosed_at": "2026-05-15 10:06:54"
+    },
+    {
+      "diagnosis_id": 25,
+      "encounter_id": 20,
+      "icd10_code": "flux",
+      "description": "meridian",
+      "is_chronic": 0,
+      "diagnosed_at": "2026-02-26 20:49:45"
+    }
+  ],
+  "prescriptions": [
+    {
+      "prescription_id": 1,
+      "encounter_id": 22,
+      "drug_name": "ember",
+      "dosage": "zenith",
+      "frequency": "vertex",
+      "duration_days": 115,
+      "refills_allowed": 1,
+      "prescribed_at": "2025-08-27 00:20:07"
+    },
+    {
+      "prescription_id": 2,
+      "encounter_id": 14,
+      "drug_name": "delta",
+      "dosage": "quartz",
+      "frequency": "matrix",
+      "duration_days": 332,
+      "refills_allowed": 2,
+      "prescribed_at": "2026-03-26 20:29:35"
+    },
+    {
+      "prescription_id": 3,
+      "encounter_id": 25,
+      "drug_name": "ember",
+      "dosage": "zenith",
+      "frequency": "quartz",
+      "duration_days": 163,
+      "refills_allowed": 0,
+      "prescribed_at": "2025-09-13 14:51:23"
+    },
+    {
+      "prescription_id": 4,
+      "encounter_id": 19,
+      "drug_name": "harbor",
+      "dosage": "willow",
+      "frequency": "prism",
+      "duration_days": 191,
+      "refills_allowed": 1,
+      "prescribed_at": "2025-06-16 05:00:30"
+    },
+    {
+      "prescription_id": 5,
+      "encounter_id": 23,
+      "drug_name": "meridian",
+      "dosage": "meridian",
+      "frequency": "cascade",
+      "duration_days": 111,
+      "refills_allowed": 12,
+      "prescribed_at": "2026-04-06 10:43:04"
+    },
+    {
+      "prescription_id": 6,
+      "encounter_id": 16,
+      "drug_name": "ember",
+      "dosage": "beacon",
+      "frequency": "signal",
+      "duration_days": 172,
+      "refills_allowed": 8,
+      "prescribed_at": "2026-05-28 23:24:13"
+    },
+    {
+      "prescription_id": 7,
+      "encounter_id": 19,
+      "drug_name": "pulse",
+      "dosage": "pulse",
+      "frequency": "nova",
+      "duration_days": 317,
+      "refills_allowed": 7,
+      "prescribed_at": "2025-04-03 16:00:27"
+    },
+    {
+      "prescription_id": 8,
+      "encounter_id": 23,
+      "drug_name": "zenith",
+      "dosage": "quartz",
+      "frequency": "nova",
+      "duration_days": 200,
+      "refills_allowed": 2,
+      "prescribed_at": "2026-03-09 04:34:03"
+    },
+    {
+      "prescription_id": 9,
+      "encounter_id": 17,
+      "drug_name": "orbit",
+      "dosage": "flux",
+      "frequency": "summit",
+      "duration_days": 61,
+      "refills_allowed": 9,
+      "prescribed_at": "2025-03-08 18:41:17"
+    },
+    {
+      "prescription_id": 10,
+      "encounter_id": 24,
+      "drug_name": "nova",
+      "dosage": "quartz",
+      "frequency": "prism",
+      "duration_days": 87,
+      "refills_allowed": 5,
+      "prescribed_at": "2026-02-13 06:55:59"
+    },
+    {
+      "prescription_id": 11,
+      "encounter_id": 16,
+      "drug_name": "vertex",
+      "dosage": "matrix",
+      "frequency": "flux",
+      "duration_days": 250,
+      "refills_allowed": 2,
+      "prescribed_at": "2025-07-28 16:42:22"
+    },
+    {
+      "prescription_id": 12,
+      "encounter_id": 8,
+      "drug_name": "pulse",
+      "dosage": "nova",
+      "frequency": "zenith",
+      "duration_days": 37,
+      "refills_allowed": 0,
+      "prescribed_at": "2025-07-10 08:35:43"
+    },
+    {
+      "prescription_id": 13,
+      "encounter_id": 10,
+      "drug_name": "summit",
+      "dosage": "beacon",
+      "frequency": "vertex",
+      "duration_days": 114,
+      "refills_allowed": 6,
+      "prescribed_at": "2025-08-25 19:32:03"
+    },
+    {
+      "prescription_id": 14,
+      "encounter_id": 10,
+      "drug_name": "vector",
+      "dosage": "quartz",
+      "frequency": "flux",
+      "duration_days": 61,
+      "refills_allowed": 4,
+      "prescribed_at": "2025-02-14 01:26:06"
+    },
+    {
+      "prescription_id": 15,
+      "encounter_id": 22,
+      "drug_name": "vertex",
+      "dosage": "willow",
+      "frequency": "matrix",
+      "duration_days": 66,
+      "refills_allowed": 3,
+      "prescribed_at": "2025-08-09 13:38:50"
+    },
+    {
+      "prescription_id": 16,
+      "encounter_id": 10,
+      "drug_name": "meridian",
+      "dosage": "orbit",
+      "frequency": "vector",
+      "duration_days": 187,
+      "refills_allowed": 5,
+      "prescribed_at": "2025-10-01 20:55:49"
+    },
+    {
+      "prescription_id": 17,
+      "encounter_id": 20,
+      "drug_name": "cascade",
+      "dosage": "willow",
+      "frequency": "signal",
+      "duration_days": 290,
+      "refills_allowed": 11,
+      "prescribed_at": "2026-02-04 22:48:10"
+    },
+    {
+      "prescription_id": 18,
+      "encounter_id": 9,
+      "drug_name": "ember",
+      "dosage": "summit",
+      "frequency": "willow",
+      "duration_days": 160,
+      "refills_allowed": 0,
+      "prescribed_at": "2026-02-21 10:41:46"
+    },
+    {
+      "prescription_id": 19,
+      "encounter_id": 12,
+      "drug_name": "willow",
+      "dosage": "nova",
+      "frequency": "beacon",
+      "duration_days": 57,
+      "refills_allowed": 9,
+      "prescribed_at": "2025-01-19 02:39:33"
+    },
+    {
+      "prescription_id": 20,
+      "encounter_id": 16,
+      "drug_name": "quartz",
+      "dosage": "flux",
+      "frequency": "vertex",
+      "duration_days": 166,
+      "refills_allowed": 7,
+      "prescribed_at": "2026-01-23 00:37:15"
+    },
+    {
+      "prescription_id": 21,
+      "encounter_id": 25,
+      "drug_name": "nova",
+      "dosage": "nova",
+      "frequency": "signal",
+      "duration_days": 74,
+      "refills_allowed": 12,
+      "prescribed_at": "2025-08-19 06:34:44"
+    },
+    {
+      "prescription_id": 22,
+      "encounter_id": 23,
+      "drug_name": "prism",
+      "dosage": "summit",
+      "frequency": "cascade",
+      "duration_days": 168,
+      "refills_allowed": 8,
+      "prescribed_at": "2026-03-03 23:45:42"
+    },
+    {
+      "prescription_id": 23,
+      "encounter_id": 22,
+      "drug_name": "delta",
+      "dosage": "ember",
+      "frequency": "alpha",
+      "duration_days": 342,
+      "refills_allowed": 8,
+      "prescribed_at": "2025-08-10 12:48:37"
+    },
+    {
+      "prescription_id": 24,
+      "encounter_id": 23,
+      "drug_name": "meridian",
+      "dosage": "beacon",
+      "frequency": "zenith",
+      "duration_days": 24,
+      "refills_allowed": 1,
+      "prescribed_at": "2026-02-20 00:16:13"
+    },
+    {
+      "prescription_id": 25,
+      "encounter_id": 5,
+      "drug_name": "alpha",
+      "dosage": "harbor",
+      "frequency": "prism",
+      "duration_days": 79,
+      "refills_allowed": 11,
+      "prescribed_at": "2025-01-15 20:01:12"
+    }
+  ],
+  "lab_orders": [
+    {
+      "lab_order_id": 1,
+      "encounter_id": 21,
+      "test_code": "alpha",
+      "test_name": "quartz",
+      "ordered_at": "2025-07-09 22:34:10",
+      "result_value": "beacon",
+      "result_unit": "prism",
+      "result_status": "CANCELLED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 2,
+      "encounter_id": 18,
+      "test_code": "harbor",
+      "test_name": "summit",
+      "ordered_at": "2025-09-12 22:36:04",
+      "result_value": "ember",
+      "result_unit": "cascade",
+      "result_status": "RESULTED",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 3,
+      "encounter_id": 12,
+      "test_code": "ember",
+      "test_name": "matrix",
+      "ordered_at": "2025-10-10 20:05:00",
+      "result_value": "matrix",
+      "result_unit": "beacon",
+      "result_status": "CANCELLED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 4,
+      "encounter_id": 10,
+      "test_code": "prism",
+      "test_name": "signal",
+      "ordered_at": "2025-11-14 10:52:30",
+      "result_value": "vertex",
+      "result_unit": "matrix",
+      "result_status": "ORDERED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 5,
+      "encounter_id": 18,
+      "test_code": "meridian",
+      "test_name": "harbor",
+      "ordered_at": "2025-04-01 11:27:10",
+      "result_value": "summit",
+      "result_unit": "prism",
+      "result_status": "RESULTED",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 6,
+      "encounter_id": 24,
+      "test_code": "summit",
+      "test_name": "zenith",
+      "ordered_at": "2025-05-09 05:51:35",
+      "result_value": "willow",
+      "result_unit": "harbor",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 7,
+      "encounter_id": 6,
+      "test_code": "summit",
+      "test_name": "nova",
+      "ordered_at": "2025-01-18 18:35:06",
+      "result_value": "quartz",
+      "result_unit": "vertex",
+      "result_status": "RESULTED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 8,
+      "encounter_id": 25,
+      "test_code": "orbit",
+      "test_name": "matrix",
+      "ordered_at": "2025-01-10 09:20:20",
+      "result_value": "orbit",
+      "result_unit": "orbit",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 9,
+      "encounter_id": 4,
+      "test_code": "signal",
+      "test_name": "summit",
+      "ordered_at": "2025-12-31 17:24:48",
+      "result_value": "meridian",
+      "result_unit": "delta",
+      "result_status": "CANCELLED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 10,
+      "encounter_id": 3,
+      "test_code": "summit",
+      "test_name": "meridian",
+      "ordered_at": "2026-05-26 21:44:13",
+      "result_value": "nova",
+      "result_unit": "orbit",
+      "result_status": "ORDERED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 11,
+      "encounter_id": 23,
+      "test_code": "flux",
+      "test_name": "beacon",
+      "ordered_at": "2026-01-05 21:17:47",
+      "result_value": "ember",
+      "result_unit": "ember",
+      "result_status": "CANCELLED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 12,
+      "encounter_id": 16,
+      "test_code": "willow",
+      "test_name": "prism",
+      "ordered_at": "2025-03-11 04:46:55",
+      "result_value": "pulse",
+      "result_unit": "delta",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 13,
+      "encounter_id": 5,
+      "test_code": "delta",
+      "test_name": "delta",
+      "ordered_at": "2025-08-08 21:28:11",
+      "result_value": "vertex",
+      "result_unit": "ember",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 14,
+      "encounter_id": 1,
+      "test_code": "flux",
+      "test_name": "willow",
+      "ordered_at": "2026-03-01 11:46:17",
+      "result_value": "vector",
+      "result_unit": "ember",
+      "result_status": "ORDERED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 15,
+      "encounter_id": 25,
+      "test_code": "flux",
+      "test_name": "ember",
+      "ordered_at": "2025-08-25 03:41:45",
+      "result_value": "vector",
+      "result_unit": "cascade",
+      "result_status": "ORDERED",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 16,
+      "encounter_id": 24,
+      "test_code": "ember",
+      "test_name": "quartz",
+      "ordered_at": "2025-01-01 23:34:12",
+      "result_value": "alpha",
+      "result_unit": "prism",
+      "result_status": "ORDERED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 17,
+      "encounter_id": 20,
+      "test_code": "nova",
+      "test_name": "ember",
+      "ordered_at": "2026-03-02 11:45:05",
+      "result_value": "alpha",
+      "result_unit": "harbor",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 18,
+      "encounter_id": 23,
+      "test_code": "pulse",
+      "test_name": "flux",
+      "ordered_at": "2025-06-18 22:35:44",
+      "result_value": "nova",
+      "result_unit": "vertex",
+      "result_status": "CANCELLED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 19,
+      "encounter_id": 25,
+      "test_code": "summit",
+      "test_name": "prism",
+      "ordered_at": "2026-06-14 20:30:10",
+      "result_value": "meridian",
+      "result_unit": "vertex",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 20,
+      "encounter_id": 23,
+      "test_code": "flux",
+      "test_name": "vertex",
+      "ordered_at": "2025-10-29 08:08:58",
+      "result_value": "pulse",
+      "result_unit": "meridian",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 21,
+      "encounter_id": 14,
+      "test_code": "beacon",
+      "test_name": "summit",
+      "ordered_at": "2025-03-13 04:34:00",
+      "result_value": "cascade",
+      "result_unit": "meridian",
+      "result_status": "IN_PROGRESS",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 22,
+      "encounter_id": 13,
+      "test_code": "nova",
+      "test_name": "harbor",
+      "ordered_at": "2025-03-21 00:03:36",
+      "result_value": "willow",
+      "result_unit": "meridian",
+      "result_status": "ORDERED",
+      "is_abnormal": 0
+    },
+    {
+      "lab_order_id": 23,
+      "encounter_id": 22,
+      "test_code": "alpha",
+      "test_name": "harbor",
+      "ordered_at": "2025-04-05 09:43:40",
+      "result_value": "delta",
+      "result_unit": "vertex",
+      "result_status": "ORDERED",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 24,
+      "encounter_id": 18,
+      "test_code": "prism",
+      "test_name": "alpha",
+      "ordered_at": "2025-04-21 07:36:29",
+      "result_value": "vertex",
+      "result_unit": "meridian",
+      "result_status": "ORDERED",
+      "is_abnormal": 1
+    },
+    {
+      "lab_order_id": 25,
+      "encounter_id": 9,
+      "test_code": "signal",
+      "test_name": "signal",
+      "ordered_at": "2025-10-03 18:01:33",
+      "result_value": "pulse",
+      "result_unit": "orbit",
+      "result_status": "CANCELLED",
+      "is_abnormal": 0
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": 1,
+      "encounter_id": 10,
+      "policy_id": 10,
+      "claim_amount": 874.27,
+      "approved_amount": 148.69,
+      "claim_status": "APPROVED",
+      "submitted_date": "2026-06-13",
+      "settled_date": "2025-07-16"
+    },
+    {
+      "claim_id": 2,
+      "encounter_id": 6,
+      "policy_id": 12,
+      "claim_amount": 12.43,
+      "approved_amount": 52.44,
+      "claim_status": "PAID",
+      "submitted_date": "2025-12-21",
+      "settled_date": "2025-08-30"
+    },
+    {
+      "claim_id": 3,
+      "encounter_id": 8,
+      "policy_id": 4,
+      "claim_amount": 869.2,
+      "approved_amount": 756.08,
+      "claim_status": "DENIED",
+      "submitted_date": "2025-08-27",
+      "settled_date": "2025-05-30"
+    },
+    {
+      "claim_id": 4,
+      "encounter_id": 9,
+      "policy_id": 9,
+      "claim_amount": 314.63,
+      "approved_amount": 999.79,
+      "claim_status": "APPROVED",
+      "submitted_date": "2025-07-06",
+      "settled_date": "2025-05-31"
+    },
+    {
+      "claim_id": 5,
+      "encounter_id": 10,
+      "policy_id": 6,
+      "claim_amount": 364.63,
+      "approved_amount": 155.68,
+      "claim_status": "SUBMITTED",
+      "submitted_date": "2025-11-04",
+      "settled_date": "2026-02-27"
+    },
+    {
+      "claim_id": 6,
+      "encounter_id": 19,
+      "policy_id": 24,
+      "claim_amount": 495.34,
+      "approved_amount": 994.32,
+      "claim_status": "IN_REVIEW",
+      "submitted_date": "2025-08-22",
+      "settled_date": "2026-05-14"
+    },
+    {
+      "claim_id": 7,
+      "encounter_id": 25,
+      "policy_id": 5,
+      "claim_amount": 591,
+      "approved_amount": 346.08,
+      "claim_status": "PAID",
+      "submitted_date": "2026-02-15",
+      "settled_date": "2025-10-05"
+    },
+    {
+      "claim_id": 8,
+      "encounter_id": 4,
+      "policy_id": 9,
+      "claim_amount": 922.38,
+      "approved_amount": 685.9,
+      "claim_status": "DENIED",
+      "submitted_date": "2025-02-20",
+      "settled_date": "2026-06-08"
+    },
+    {
+      "claim_id": 9,
+      "encounter_id": 25,
+      "policy_id": 14,
+      "claim_amount": 941.09,
+      "approved_amount": 819.4,
+      "claim_status": "PARTIAL",
+      "submitted_date": "2026-02-22",
+      "settled_date": "2026-03-26"
+    },
+    {
+      "claim_id": 10,
+      "encounter_id": 7,
+      "policy_id": 6,
+      "claim_amount": 941.94,
+      "approved_amount": 736.87,
+      "claim_status": "PAID",
+      "submitted_date": "2025-05-19",
+      "settled_date": "2026-01-14"
+    },
+    {
+      "claim_id": 11,
+      "encounter_id": 8,
+      "policy_id": 14,
+      "claim_amount": 863.24,
+      "approved_amount": 36.98,
+      "claim_status": "PARTIAL",
+      "submitted_date": "2025-07-14",
+      "settled_date": "2025-03-29"
+    },
+    {
+      "claim_id": 12,
+      "encounter_id": 6,
+      "policy_id": 7,
+      "claim_amount": 472.47,
+      "approved_amount": 76.21,
+      "claim_status": "PARTIAL",
+      "submitted_date": "2025-06-08",
+      "settled_date": "2025-09-07"
+    },
+    {
+      "claim_id": 13,
+      "encounter_id": 18,
+      "policy_id": 23,
+      "claim_amount": 501.79,
+      "approved_amount": 259.46,
+      "claim_status": "APPROVED",
+      "submitted_date": "2025-07-03",
+      "settled_date": "2026-06-14"
+    },
+    {
+      "claim_id": 14,
+      "encounter_id": 20,
+      "policy_id": 4,
+      "claim_amount": 734.78,
+      "approved_amount": 872.86,
+      "claim_status": "PAID",
+      "submitted_date": "2025-07-20",
+      "settled_date": "2026-03-06"
+    },
+    {
+      "claim_id": 15,
+      "encounter_id": 4,
+      "policy_id": 11,
+      "claim_amount": 923.35,
+      "approved_amount": 744.73,
+      "claim_status": "DENIED",
+      "submitted_date": "2025-12-31",
+      "settled_date": "2026-03-25"
+    },
+    {
+      "claim_id": 16,
+      "encounter_id": 24,
+      "policy_id": 20,
+      "claim_amount": 242.32,
+      "approved_amount": 215.12,
+      "claim_status": "PAID",
+      "submitted_date": "2025-07-29",
+      "settled_date": "2025-05-11"
+    },
+    {
+      "claim_id": 17,
+      "encounter_id": 25,
+      "policy_id": 21,
+      "claim_amount": 168.31,
+      "approved_amount": 553.03,
+      "claim_status": "PAID",
+      "submitted_date": "2026-02-05",
+      "settled_date": "2025-09-11"
+    },
+    {
+      "claim_id": 18,
+      "encounter_id": 24,
+      "policy_id": 2,
+      "claim_amount": 976,
+      "approved_amount": 528.41,
+      "claim_status": "PARTIAL",
+      "submitted_date": "2025-04-12",
+      "settled_date": "2025-03-17"
+    },
+    {
+      "claim_id": 19,
+      "encounter_id": 17,
+      "policy_id": 17,
+      "claim_amount": 873.66,
+      "approved_amount": 853.05,
+      "claim_status": "PARTIAL",
+      "submitted_date": "2025-01-06",
+      "settled_date": "2026-06-22"
+    },
+    {
+      "claim_id": 20,
+      "encounter_id": 2,
+      "policy_id": 25,
+      "claim_amount": 419.58,
+      "approved_amount": 585.63,
+      "claim_status": "PARTIAL",
+      "submitted_date": "2026-05-28",
+      "settled_date": "2026-02-02"
+    },
+    {
+      "claim_id": 21,
+      "encounter_id": 11,
+      "policy_id": 15,
+      "claim_amount": 620.23,
+      "approved_amount": 854.13,
+      "claim_status": "SUBMITTED",
+      "submitted_date": "2026-02-15",
+      "settled_date": "2025-04-23"
+    },
+    {
+      "claim_id": 22,
+      "encounter_id": 12,
+      "policy_id": 23,
+      "claim_amount": 181.86,
+      "approved_amount": 636.3,
+      "claim_status": "APPROVED",
+      "submitted_date": "2025-09-20",
+      "settled_date": "2025-05-01"
+    },
+    {
+      "claim_id": 23,
+      "encounter_id": 2,
+      "policy_id": 12,
+      "claim_amount": 957,
+      "approved_amount": 107.82,
+      "claim_status": "PARTIAL",
+      "submitted_date": "2025-10-04",
+      "settled_date": "2025-03-18"
+    },
+    {
+      "claim_id": 24,
+      "encounter_id": 18,
+      "policy_id": 21,
+      "claim_amount": 437.2,
+      "approved_amount": 227.19,
+      "claim_status": "DENIED",
+      "submitted_date": "2026-02-28",
+      "settled_date": "2025-01-07"
+    },
+    {
+      "claim_id": 25,
+      "encounter_id": 10,
+      "policy_id": 1,
+      "claim_amount": 733.08,
+      "approved_amount": 424.86,
+      "claim_status": "APPROVED",
+      "submitted_date": "2025-07-05",
+      "settled_date": "2025-03-26"
+    }
+  ]
+}

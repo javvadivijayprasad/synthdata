@@ -146,8 +146,11 @@ while((m=re.exec(sql))!==null){const name=m[1];let depth=1,i=re.lastIndex,inStr=
 while(i<sql.length&&depth>0){const ch=sql[i];if(ch==="'")inStr=!inStr;if(!inStr){if(ch==='(')depth++;if(ch===')')depth--;}i++;}
 const body=sql.slice(re.lastIndex,i-1);const table={name,columns:[],uniqueSets:[],rowChecks:[]};const checkTexts=[];
 for(const part of splitTopLevel(body)){const up=part.toUpperCase();
-if(up.startsWith('PRIMARY KEY')){const cols=(part.match(/\(([^)]*)\)/)||[])[1]||'';for(const cn of cols.split(',').map(s=>s.trim().replace(/["`]/g,''))){const c=table.columns.find(x=>x.name===cn);if(c){c.isPk=true;c.notNull=true;}}}
-else if(up.startsWith('UNIQUE')){const cols=(part.match(/\(([^)]*)\)/)||[])[1]||'';const names=cols.split(',').map(s=>s.trim().replace(/["`]/g,'')).filter(Boolean);if(names.length)table.uniqueSets.push(names);}
+if(up.startsWith('PRIMARY KEY')){const cols=(part.match(/\(([^)]*)\)/)||[])[1]||'';const names=cols.split(',').map(s=>s.trim().replace(/["`]/g,'')).filter(Boolean);for(const cn of names){const c=table.columns.find(x=>x.name===cn);if(c){c.isPk=true;c.notNull=true;}}
+if(names.length>1)table.uniqueSets.push(names);}
+else if(up.startsWith('UNIQUE')){const cols=(part.match(/\(([^)]*)\)/)||[])[1]||'';const names=cols.split(',').map(s=>s.trim().replace(/["`]/g,'')).filter(Boolean);
+const single=names.length===1&&table.columns.find(x=>x.name===names[0]);
+if(single)single.unique=true;else if(names.length)table.uniqueSets.push(names);}
 else if(up.startsWith('FOREIGN KEY')){const fk=part.match(/FOREIGN\s+KEY\s*\(([^)]*)\)\s*REFERENCES\s+["`]?(\w+)["`]?\s*(?:\(([^)]*)\))?/i);if(fk){const c=table.columns.find(x=>x.name===fk[1].trim().replace(/["`]/g,''));if(c){c.fkTable=fk[2];c.fkColumn=fk[3]?fk[3].trim():null;}}}
 else if(up.startsWith('CHECK')||up.startsWith('CONSTRAINT')){for(const c of table.columns)parseCheck(part,c);checkTexts.push(part);}
 else{const cm=part.match(/^["`]?(\w+)["`]?\s+([A-Za-z]+(?:\s*\(\s*[\d,\s]+\s*\))?)([\s\S]*)$/);if(!cm)continue;
@@ -164,7 +167,9 @@ table.columns.push(col);}}
 for(const text of checkTexts){const rc=/(\w+)\s*(>=|>|<=|<)\s*(\w+)/g;let cm2;
 while((cm2=rc.exec(text))!==null){if(table.columns.some(c=>c.name===cm2[1])&&table.columns.some(c=>c.name===cm2[3]))table.rowChecks.push({left:cm2[1],op:cm2[2],right:cm2[3]});}}
 tables[name]=table;}
-for(const t of Object.values(tables))for(const c of t.columns)if(c.fkTable&&!c.fkColumn&&tables[c.fkTable]){const pk=tables[c.fkTable].columns.find(x=>x.isPk);c.fkColumn=pk?pk.name:null;}
+for(const t of Object.values(tables)){for(const c of t.columns)if(c.fkTable&&!c.fkColumn&&tables[c.fkTable]){const pk=tables[c.fkTable].columns.find(x=>x.isPk);c.fkColumn=pk?pk.name:null;}
+const pkCols=t.columns.filter(c=>c.isPk);
+if(pkCols.length===1&&(pkCols[0].fkTable||!/INT|SERIAL/.test(pkCols[0].dtype)))pkCols[0].unique=true;}
 return tables;}
 function topoOrder(tables){const order=[],seen=new Set();function visit(name,stack){if(seen.has(name)||!tables[name])return;if(stack.includes(name))return;for(const c of tables[name].columns)if(c.fkTable&&c.fkTable!==name)visit(c.fkTable,[...stack,name]);if(!seen.has(name)){seen.add(name);order.push(name);}}for(const n of Object.keys(tables))visit(n,[]);return order;}
 
@@ -198,9 +203,16 @@ case 'user_name':return p(FIRST).toLowerCase()+rng.randint(1,999);
 default:return p(WORDS);}}
 
 const MAX_RETRIES=50;
+function shiftDate(s,ms){const str=String(s);const hasTime=str.length>10;
+const d=new Date(str.replace(' ','T')+(hasTime?'Z':'T00:00:00Z'));
+const iso=new Date(d.getTime()+ms).toISOString();
+return hasTime?iso.slice(0,19).replace('T',' '):iso.slice(0,10);}
+const addDays=(s,n)=>shiftDate(s,n*86400000),addHours=(s,n)=>shiftDate(s,n*3600000),addMinutes=(s,n)=>shiftDate(s,n*60000);
 const round2=(v,d)=>{const p=Math.pow(10,d==null?2:d);return Math.round(v*p)/p;};
 const fmtTpl=(tpl,seq)=>tpl.replace(/\{seq(?::0(\d+)d)?\}/g,(_,w)=>w?String(seq).padStart(+w,'0'):String(seq));
-class Engine{constructor(tables,plan,seed,profile){this.tables=tables;this.plan=plan||{};this.profile=profile||'functional';this.rng=makeRng(seed);this.data={};this.keys={};}
+class Engine{constructor(tables,plan,seed,profile,tableSeeds){this.tables=tables;this.plan=plan||{};this.seed=seed;this.profile=profile||'functional';this.rng=makeRng(seed);this.data={};this.keys={};this.tableSeeds={};for(const[t,tp]of Object.entries(this.plan.tables||{}))if(tp&&tp.seed!=null)this.tableSeeds[t]=+tp.seed;for(const[t,v]of Object.entries(tableSeeds||{}))this.tableSeeds[t]=+v;}
+tableSeed(name){if(this.tableSeeds[name]!=null)return this.tableSeeds[name]>>>0;let h=(0x811c9dc5^(this.seed>>>0))>>>0;for(let i=0;i<name.length;i++)h=Math.imul(h^name.charCodeAt(i),0x01000193)>>>0;return(h^Math.imul(this.seed>>>0,0x9e3779b1))>>>0;}
+generateTable(name){const saved=this.rng;this.rng=makeRng(this.tableSeed(name));try{return this.generateTableInner(name);}finally{this.rng=saved;}}
 value(spec,tname,col,seq,row,partial){const rng=this.rng;
 if(spec.null_prob&&rng.random()<spec.null_prob)return null;
 switch(spec.gen||'auto'){
@@ -214,22 +226,59 @@ case 'date':{const s=new Date(String(spec.start??'2024-01-01')+'T00:00:00Z'),e=n
 case 'datetime':{const s=new Date(String(spec.start??'2024-01-01 00:00').replace(' ','T')+':00Z'),e=new Date(String(spec.end??'2026-01-01 00:00').replace(' ','T')+':00Z');return new Date(s.getTime()+rng.randint(0,Math.floor((e-s)/1000))*1000).toISOString().slice(0,19).replace('T',' ');}
 case 'template':return fmtTpl(spec.format,seq);
 case 'const':return spec.value??null;
-case 'fk':{if(col.fkTable===tname){const pool=partial.map(r=>r[col.fkColumn]).filter(v=>v!=null);if(!pool.length||rng.random()<0.02)return null;return rng.choice(pool);}
-const pool=this.keys[col.fkTable+'.'+col.fkColumn]||[];
-if(!pool.length)throw new Error(tname+'.'+col.name+': no parent keys for '+col.fkTable+'.'+col.fkColumn);
-if(spec.distribution==='zipf'){const idx=Math.min(Math.floor(rng.pareto(1.2))-1,pool.length-1);return pool[Math.max(0,idx)];}
-return rng.choice(pool);}
-case 'expr':{const fn=new Function('row','rng','return ('+spec.code+');');return fn(row,rng);}
+case 'fk':{const tgt=this.resolveFkTarget(tname,col,spec);
+if(tgt&&tgt.table===tname){const pool=partial.map(r=>r[tgt.column]).filter(v=>v!=null);if(!pool.length||rng.random()<0.02)return null;return rng.choice(pool);}
+const pool0=tgt?(this.keys[tgt.table+'.'+tgt.column]||[]):[];
+if(!pool0.length){this.warnOnce(tname+'.'+col.name,'warning: '+tname+'.'+col.name+': fk target unresolvable or empty — falling back to int; use {gen: fk, ref: parent.column}');return rng.randint(1,1000);}
+if(spec.distribution==='zipf'){const idx=Math.min(Math.floor(rng.pareto(1.2))-1,pool0.length-1);return pool0[Math.max(0,idx)];}
+return rng.choice(pool0);}
+case 'expr':{const fn=new Function('row','rng','addDays','addHours','addMinutes','return ('+spec.code+');');
+let v=fn(row,rng,addDays,addHours,addMinutes);
+if(typeof v==='string'&&/DATE|TIME/.test(col.dtype)){
+const m=/^(\d{4}-\d{2}-\d{2}(?: \d{2}:\d{2}:\d{2})?)(\d+(?:\.\d+)?)$/.exec(v);
+if(m){this.warnOnce('expr:'+tname+'.'+col.name,'warning: '+tname+'.'+col.name+': expr concatenated a number onto a date — interpreting as +days; use addDays(row.col, n)');v=addDays(m[1],parseFloat(m[2]));}}
+return v;}
 default:throw new Error(tname+'.'+col.name+": unknown generator '"+(spec.gen)+"'");}}
-autoSpec(col){if(col.isPk)return{gen:'sequence'};if(col.fkTable)return{gen:'fk'};
+warnOnce(key,msg){this._warned??=new Set();if(this._warned.has(key))return;this._warned.add(key);if(typeof console!=='undefined')console.error(msg);}
+resolveFkTarget(tname,col,spec){
+if(spec&&spec.ref){const parts=String(spec.ref).split('.');const t=parts[0],c=parts[1];
+if(this.tables[t]){const pk=this.tables[t].columns.find(x=>x.isPk);return{table:t,column:c||(pk?pk.name:null)};}}
+if(col.fkTable&&(this.tables[col.fkTable]||col.fkTable===tname))return{table:col.fkTable,column:col.fkColumn};
+for(const[t,tab]of Object.entries(this.tables)){if(t===tname)continue;
+const c=tab.columns.find(x=>x.name===col.name&&(x.isPk||x.unique));
+if(c)return{table:t,column:c.name};}
+return null;}
+enforceLen(tname,col,val){if(typeof val!=='string')return val;
+const lenM=/^(?:VAR)?CHAR(?:ACTER)?\((\d+)/.exec(col.dtype);
+if(!lenM||val.length<=+lenM[1])return val;
+this.warnOnce('len:'+tname+'.'+col.name,'warning: '+tname+'.'+col.name+': generated value exceeds '+col.dtype.toLowerCase()+' — truncating to '+lenM[1]+' chars');
+return val.slice(0,+lenM[1]);}
+uniqueTextFallback(tname,col,spec,val,seq){
+if(typeof val!=='string'||/DATE|TIME/.test(col.dtype))return null;
+const lenM=/^(?:VAR)?CHAR(?:ACTER)?\((\d+)/.exec(col.dtype);
+const maxLen=spec.max_len??(lenM?+lenM[1]:null);
+const suffix='_'+seq;let out;
+if(maxLen!=null&&maxLen<suffix.length+1){out=seq.toString(36).padStart(maxLen,'0').slice(-maxLen);}
+else{let base=val;
+if(maxLen!=null&&base.length+suffix.length>maxLen)base=base.slice(0,Math.max(1,maxLen-suffix.length));
+out=base+suffix;}
+this.warnOnce('uniq:'+tname+'.'+col.name,'warning: '+tname+'.'+col.name+': fake-value pool smaller than requested rows — using deterministic sequence-based values');
+return out;}
+autoSpec(col){if(col.fkTable)return{gen:'fk'};if(col.isPk&&/INT|SERIAL/.test(col.dtype))return{gen:'sequence'};
 const lenM=/^(?:VAR)?CHAR(?:ACTER)?\((\d+)/.exec(col.dtype);const maxLen=lenM?+lenM[1]:null;
-if(col.unique&&!/INT|NUMERIC|DECIMAL|REAL|FLOAT|DATE|TIME/.test(col.dtype)){
+if((col.unique||col.isPk)&&!/INT|NUMERIC|DECIMAL|REAL|FLOAT|DATE|TIME/.test(col.dtype)){
 let format=col.name+'_{seq}';
 if(maxLen!=null&&maxLen<col.name.length+7)format=maxLen>=6?'{seq:0'+Math.min(maxLen,6)+'d}':'{seq}';
 return{gen:'template',format};}
 if(col.checkIn)return{gen:'choice',values:col.checkIn};const d=col.dtype;
-if(col.checkRange){const lo=col.checkRange[0]??0;const hi=col.checkRange[1]??Math.max(1000,lo+1000);return d.includes('INT')?{gen:'int',min:lo,max:hi}:{gen:'float',min:lo,max:hi};}
+if(col.checkRange){const lo=col.checkRange[0]??0;let hi=col.checkRange[1]??Math.max(1000,lo+1000);
+const nm=/^(?:NUMERIC|DECIMAL)\((\d+)(?:,(\d+))?\)/.exec(d);
+if(nm){const s=+(nm[2]||0);hi=Math.min(hi,Math.pow(10,+nm[1]-s)-Math.pow(10,-s));return{gen:'float',min:lo,max:+hi.toFixed(s),round:s};}
+return d.includes('INT')?{gen:'int',min:lo,max:hi}:{gen:'float',min:lo,max:hi};}
 if(d.includes('INT'))return{gen:'int',min:0,max:1000};
+const numM=/^(?:NUMERIC|DECIMAL)\((\d+)(?:,(\d+))?\)/.exec(d);
+if(numM){const p=+numM[1],s=+(numM[2]||0);const cap=Math.pow(10,p-s)-Math.pow(10,-s);
+return{gen:'float',min:0,max:+Math.min(10000,cap).toFixed(s),round:s};}
 if(/NUMERIC|DECIMAL|REAL|FLOAT|DOUBLE/.test(d))return{gen:'float',min:0,max:10000};
 if(d.includes('BOOL'))return{gen:'choice',values:[0,1]};
 if(/TIMESTAMP|DATETIME/.test(d))return{gen:'datetime',start:'2025-01-01 00:00',end:'2026-07-01 00:00'};
@@ -273,7 +322,7 @@ precomputeUniqueCombos(table,colPlans,nRows,tname){const assigns=[],covered=new 
 for(const uset of table.uniqueSets){if(uset.some(c=>covered.has(c)))continue;
 const pools=[];let ok=true;
 for(const cn of uset){const col=table.columns.find(x=>x.name===cn);const spec=colPlans[cn]||this.autoSpec(col);
-if(spec.gen==='fk'&&col.fkTable!==tname)pools.push(this.keys[col.fkTable+'.'+col.fkColumn]||[]);
+if(spec.gen==='fk'){const tgt=this.resolveFkTarget(tname,col,spec);if(!tgt||tgt.table===tname){ok=false;break;}pools.push(this.keys[tgt.table+'.'+tgt.column]||[]);}
 else if(spec.gen==='choice')pools.push(spec.values);else{ok=false;break;}}
 if(!ok||pools.some(p=>!p.length))continue;
 const total=pools.reduce((s,p)=>s*p.length,1);
@@ -286,10 +335,11 @@ idxs=idxs.slice(0,nRows);}
 const combos=idxs.map(ix0=>{let ix=ix0;const vals=[];for(const p of pools){vals.push(p[ix%p.length]);ix=Math.floor(ix/p.length);}return vals;});
 assigns.push({uset,combos});uset.forEach(c=>covered.add(c));}
 for(const col of table.columns){const spec=colPlans[col.name]||this.autoSpec(col);
-const isU=col.unique||(colPlans[col.name]&&colPlans[col.name].unique);
+const singlePkFk=col.isPk&&table.columns.filter(c=>c.isPk).length===1&&spec.gen!=='sequence';
+const isU=col.unique||(colPlans[col.name]&&colPlans[col.name].unique)||singlePkFk;
 if(!isU||covered.has(col.name))continue;
 let pool=null;
-if(spec.gen==='fk'&&col.fkTable!==tname)pool=this.keys[col.fkTable+'.'+col.fkColumn]||[];
+if(spec.gen==='fk'){const tgt=this.resolveFkTarget(tname,col,spec);if(tgt&&tgt.table!==tname)pool=this.keys[tgt.table+'.'+tgt.column]||[];}
 else if(spec.gen==='choice')pool=spec.values;
 if(!pool||!pool.length)continue;
 if(nRows>pool.length)throw new Error(tname+'.'+col.name+': UNIQUE allows only '+pool.length+' distinct values but the plan asks for '+nRows+' rows — reduce rows or grow '+(col.fkTable||'the value list'));
@@ -297,10 +347,13 @@ const idxs=Array.from({length:pool.length},(_,i)=>i);
 for(let i=idxs.length-1;i>0;i--){const j=this.rng.randint(0,i);[idxs[i],idxs[j]]=[idxs[j],idxs[i]];}
 assigns.push({uset:[col.name],combos:idxs.slice(0,nRows).map(i=>[pool[i]])});covered.add(col.name);}
 return assigns;}
-generateTable(name){const table=this.tables[name];const tplan=(this.plan.tables||{})[name]||{};
+generateTableInner(name){const table=this.tables[name];const tplan=(this.plan.tables||{})[name]||{};
 const nRows=Math.trunc(tplan.rows??100);const colPlans=tplan.columns||{};const rows=[];const uniq={};
 const comboAssigns=this.precomputeUniqueCombos(table,colPlans,nRows,name);const comboCols=new Set(comboAssigns.flatMap(a=>a.uset));
-for(const c of table.columns)if(c.unique||(colPlans[c.name]&&colPlans[c.name].unique))uniq[c.name]=new Set();
+const pkCount=table.columns.filter(c=>c.isPk).length;
+for(const c of table.columns){const sp=colPlans[c.name]||this.autoSpec(c);
+const pkNeedsUnique=c.isPk&&pkCount===1&&sp.gen!=='sequence';
+if(c.unique||(colPlans[c.name]&&colPlans[c.name].unique)||pkNeedsUnique)uniq[c.name]=new Set();}
 const edgeCache={};
 for(let seq=1;seq<=nRows;seq++){const row={};
 for(const col of table.columns){const spec=colPlans[col.name]||this.autoSpec(col);
@@ -309,15 +362,20 @@ if(this.profile==='edge'&&!col.isPk&&!col.fkTable&&!uniq[col.name]&&!comboCols.h
 const cands=edgeCache[col.name]??=this.edgeCandidates(col,spec);
 val=cands[(seq-1)%cands.length];}
 else val=this.value(spec,name,col,seq,row,rows);
+val=this.enforceLen(name,col,val);
 if(uniq[col.name]&&!comboCols.has(col.name)&&val!=null){let tries=0;
-while(uniq[col.name].has(val)&&tries<MAX_RETRIES){val=this.value(spec,name,col,seq,row,rows);tries++;}
+while(uniq[col.name].has(val)&&tries<MAX_RETRIES){val=this.enforceLen(name,col,this.value(spec,name,col,seq,row,rows));tries++;}
+if(uniq[col.name].has(val))val=this.uniqueTextFallback(name,col,spec,val,seq)??val;
 if(uniq[col.name].has(val))throw new Error(name+'.'+col.name+": can't satisfy UNIQUE (pool too small)");
 uniq[col.name].add(val);}
 row[col.name]=val;}
 for(const a of comboAssigns)a.uset.forEach((cn,j)=>{row[cn]=a.combos[seq-1][j];});
 for(const uset of table.uniqueSets){const k='U::'+uset.join('::');uniq[k]=uniq[k]||new Set();
 let key=uset.map(c=>row[c]).join('');let tries=0;
-while(uniq[k].has(key)&&tries<MAX_RETRIES){for(const cn of uset){const col=table.columns.find(x=>x.name===cn);const spec=colPlans[cn]||this.autoSpec(col);row[cn]=this.value(spec,name,col,seq,row,rows);}key=uset.map(c=>row[c]).join('');tries++;}
+while(uniq[k].has(key)&&tries<MAX_RETRIES){for(const cn of uset){const col=table.columns.find(x=>x.name===cn);const spec=colPlans[cn]||this.autoSpec(col);row[cn]=this.enforceLen(name,col,this.value(spec,name,col,seq,row,rows));}key=uset.map(c=>row[c]).join('');tries++;}
+if(uniq[k].has(key)){for(const cn of uset){const col=table.columns.find(x=>x.name===cn);const spec=colPlans[cn]||this.autoSpec(col);
+const fb=this.uniqueTextFallback(name,col,spec,row[cn],seq);
+if(fb!=null){row[cn]=fb;key=uset.map(c=>row[c]).join('');break;}}}
 if(uniq[k].has(key))throw new Error(name+": can't satisfy UNIQUE("+uset+") — reduce rows");
 uniq[k].add(key);}
 const cmpOk=(a,op,b)=>a==null||b==null?true:op==='>='?a>=b:op==='>'?a>b:op==='<='?a<=b:a<b;
@@ -330,7 +388,14 @@ if(!cmpOk(row[rc.left],rc.op,row[rc.right]))throw new Error(name+": can't satisf
 rows.push(row);}
 this.data[name]=rows;
 for(const col of table.columns)this.keys[name+'.'+col.name]=rows.map(r=>r[col.name]).filter(v=>v!=null);}
-run(){for(const n of topoOrder(this.tables))this.generateTable(n);if(this.profile==='negative')this.corruptData();return this.data;}}
+run(){const pseudo={};
+for(const[tn,tab]of Object.entries(this.tables)){const colPlans=((this.plan.tables||{})[tn]||{}).columns||{};
+pseudo[tn]={columns:tab.columns.map(c=>{const spec=colPlans[c.name];
+const isFk=spec?spec.gen==='fk':!!c.fkTable;
+const tgt=isFk?this.resolveFkTarget(tn,c,spec):null;
+return{fkTable:tgt?tgt.table:null};})};}
+for(const n of topoOrder(pseudo))this.generateTable(n);
+if(this.profile==='negative')this.corruptData();return this.data;}}
 
 function toPgScript(ddl,tables,data,seed){
 const pgVal=(v,isBool)=>{if(v==null)return 'NULL';

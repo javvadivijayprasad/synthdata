@@ -1,0 +1,2197 @@
+{
+  "customers": [
+    {
+      "customer_id": 1,
+      "email": "email_1",
+      "full_name": "zenith",
+      "phone": "summit",
+      "customer_tier": "STANDARD",
+      "created_at": "2025-04-27 06:22:42",
+      "is_active": 1
+    },
+    {
+      "customer_id": 2,
+      "email": "email_2",
+      "full_name": "nova",
+      "phone": "vector",
+      "customer_tier": "STANDARD",
+      "created_at": "2025-09-30 16:29:49",
+      "is_active": 1
+    },
+    {
+      "customer_id": 3,
+      "email": "email_3",
+      "full_name": "signal",
+      "phone": "pulse",
+      "customer_tier": "SILVER",
+      "created_at": "2026-01-30 07:38:22",
+      "is_active": 1
+    },
+    {
+      "customer_id": 4,
+      "email": "email_4",
+      "full_name": "vector",
+      "phone": "nova",
+      "customer_tier": "STANDARD",
+      "created_at": "2025-12-27 06:14:40",
+      "is_active": 0
+    },
+    {
+      "customer_id": 5,
+      "email": "email_5",
+      "full_name": "vertex",
+      "phone": "vertex",
+      "customer_tier": "GOLD",
+      "created_at": "2025-08-02 09:07:36",
+      "is_active": 1
+    },
+    {
+      "customer_id": 6,
+      "email": "email_6",
+      "full_name": "ember",
+      "phone": "flux",
+      "customer_tier": "PREMIUM",
+      "created_at": "2025-12-10 21:51:33",
+      "is_active": 0
+    },
+    {
+      "customer_id": 7,
+      "email": "email_7",
+      "full_name": "summit",
+      "phone": "nova",
+      "customer_tier": "STANDARD",
+      "created_at": "2026-04-11 15:03:21",
+      "is_active": 0
+    },
+    {
+      "customer_id": 8,
+      "email": "email_8",
+      "full_name": "summit",
+      "phone": "harbor",
+      "customer_tier": "PREMIUM",
+      "created_at": "2025-03-10 01:43:15",
+      "is_active": 0
+    },
+    {
+      "customer_id": 9,
+      "email": "email_9",
+      "full_name": "harbor",
+      "phone": "summit",
+      "customer_tier": "GOLD",
+      "created_at": "2025-07-11 15:12:55",
+      "is_active": 0
+    },
+    {
+      "customer_id": 10,
+      "email": "email_10",
+      "full_name": "flux",
+      "phone": "flux",
+      "customer_tier": "SILVER",
+      "created_at": "2025-11-22 06:43:06",
+      "is_active": 0
+    },
+    {
+      "customer_id": 11,
+      "email": "email_11",
+      "full_name": "orbit",
+      "phone": "signal",
+      "customer_tier": "STANDARD",
+      "created_at": "2026-06-22 23:48:45",
+      "is_active": 0
+    },
+    {
+      "customer_id": 12,
+      "email": "email_12",
+      "full_name": "beacon",
+      "phone": "harbor",
+      "customer_tier": "SILVER",
+      "created_at": "2026-02-27 08:41:34",
+      "is_active": 0
+    },
+    {
+      "customer_id": 13,
+      "email": "email_13",
+      "full_name": "quartz",
+      "phone": "summit",
+      "customer_tier": "STANDARD",
+      "created_at": "2025-05-09 08:06:30",
+      "is_active": 1
+    },
+    {
+      "customer_id": 14,
+      "email": "email_14",
+      "full_name": "zenith",
+      "phone": "cascade",
+      "customer_tier": "STANDARD",
+      "created_at": "2026-03-11 18:25:11",
+      "is_active": 0
+    },
+    {
+      "customer_id": 15,
+      "email": "email_15",
+      "full_name": "zenith",
+      "phone": "prism",
+      "customer_tier": "GOLD",
+      "created_at": "2026-04-02 10:36:24",
+      "is_active": 0
+    },
+    {
+      "customer_id": 16,
+      "email": "email_16",
+      "full_name": "pulse",
+      "phone": "quartz",
+      "customer_tier": "STANDARD",
+      "created_at": "2025-05-07 06:59:59",
+      "is_active": 0
+    },
+    {
+      "customer_id": 17,
+      "email": "email_17",
+      "full_name": "harbor",
+      "phone": "cascade",
+      "customer_tier": "GOLD",
+      "created_at": "2026-03-14 09:17:52",
+      "is_active": 1
+    },
+    {
+      "customer_id": 18,
+      "email": "email_18",
+      "full_name": "summit",
+      "phone": "ember",
+      "customer_tier": "PREMIUM",
+      "created_at": "2026-01-09 04:48:35",
+      "is_active": 0
+    },
+    {
+      "customer_id": 19,
+      "email": "email_19",
+      "full_name": "harbor",
+      "phone": "zenith",
+      "customer_tier": "GOLD",
+      "created_at": "2026-04-20 19:28:39",
+      "is_active": 0
+    },
+    {
+      "customer_id": 20,
+      "email": "email_20",
+      "full_name": "vector",
+      "phone": "nova",
+      "customer_tier": "SILVER",
+      "created_at": "2025-04-15 03:44:54",
+      "is_active": 0
+    },
+    {
+      "customer_id": 21,
+      "email": "email_21",
+      "full_name": "nova",
+      "phone": "quartz",
+      "customer_tier": "PREMIUM",
+      "created_at": "2025-01-22 20:41:32",
+      "is_active": 0
+    },
+    {
+      "customer_id": 22,
+      "email": "email_22",
+      "full_name": "cascade",
+      "phone": "summit",
+      "customer_tier": "STANDARD",
+      "created_at": "2026-06-26 16:35:38",
+      "is_active": 1
+    },
+    {
+      "customer_id": 23,
+      "email": "email_23",
+      "full_name": "signal",
+      "phone": "ember",
+      "customer_tier": "PREMIUM",
+      "created_at": "2025-07-08 08:50:49",
+      "is_active": 1
+    },
+    {
+      "customer_id": 24,
+      "email": "email_24",
+      "full_name": "willow",
+      "phone": "harbor",
+      "customer_tier": "PREMIUM",
+      "created_at": "2025-03-20 03:25:42",
+      "is_active": 0
+    },
+    {
+      "customer_id": 25,
+      "email": "email_25",
+      "full_name": "delta",
+      "phone": "pulse",
+      "customer_tier": "SILVER",
+      "created_at": "2026-04-04 04:19:20",
+      "is_active": 0
+    }
+  ],
+  "addresses": [
+    {
+      "address_id": 1,
+      "customer_id": 11,
+      "address_type": "SHIPPING",
+      "line1": "signal",
+      "line2": "flux",
+      "city": "vector",
+      "state": "harbor",
+      "postal_code": "zenith",
+      "country_code": "ma",
+      "is_default": 0
+    },
+    {
+      "address_id": 2,
+      "customer_id": 19,
+      "address_type": "SHIPPING",
+      "line1": "prism",
+      "line2": "prism",
+      "city": "delta",
+      "state": "ember",
+      "postal_code": "delta",
+      "country_code": "su",
+      "is_default": 0
+    },
+    {
+      "address_id": 3,
+      "customer_id": 11,
+      "address_type": "SHIPPING",
+      "line1": "matrix",
+      "line2": "flux",
+      "city": "signal",
+      "state": "signal",
+      "postal_code": "willow",
+      "country_code": "no",
+      "is_default": 1
+    },
+    {
+      "address_id": 4,
+      "customer_id": 7,
+      "address_type": "BILLING",
+      "line1": "vector",
+      "line2": "beacon",
+      "city": "ember",
+      "state": "orbit",
+      "postal_code": "flux",
+      "country_code": "em",
+      "is_default": 0
+    },
+    {
+      "address_id": 5,
+      "customer_id": 11,
+      "address_type": "SHIPPING",
+      "line1": "delta",
+      "line2": "signal",
+      "city": "vector",
+      "state": "harbor",
+      "postal_code": "zenith",
+      "country_code": "pr",
+      "is_default": 0
+    },
+    {
+      "address_id": 6,
+      "customer_id": 24,
+      "address_type": "SHIPPING",
+      "line1": "quartz",
+      "line2": "flux",
+      "city": "summit",
+      "state": "willow",
+      "postal_code": "prism",
+      "country_code": "ze",
+      "is_default": 0
+    },
+    {
+      "address_id": 7,
+      "customer_id": 16,
+      "address_type": "SHIPPING",
+      "line1": "harbor",
+      "line2": "ember",
+      "city": "ember",
+      "state": "quartz",
+      "postal_code": "vector",
+      "country_code": "pr",
+      "is_default": 1
+    },
+    {
+      "address_id": 8,
+      "customer_id": 10,
+      "address_type": "BILLING",
+      "line1": "zenith",
+      "line2": "pulse",
+      "city": "orbit",
+      "state": "orbit",
+      "postal_code": "orbit",
+      "country_code": "de",
+      "is_default": 0
+    },
+    {
+      "address_id": 9,
+      "customer_id": 10,
+      "address_type": "SHIPPING",
+      "line1": "vertex",
+      "line2": "signal",
+      "city": "quartz",
+      "state": "cascade",
+      "postal_code": "ember",
+      "country_code": "si",
+      "is_default": 1
+    },
+    {
+      "address_id": 10,
+      "customer_id": 1,
+      "address_type": "SHIPPING",
+      "line1": "summit",
+      "line2": "flux",
+      "city": "vector",
+      "state": "matrix",
+      "postal_code": "pulse",
+      "country_code": "em",
+      "is_default": 1
+    },
+    {
+      "address_id": 11,
+      "customer_id": 18,
+      "address_type": "SHIPPING",
+      "line1": "prism",
+      "line2": "matrix",
+      "city": "willow",
+      "state": "cascade",
+      "postal_code": "vertex",
+      "country_code": "pr",
+      "is_default": 0
+    },
+    {
+      "address_id": 12,
+      "customer_id": 13,
+      "address_type": "SHIPPING",
+      "line1": "prism",
+      "line2": "matrix",
+      "city": "matrix",
+      "state": "zenith",
+      "postal_code": "summit",
+      "country_code": "ma",
+      "is_default": 1
+    },
+    {
+      "address_id": 13,
+      "customer_id": 11,
+      "address_type": "BILLING",
+      "line1": "willow",
+      "line2": "orbit",
+      "city": "pulse",
+      "state": "harbor",
+      "postal_code": "quartz",
+      "country_code": "or",
+      "is_default": 1
+    },
+    {
+      "address_id": 14,
+      "customer_id": 24,
+      "address_type": "BILLING",
+      "line1": "zenith",
+      "line2": "pulse",
+      "city": "harbor",
+      "state": "prism",
+      "postal_code": "flux",
+      "country_code": "or",
+      "is_default": 0
+    },
+    {
+      "address_id": 15,
+      "customer_id": 6,
+      "address_type": "SHIPPING",
+      "line1": "harbor",
+      "line2": "flux",
+      "city": "harbor",
+      "state": "zenith",
+      "postal_code": "flux",
+      "country_code": "qu",
+      "is_default": 0
+    },
+    {
+      "address_id": 16,
+      "customer_id": 21,
+      "address_type": "SHIPPING",
+      "line1": "matrix",
+      "line2": "beacon",
+      "city": "matrix",
+      "state": "cascade",
+      "postal_code": "vector",
+      "country_code": "ze",
+      "is_default": 1
+    },
+    {
+      "address_id": 17,
+      "customer_id": 11,
+      "address_type": "SHIPPING",
+      "line1": "beacon",
+      "line2": "prism",
+      "city": "delta",
+      "state": "alpha",
+      "postal_code": "pulse",
+      "country_code": "be",
+      "is_default": 1
+    },
+    {
+      "address_id": 18,
+      "customer_id": 1,
+      "address_type": "SHIPPING",
+      "line1": "vertex",
+      "line2": "zenith",
+      "city": "nova",
+      "state": "pulse",
+      "postal_code": "signal",
+      "country_code": "no",
+      "is_default": 1
+    },
+    {
+      "address_id": 19,
+      "customer_id": 22,
+      "address_type": "BILLING",
+      "line1": "quartz",
+      "line2": "pulse",
+      "city": "zenith",
+      "state": "matrix",
+      "postal_code": "matrix",
+      "country_code": "wi",
+      "is_default": 0
+    },
+    {
+      "address_id": 20,
+      "customer_id": 9,
+      "address_type": "SHIPPING",
+      "line1": "willow",
+      "line2": "zenith",
+      "city": "orbit",
+      "state": "quartz",
+      "postal_code": "cascade",
+      "country_code": "ca",
+      "is_default": 0
+    },
+    {
+      "address_id": 21,
+      "customer_id": 7,
+      "address_type": "SHIPPING",
+      "line1": "beacon",
+      "line2": "prism",
+      "city": "meridian",
+      "state": "orbit",
+      "postal_code": "alpha",
+      "country_code": "pr",
+      "is_default": 1
+    },
+    {
+      "address_id": 22,
+      "customer_id": 16,
+      "address_type": "BILLING",
+      "line1": "alpha",
+      "line2": "vector",
+      "city": "alpha",
+      "state": "orbit",
+      "postal_code": "zenith",
+      "country_code": "ve",
+      "is_default": 1
+    },
+    {
+      "address_id": 23,
+      "customer_id": 6,
+      "address_type": "SHIPPING",
+      "line1": "signal",
+      "line2": "meridian",
+      "city": "pulse",
+      "state": "pulse",
+      "postal_code": "signal",
+      "country_code": "de",
+      "is_default": 0
+    },
+    {
+      "address_id": 24,
+      "customer_id": 25,
+      "address_type": "BILLING",
+      "line1": "alpha",
+      "line2": "beacon",
+      "city": "cascade",
+      "state": "meridian",
+      "postal_code": "pulse",
+      "country_code": "no",
+      "is_default": 1
+    },
+    {
+      "address_id": 25,
+      "customer_id": 12,
+      "address_type": "SHIPPING",
+      "line1": "vertex",
+      "line2": "flux",
+      "city": "pulse",
+      "state": "summit",
+      "postal_code": "pulse",
+      "country_code": "ve",
+      "is_default": 0
+    }
+  ],
+  "categories": [
+    {
+      "category_id": 1,
+      "parent_id": null,
+      "category_name": "vector",
+      "is_active": 0
+    },
+    {
+      "category_id": 2,
+      "parent_id": 1,
+      "category_name": "beacon",
+      "is_active": 0
+    },
+    {
+      "category_id": 3,
+      "parent_id": 1,
+      "category_name": "pulse",
+      "is_active": 0
+    },
+    {
+      "category_id": 4,
+      "parent_id": 1,
+      "category_name": "summit",
+      "is_active": 0
+    },
+    {
+      "category_id": 5,
+      "parent_id": 3,
+      "category_name": "zenith",
+      "is_active": 1
+    },
+    {
+      "category_id": 6,
+      "parent_id": 4,
+      "category_name": "alpha",
+      "is_active": 1
+    },
+    {
+      "category_id": 7,
+      "parent_id": 6,
+      "category_name": "alpha",
+      "is_active": 1
+    },
+    {
+      "category_id": 8,
+      "parent_id": 2,
+      "category_name": "alpha",
+      "is_active": 1
+    },
+    {
+      "category_id": 9,
+      "parent_id": 8,
+      "category_name": "willow",
+      "is_active": 0
+    },
+    {
+      "category_id": 10,
+      "parent_id": 6,
+      "category_name": "zenith",
+      "is_active": 0
+    },
+    {
+      "category_id": 11,
+      "parent_id": 1,
+      "category_name": "zenith",
+      "is_active": 1
+    },
+    {
+      "category_id": 12,
+      "parent_id": 3,
+      "category_name": "delta",
+      "is_active": 0
+    },
+    {
+      "category_id": 13,
+      "parent_id": 8,
+      "category_name": "orbit",
+      "is_active": 1
+    },
+    {
+      "category_id": 14,
+      "parent_id": 7,
+      "category_name": "willow",
+      "is_active": 1
+    },
+    {
+      "category_id": 15,
+      "parent_id": 7,
+      "category_name": "ember",
+      "is_active": 1
+    },
+    {
+      "category_id": 16,
+      "parent_id": null,
+      "category_name": "flux",
+      "is_active": 1
+    },
+    {
+      "category_id": 17,
+      "parent_id": 10,
+      "category_name": "ember",
+      "is_active": 1
+    },
+    {
+      "category_id": 18,
+      "parent_id": 8,
+      "category_name": "delta",
+      "is_active": 0
+    },
+    {
+      "category_id": 19,
+      "parent_id": 12,
+      "category_name": "quartz",
+      "is_active": 1
+    },
+    {
+      "category_id": 20,
+      "parent_id": 8,
+      "category_name": "summit",
+      "is_active": 0
+    },
+    {
+      "category_id": 21,
+      "parent_id": 20,
+      "category_name": "nova",
+      "is_active": 0
+    },
+    {
+      "category_id": 22,
+      "parent_id": 7,
+      "category_name": "beacon",
+      "is_active": 1
+    },
+    {
+      "category_id": 23,
+      "parent_id": 16,
+      "category_name": "cascade",
+      "is_active": 0
+    },
+    {
+      "category_id": 24,
+      "parent_id": 1,
+      "category_name": "flux",
+      "is_active": 0
+    },
+    {
+      "category_id": 25,
+      "parent_id": 1,
+      "category_name": "beacon",
+      "is_active": 1
+    }
+  ],
+  "products": [
+    {
+      "product_id": 1,
+      "category_id": 11,
+      "sku": "sku_1",
+      "product_name": "alpha",
+      "unit_price": 919.32,
+      "weight_grams": 896,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2026-06-22 04:29:52"
+    },
+    {
+      "product_id": 2,
+      "category_id": 7,
+      "sku": "sku_2",
+      "product_name": "vertex",
+      "unit_price": 683.24,
+      "weight_grams": 817,
+      "status": "ACTIVE",
+      "created_at": "2025-12-12 06:48:22"
+    },
+    {
+      "product_id": 3,
+      "category_id": 1,
+      "sku": "sku_3",
+      "product_name": "willow",
+      "unit_price": 791.35,
+      "weight_grams": 170,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-09-08 01:51:14"
+    },
+    {
+      "product_id": 4,
+      "category_id": 10,
+      "sku": "sku_4",
+      "product_name": "beacon",
+      "unit_price": 480.42,
+      "weight_grams": 739,
+      "status": "DISCONTINUED",
+      "created_at": "2026-02-16 11:08:16"
+    },
+    {
+      "product_id": 5,
+      "category_id": 12,
+      "sku": "sku_5",
+      "product_name": "beacon",
+      "unit_price": 587.11,
+      "weight_grams": 337,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-07-11 01:43:09"
+    },
+    {
+      "product_id": 6,
+      "category_id": 19,
+      "sku": "sku_6",
+      "product_name": "cascade",
+      "unit_price": 295.84,
+      "weight_grams": 851,
+      "status": "ACTIVE",
+      "created_at": "2025-05-12 04:58:45"
+    },
+    {
+      "product_id": 7,
+      "category_id": 4,
+      "sku": "sku_7",
+      "product_name": "vector",
+      "unit_price": 934.89,
+      "weight_grams": 737,
+      "status": "DISCONTINUED",
+      "created_at": "2025-04-14 12:01:36"
+    },
+    {
+      "product_id": 8,
+      "category_id": 9,
+      "sku": "sku_8",
+      "product_name": "pulse",
+      "unit_price": 111.26,
+      "weight_grams": 476,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-05-16 18:01:42"
+    },
+    {
+      "product_id": 9,
+      "category_id": 25,
+      "sku": "sku_9",
+      "product_name": "ember",
+      "unit_price": 686.24,
+      "weight_grams": 760,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-02-14 02:33:21"
+    },
+    {
+      "product_id": 10,
+      "category_id": 25,
+      "sku": "sku_10",
+      "product_name": "beacon",
+      "unit_price": 420.81,
+      "weight_grams": 855,
+      "status": "ACTIVE",
+      "created_at": "2025-05-16 11:05:00"
+    },
+    {
+      "product_id": 11,
+      "category_id": 3,
+      "sku": "sku_11",
+      "product_name": "nova",
+      "unit_price": 114.16,
+      "weight_grams": 132,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-11-09 23:43:00"
+    },
+    {
+      "product_id": 12,
+      "category_id": 17,
+      "sku": "sku_12",
+      "product_name": "beacon",
+      "unit_price": 694.41,
+      "weight_grams": 977,
+      "status": "ACTIVE",
+      "created_at": "2026-02-10 23:18:35"
+    },
+    {
+      "product_id": 13,
+      "category_id": 18,
+      "sku": "sku_13",
+      "product_name": "delta",
+      "unit_price": 536.01,
+      "weight_grams": 84,
+      "status": "ACTIVE",
+      "created_at": "2026-01-10 08:59:25"
+    },
+    {
+      "product_id": 14,
+      "category_id": 2,
+      "sku": "sku_14",
+      "product_name": "orbit",
+      "unit_price": 299.62,
+      "weight_grams": 78,
+      "status": "DISCONTINUED",
+      "created_at": "2025-03-15 11:30:33"
+    },
+    {
+      "product_id": 15,
+      "category_id": 23,
+      "sku": "sku_15",
+      "product_name": "nova",
+      "unit_price": 215.89,
+      "weight_grams": 721,
+      "status": "DISCONTINUED",
+      "created_at": "2025-04-13 23:10:39"
+    },
+    {
+      "product_id": 16,
+      "category_id": 20,
+      "sku": "sku_16",
+      "product_name": "harbor",
+      "unit_price": 93.82,
+      "weight_grams": 629,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-11-09 14:08:40"
+    },
+    {
+      "product_id": 17,
+      "category_id": 23,
+      "sku": "sku_17",
+      "product_name": "meridian",
+      "unit_price": 828.33,
+      "weight_grams": 948,
+      "status": "ACTIVE",
+      "created_at": "2026-05-10 20:38:00"
+    },
+    {
+      "product_id": 18,
+      "category_id": 20,
+      "sku": "sku_18",
+      "product_name": "vector",
+      "unit_price": 984.99,
+      "weight_grams": 666,
+      "status": "DISCONTINUED",
+      "created_at": "2025-07-05 18:57:08"
+    },
+    {
+      "product_id": 19,
+      "category_id": 17,
+      "sku": "sku_19",
+      "product_name": "prism",
+      "unit_price": 558.24,
+      "weight_grams": 447,
+      "status": "ACTIVE",
+      "created_at": "2025-10-08 13:01:04"
+    },
+    {
+      "product_id": 20,
+      "category_id": 25,
+      "sku": "sku_20",
+      "product_name": "signal",
+      "unit_price": 266.1,
+      "weight_grams": 804,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-05-21 19:20:42"
+    },
+    {
+      "product_id": 21,
+      "category_id": 25,
+      "sku": "sku_21",
+      "product_name": "cascade",
+      "unit_price": 384.39,
+      "weight_grams": 347,
+      "status": "ACTIVE",
+      "created_at": "2025-11-07 00:48:23"
+    },
+    {
+      "product_id": 22,
+      "category_id": 16,
+      "sku": "sku_22",
+      "product_name": "pulse",
+      "unit_price": 880.4,
+      "weight_grams": 21,
+      "status": "DISCONTINUED",
+      "created_at": "2025-09-27 14:14:10"
+    },
+    {
+      "product_id": 23,
+      "category_id": 15,
+      "sku": "sku_23",
+      "product_name": "flux",
+      "unit_price": 848.61,
+      "weight_grams": 990,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-09-29 13:34:02"
+    },
+    {
+      "product_id": 24,
+      "category_id": 3,
+      "sku": "sku_24",
+      "product_name": "delta",
+      "unit_price": 645.21,
+      "weight_grams": 627,
+      "status": "OUT_OF_SEASON",
+      "created_at": "2025-03-15 04:59:42"
+    },
+    {
+      "product_id": 25,
+      "category_id": 15,
+      "sku": "sku_25",
+      "product_name": "beacon",
+      "unit_price": 323.86,
+      "weight_grams": 986,
+      "status": "ACTIVE",
+      "created_at": "2026-04-27 17:13:23"
+    }
+  ],
+  "inventory": [
+    {
+      "inventory_id": 1,
+      "product_id": 12,
+      "warehouse_code": "pulse",
+      "qty_on_hand": 658,
+      "qty_reserved": 454,
+      "updated_at": "2025-08-01 16:46:41"
+    },
+    {
+      "inventory_id": 2,
+      "product_id": 10,
+      "warehouse_code": "vector",
+      "qty_on_hand": 827,
+      "qty_reserved": 966,
+      "updated_at": "2025-05-25 08:12:05"
+    },
+    {
+      "inventory_id": 3,
+      "product_id": 19,
+      "warehouse_code": "matrix",
+      "qty_on_hand": 478,
+      "qty_reserved": 443,
+      "updated_at": "2026-02-05 10:00:00"
+    },
+    {
+      "inventory_id": 4,
+      "product_id": 22,
+      "warehouse_code": "matrix",
+      "qty_on_hand": 243,
+      "qty_reserved": 419,
+      "updated_at": "2026-02-07 14:06:15"
+    },
+    {
+      "inventory_id": 5,
+      "product_id": 20,
+      "warehouse_code": "signal",
+      "qty_on_hand": 963,
+      "qty_reserved": 222,
+      "updated_at": "2026-01-08 23:04:21"
+    },
+    {
+      "inventory_id": 6,
+      "product_id": 22,
+      "warehouse_code": "signal",
+      "qty_on_hand": 816,
+      "qty_reserved": 188,
+      "updated_at": "2026-01-14 03:56:34"
+    },
+    {
+      "inventory_id": 7,
+      "product_id": 6,
+      "warehouse_code": "matrix",
+      "qty_on_hand": 791,
+      "qty_reserved": 225,
+      "updated_at": "2025-02-04 22:09:35"
+    },
+    {
+      "inventory_id": 8,
+      "product_id": 11,
+      "warehouse_code": "ember",
+      "qty_on_hand": 680,
+      "qty_reserved": 737,
+      "updated_at": "2025-05-04 11:33:48"
+    },
+    {
+      "inventory_id": 9,
+      "product_id": 14,
+      "warehouse_code": "prism",
+      "qty_on_hand": 751,
+      "qty_reserved": 624,
+      "updated_at": "2025-07-31 04:56:51"
+    },
+    {
+      "inventory_id": 10,
+      "product_id": 6,
+      "warehouse_code": "orbit",
+      "qty_on_hand": 45,
+      "qty_reserved": 114,
+      "updated_at": "2025-11-29 14:48:52"
+    },
+    {
+      "inventory_id": 11,
+      "product_id": 12,
+      "warehouse_code": "beacon",
+      "qty_on_hand": 973,
+      "qty_reserved": 464,
+      "updated_at": "2025-12-16 04:31:53"
+    },
+    {
+      "inventory_id": 12,
+      "product_id": 1,
+      "warehouse_code": "willow",
+      "qty_on_hand": 912,
+      "qty_reserved": 695,
+      "updated_at": "2025-08-03 04:41:05"
+    },
+    {
+      "inventory_id": 13,
+      "product_id": 11,
+      "warehouse_code": "willow",
+      "qty_on_hand": 141,
+      "qty_reserved": 468,
+      "updated_at": "2025-04-26 09:08:18"
+    },
+    {
+      "inventory_id": 14,
+      "product_id": 24,
+      "warehouse_code": "summit",
+      "qty_on_hand": 334,
+      "qty_reserved": 762,
+      "updated_at": "2025-04-25 09:34:45"
+    },
+    {
+      "inventory_id": 15,
+      "product_id": 20,
+      "warehouse_code": "orbit",
+      "qty_on_hand": 486,
+      "qty_reserved": 284,
+      "updated_at": "2025-10-21 21:58:38"
+    },
+    {
+      "inventory_id": 16,
+      "product_id": 19,
+      "warehouse_code": "harbor",
+      "qty_on_hand": 589,
+      "qty_reserved": 382,
+      "updated_at": "2025-08-17 02:34:49"
+    },
+    {
+      "inventory_id": 17,
+      "product_id": 24,
+      "warehouse_code": "flux",
+      "qty_on_hand": 365,
+      "qty_reserved": 657,
+      "updated_at": "2025-06-02 01:46:53"
+    },
+    {
+      "inventory_id": 18,
+      "product_id": 1,
+      "warehouse_code": "pulse",
+      "qty_on_hand": 491,
+      "qty_reserved": 960,
+      "updated_at": "2026-06-04 18:37:04"
+    },
+    {
+      "inventory_id": 19,
+      "product_id": 22,
+      "warehouse_code": "orbit",
+      "qty_on_hand": 436,
+      "qty_reserved": 627,
+      "updated_at": "2025-01-31 08:51:16"
+    },
+    {
+      "inventory_id": 20,
+      "product_id": 3,
+      "warehouse_code": "harbor",
+      "qty_on_hand": 664,
+      "qty_reserved": 877,
+      "updated_at": "2025-06-13 01:10:00"
+    },
+    {
+      "inventory_id": 21,
+      "product_id": 24,
+      "warehouse_code": "delta",
+      "qty_on_hand": 118,
+      "qty_reserved": 355,
+      "updated_at": "2025-06-26 16:16:25"
+    },
+    {
+      "inventory_id": 22,
+      "product_id": 11,
+      "warehouse_code": "signal",
+      "qty_on_hand": 819,
+      "qty_reserved": 436,
+      "updated_at": "2025-05-29 07:15:34"
+    },
+    {
+      "inventory_id": 23,
+      "product_id": 9,
+      "warehouse_code": "orbit",
+      "qty_on_hand": 621,
+      "qty_reserved": 886,
+      "updated_at": "2025-05-04 17:15:33"
+    },
+    {
+      "inventory_id": 24,
+      "product_id": 20,
+      "warehouse_code": "matrix",
+      "qty_on_hand": 720,
+      "qty_reserved": 670,
+      "updated_at": "2025-07-07 16:01:53"
+    },
+    {
+      "inventory_id": 25,
+      "product_id": 15,
+      "warehouse_code": "matrix",
+      "qty_on_hand": 995,
+      "qty_reserved": 627,
+      "updated_at": "2025-03-16 12:19:23"
+    }
+  ],
+  "orders": [
+    {
+      "order_id": 1,
+      "customer_id": 22,
+      "ship_address_id": 2,
+      "order_date": "2025-09-28 09:55:53",
+      "order_status": "DELIVERED",
+      "order_total": 122.74,
+      "coupon_code": "prism"
+    },
+    {
+      "order_id": 2,
+      "customer_id": 3,
+      "ship_address_id": 9,
+      "order_date": "2025-11-28 02:16:15",
+      "order_status": "REFUNDED",
+      "order_total": 276.66,
+      "coupon_code": "quartz"
+    },
+    {
+      "order_id": 3,
+      "customer_id": 14,
+      "ship_address_id": 22,
+      "order_date": "2026-03-15 07:43:39",
+      "order_status": "PENDING",
+      "order_total": 210.27,
+      "coupon_code": "meridian"
+    },
+    {
+      "order_id": 4,
+      "customer_id": 2,
+      "ship_address_id": 21,
+      "order_date": "2025-08-01 20:51:38",
+      "order_status": "SHIPPED",
+      "order_total": 345.1,
+      "coupon_code": "matrix"
+    },
+    {
+      "order_id": 5,
+      "customer_id": 2,
+      "ship_address_id": 12,
+      "order_date": "2025-12-28 01:39:06",
+      "order_status": "DELIVERED",
+      "order_total": 358.77,
+      "coupon_code": "delta"
+    },
+    {
+      "order_id": 6,
+      "customer_id": 24,
+      "ship_address_id": 2,
+      "order_date": "2025-04-05 22:27:43",
+      "order_status": "PAID",
+      "order_total": 911.01,
+      "coupon_code": "vector"
+    },
+    {
+      "order_id": 7,
+      "customer_id": 1,
+      "ship_address_id": 19,
+      "order_date": "2025-12-29 14:12:13",
+      "order_status": "PENDING",
+      "order_total": 596.81,
+      "coupon_code": "harbor"
+    },
+    {
+      "order_id": 8,
+      "customer_id": 5,
+      "ship_address_id": 15,
+      "order_date": "2026-03-20 02:35:11",
+      "order_status": "PAID",
+      "order_total": 914.62,
+      "coupon_code": "willow"
+    },
+    {
+      "order_id": 9,
+      "customer_id": 7,
+      "ship_address_id": 12,
+      "order_date": "2025-11-11 03:54:17",
+      "order_status": "SHIPPED",
+      "order_total": 456.37,
+      "coupon_code": "beacon"
+    },
+    {
+      "order_id": 10,
+      "customer_id": 3,
+      "ship_address_id": 19,
+      "order_date": "2025-12-01 09:27:29",
+      "order_status": "SHIPPED",
+      "order_total": 367.53,
+      "coupon_code": "summit"
+    },
+    {
+      "order_id": 11,
+      "customer_id": 15,
+      "ship_address_id": 8,
+      "order_date": "2025-05-18 13:01:15",
+      "order_status": "CANCELLED",
+      "order_total": 945.83,
+      "coupon_code": "delta"
+    },
+    {
+      "order_id": 12,
+      "customer_id": 3,
+      "ship_address_id": 2,
+      "order_date": "2026-02-17 20:43:52",
+      "order_status": "REFUNDED",
+      "order_total": 447.49,
+      "coupon_code": "summit"
+    },
+    {
+      "order_id": 13,
+      "customer_id": 11,
+      "ship_address_id": 11,
+      "order_date": "2025-11-19 18:59:37",
+      "order_status": "DELIVERED",
+      "order_total": 592.63,
+      "coupon_code": "nova"
+    },
+    {
+      "order_id": 14,
+      "customer_id": 18,
+      "ship_address_id": 24,
+      "order_date": "2025-01-17 22:54:14",
+      "order_status": "PAID",
+      "order_total": 50.62,
+      "coupon_code": "alpha"
+    },
+    {
+      "order_id": 15,
+      "customer_id": 14,
+      "ship_address_id": 12,
+      "order_date": "2025-02-06 22:49:54",
+      "order_status": "REFUNDED",
+      "order_total": 39.97,
+      "coupon_code": "zenith"
+    },
+    {
+      "order_id": 16,
+      "customer_id": 13,
+      "ship_address_id": 7,
+      "order_date": "2026-05-11 10:54:50",
+      "order_status": "PENDING",
+      "order_total": 772.74,
+      "coupon_code": "ember"
+    },
+    {
+      "order_id": 17,
+      "customer_id": 18,
+      "ship_address_id": 14,
+      "order_date": "2025-08-23 01:17:38",
+      "order_status": "CANCELLED",
+      "order_total": 468.42,
+      "coupon_code": "meridian"
+    },
+    {
+      "order_id": 18,
+      "customer_id": 25,
+      "ship_address_id": 12,
+      "order_date": "2026-05-15 23:13:05",
+      "order_status": "SHIPPED",
+      "order_total": 457.99,
+      "coupon_code": "zenith"
+    },
+    {
+      "order_id": 19,
+      "customer_id": 12,
+      "ship_address_id": 19,
+      "order_date": "2025-07-04 10:44:45",
+      "order_status": "PAID",
+      "order_total": 118.82,
+      "coupon_code": "zenith"
+    },
+    {
+      "order_id": 20,
+      "customer_id": 23,
+      "ship_address_id": 17,
+      "order_date": "2026-01-02 22:42:20",
+      "order_status": "REFUNDED",
+      "order_total": 165.38,
+      "coupon_code": "pulse"
+    },
+    {
+      "order_id": 21,
+      "customer_id": 13,
+      "ship_address_id": 5,
+      "order_date": "2025-01-23 05:06:33",
+      "order_status": "DELIVERED",
+      "order_total": 302.25,
+      "coupon_code": "quartz"
+    },
+    {
+      "order_id": 22,
+      "customer_id": 19,
+      "ship_address_id": 24,
+      "order_date": "2026-02-01 06:54:23",
+      "order_status": "CANCELLED",
+      "order_total": 931.81,
+      "coupon_code": "signal"
+    },
+    {
+      "order_id": 23,
+      "customer_id": 11,
+      "ship_address_id": 21,
+      "order_date": "2025-04-27 11:55:22",
+      "order_status": "PAID",
+      "order_total": 567.22,
+      "coupon_code": "ember"
+    },
+    {
+      "order_id": 24,
+      "customer_id": 5,
+      "ship_address_id": 14,
+      "order_date": "2025-11-23 20:44:36",
+      "order_status": "DELIVERED",
+      "order_total": 387.4,
+      "coupon_code": "vector"
+    },
+    {
+      "order_id": 25,
+      "customer_id": 25,
+      "ship_address_id": 5,
+      "order_date": "2026-04-16 22:12:28",
+      "order_status": "PENDING",
+      "order_total": 549.77,
+      "coupon_code": "beacon"
+    }
+  ],
+  "order_items": [
+    {
+      "order_item_id": 1,
+      "order_id": 10,
+      "product_id": 2,
+      "quantity": 573,
+      "unit_price": 783.56,
+      "discount_pct": 35.58
+    },
+    {
+      "order_item_id": 2,
+      "order_id": 2,
+      "product_id": 24,
+      "quantity": 259,
+      "unit_price": 32.38,
+      "discount_pct": 87.96
+    },
+    {
+      "order_item_id": 3,
+      "order_id": 13,
+      "product_id": 5,
+      "quantity": 637,
+      "unit_price": 845.19,
+      "discount_pct": 12.66
+    },
+    {
+      "order_item_id": 4,
+      "order_id": 17,
+      "product_id": 13,
+      "quantity": 741,
+      "unit_price": 570.95,
+      "discount_pct": 10.84
+    },
+    {
+      "order_item_id": 5,
+      "order_id": 4,
+      "product_id": 5,
+      "quantity": 81,
+      "unit_price": 643.06,
+      "discount_pct": 28.43
+    },
+    {
+      "order_item_id": 6,
+      "order_id": 25,
+      "product_id": 2,
+      "quantity": 300,
+      "unit_price": 898.42,
+      "discount_pct": 27.57
+    },
+    {
+      "order_item_id": 7,
+      "order_id": 21,
+      "product_id": 20,
+      "quantity": 821,
+      "unit_price": 501.74,
+      "discount_pct": 78.47
+    },
+    {
+      "order_item_id": 8,
+      "order_id": 25,
+      "product_id": 16,
+      "quantity": 981,
+      "unit_price": 879.91,
+      "discount_pct": 82.76
+    },
+    {
+      "order_item_id": 9,
+      "order_id": 24,
+      "product_id": 15,
+      "quantity": 412,
+      "unit_price": 410.45,
+      "discount_pct": 3.63
+    },
+    {
+      "order_item_id": 10,
+      "order_id": 1,
+      "product_id": 22,
+      "quantity": 337,
+      "unit_price": 927.73,
+      "discount_pct": 10.97
+    },
+    {
+      "order_item_id": 11,
+      "order_id": 19,
+      "product_id": 14,
+      "quantity": 927,
+      "unit_price": 363.18,
+      "discount_pct": 50.42
+    },
+    {
+      "order_item_id": 12,
+      "order_id": 5,
+      "product_id": 8,
+      "quantity": 204,
+      "unit_price": 775.16,
+      "discount_pct": 84.76
+    },
+    {
+      "order_item_id": 13,
+      "order_id": 17,
+      "product_id": 6,
+      "quantity": 903,
+      "unit_price": 224.49,
+      "discount_pct": 25.52
+    },
+    {
+      "order_item_id": 14,
+      "order_id": 14,
+      "product_id": 25,
+      "quantity": 348,
+      "unit_price": 801.34,
+      "discount_pct": 57.47
+    },
+    {
+      "order_item_id": 15,
+      "order_id": 5,
+      "product_id": 22,
+      "quantity": 894,
+      "unit_price": 425.34,
+      "discount_pct": 48.57
+    },
+    {
+      "order_item_id": 16,
+      "order_id": 12,
+      "product_id": 4,
+      "quantity": 31,
+      "unit_price": 301.48,
+      "discount_pct": 45.63
+    },
+    {
+      "order_item_id": 17,
+      "order_id": 9,
+      "product_id": 19,
+      "quantity": 824,
+      "unit_price": 0.25,
+      "discount_pct": 22.41
+    },
+    {
+      "order_item_id": 18,
+      "order_id": 8,
+      "product_id": 5,
+      "quantity": 710,
+      "unit_price": 8.73,
+      "discount_pct": 34.67
+    },
+    {
+      "order_item_id": 19,
+      "order_id": 17,
+      "product_id": 1,
+      "quantity": 659,
+      "unit_price": 60.19,
+      "discount_pct": 53.69
+    },
+    {
+      "order_item_id": 20,
+      "order_id": 14,
+      "product_id": 6,
+      "quantity": 765,
+      "unit_price": 18.26,
+      "discount_pct": 57.2
+    },
+    {
+      "order_item_id": 21,
+      "order_id": 17,
+      "product_id": 4,
+      "quantity": 396,
+      "unit_price": 440.27,
+      "discount_pct": 8.38
+    },
+    {
+      "order_item_id": 22,
+      "order_id": 1,
+      "product_id": 6,
+      "quantity": 181,
+      "unit_price": 179.05,
+      "discount_pct": 4.52
+    },
+    {
+      "order_item_id": 23,
+      "order_id": 1,
+      "product_id": 7,
+      "quantity": 689,
+      "unit_price": 887.73,
+      "discount_pct": 84.18
+    },
+    {
+      "order_item_id": 24,
+      "order_id": 23,
+      "product_id": 8,
+      "quantity": 916,
+      "unit_price": 820.13,
+      "discount_pct": 85.84
+    },
+    {
+      "order_item_id": 25,
+      "order_id": 16,
+      "product_id": 21,
+      "quantity": 712,
+      "unit_price": 387.67,
+      "discount_pct": 44.77
+    }
+  ],
+  "payments": [
+    {
+      "payment_id": 1,
+      "order_id": 8,
+      "payment_method": "UPI",
+      "amount": 350.94,
+      "payment_status": "FAILED",
+      "paid_at": "2025-01-21 03:16:31"
+    },
+    {
+      "payment_id": 2,
+      "order_id": 18,
+      "payment_method": "NETBANKING",
+      "amount": 951.26,
+      "payment_status": "REFUNDED",
+      "paid_at": "2026-06-20 01:26:34"
+    },
+    {
+      "payment_id": 3,
+      "order_id": 9,
+      "payment_method": "NETBANKING",
+      "amount": 250.68,
+      "payment_status": "INITIATED",
+      "paid_at": "2025-06-06 05:36:14"
+    },
+    {
+      "payment_id": 4,
+      "order_id": 21,
+      "payment_method": "CARD",
+      "amount": 58.11,
+      "payment_status": "SUCCESS",
+      "paid_at": "2025-12-14 01:48:31"
+    },
+    {
+      "payment_id": 5,
+      "order_id": 22,
+      "payment_method": "CARD",
+      "amount": 186.68,
+      "payment_status": "FAILED",
+      "paid_at": "2025-03-31 17:11:22"
+    },
+    {
+      "payment_id": 6,
+      "order_id": 1,
+      "payment_method": "CARD",
+      "amount": 31.91,
+      "payment_status": "SUCCESS",
+      "paid_at": "2025-02-14 11:54:41"
+    },
+    {
+      "payment_id": 7,
+      "order_id": 18,
+      "payment_method": "CARD",
+      "amount": 978.62,
+      "payment_status": "REFUNDED",
+      "paid_at": "2025-07-08 22:14:10"
+    },
+    {
+      "payment_id": 8,
+      "order_id": 20,
+      "payment_method": "CARD",
+      "amount": 668.6,
+      "payment_status": "INITIATED",
+      "paid_at": "2025-08-03 07:05:07"
+    },
+    {
+      "payment_id": 9,
+      "order_id": 15,
+      "payment_method": "NETBANKING",
+      "amount": 612.82,
+      "payment_status": "SUCCESS",
+      "paid_at": "2025-05-23 05:05:15"
+    },
+    {
+      "payment_id": 10,
+      "order_id": 18,
+      "payment_method": "CARD",
+      "amount": 968.59,
+      "payment_status": "INITIATED",
+      "paid_at": "2026-06-04 13:07:33"
+    },
+    {
+      "payment_id": 11,
+      "order_id": 24,
+      "payment_method": "NETBANKING",
+      "amount": 964.55,
+      "payment_status": "REFUNDED",
+      "paid_at": "2025-08-30 14:33:52"
+    },
+    {
+      "payment_id": 12,
+      "order_id": 7,
+      "payment_method": "COD",
+      "amount": 330.58,
+      "payment_status": "REFUNDED",
+      "paid_at": "2025-04-05 14:32:02"
+    },
+    {
+      "payment_id": 13,
+      "order_id": 1,
+      "payment_method": "COD",
+      "amount": 298.78,
+      "payment_status": "INITIATED",
+      "paid_at": "2025-07-06 20:23:28"
+    },
+    {
+      "payment_id": 14,
+      "order_id": 16,
+      "payment_method": "WALLET",
+      "amount": 976.24,
+      "payment_status": "SUCCESS",
+      "paid_at": "2025-07-18 01:40:05"
+    },
+    {
+      "payment_id": 15,
+      "order_id": 16,
+      "payment_method": "CARD",
+      "amount": 915.73,
+      "payment_status": "INITIATED",
+      "paid_at": "2025-04-09 10:16:45"
+    },
+    {
+      "payment_id": 16,
+      "order_id": 4,
+      "payment_method": "CARD",
+      "amount": 509.62,
+      "payment_status": "FAILED",
+      "paid_at": "2026-05-21 11:23:46"
+    },
+    {
+      "payment_id": 17,
+      "order_id": 22,
+      "payment_method": "WALLET",
+      "amount": 530.02,
+      "payment_status": "SUCCESS",
+      "paid_at": "2026-01-19 17:39:32"
+    },
+    {
+      "payment_id": 18,
+      "order_id": 2,
+      "payment_method": "NETBANKING",
+      "amount": 584.26,
+      "payment_status": "SUCCESS",
+      "paid_at": "2025-04-06 03:11:44"
+    },
+    {
+      "payment_id": 19,
+      "order_id": 14,
+      "payment_method": "NETBANKING",
+      "amount": 374.23,
+      "payment_status": "INITIATED",
+      "paid_at": "2025-11-30 00:53:56"
+    },
+    {
+      "payment_id": 20,
+      "order_id": 25,
+      "payment_method": "COD",
+      "amount": 437.73,
+      "payment_status": "REFUNDED",
+      "paid_at": "2025-06-16 01:17:25"
+    },
+    {
+      "payment_id": 21,
+      "order_id": 1,
+      "payment_method": "COD",
+      "amount": 544.4,
+      "payment_status": "REFUNDED",
+      "paid_at": "2025-03-21 15:38:46"
+    },
+    {
+      "payment_id": 22,
+      "order_id": 11,
+      "payment_method": "COD",
+      "amount": 829.56,
+      "payment_status": "INITIATED",
+      "paid_at": "2025-06-28 02:47:54"
+    },
+    {
+      "payment_id": 23,
+      "order_id": 6,
+      "payment_method": "WALLET",
+      "amount": 562.2,
+      "payment_status": "REFUNDED",
+      "paid_at": "2026-04-20 02:52:00"
+    },
+    {
+      "payment_id": 24,
+      "order_id": 25,
+      "payment_method": "COD",
+      "amount": 998.04,
+      "payment_status": "INITIATED",
+      "paid_at": "2026-05-10 07:05:56"
+    },
+    {
+      "payment_id": 25,
+      "order_id": 24,
+      "payment_method": "CARD",
+      "amount": 788.1,
+      "payment_status": "INITIATED",
+      "paid_at": "2026-03-29 01:07:05"
+    }
+  ],
+  "shipments": [
+    {
+      "shipment_id": 1,
+      "order_id": 23,
+      "carrier": "beacon",
+      "tracking_number": "tracking_number_1",
+      "shipped_at": "2025-03-24 11:14:54",
+      "delivered_at": "2025-02-26 05:01:26",
+      "shipment_status": "PREPARING"
+    },
+    {
+      "shipment_id": 2,
+      "order_id": 16,
+      "carrier": "nova",
+      "tracking_number": "tracking_number_2",
+      "shipped_at": "2026-02-11 19:07:32",
+      "delivered_at": "2025-08-02 21:55:17",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 3,
+      "order_id": 9,
+      "carrier": "signal",
+      "tracking_number": "tracking_number_3",
+      "shipped_at": "2025-06-18 16:40:50",
+      "delivered_at": "2025-06-06 20:46:44",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 4,
+      "order_id": 23,
+      "carrier": "signal",
+      "tracking_number": "tracking_number_4",
+      "shipped_at": "2025-03-10 07:47:01",
+      "delivered_at": "2025-12-25 22:55:02",
+      "shipment_status": "RETURNED"
+    },
+    {
+      "shipment_id": 5,
+      "order_id": 9,
+      "carrier": "summit",
+      "tracking_number": "tracking_number_5",
+      "shipped_at": "2026-04-11 23:31:50",
+      "delivered_at": "2025-06-16 08:14:25",
+      "shipment_status": "RETURNED"
+    },
+    {
+      "shipment_id": 6,
+      "order_id": 6,
+      "carrier": "orbit",
+      "tracking_number": "tracking_number_6",
+      "shipped_at": "2025-11-03 14:35:05",
+      "delivered_at": "2026-01-26 11:12:41",
+      "shipment_status": "PREPARING"
+    },
+    {
+      "shipment_id": 7,
+      "order_id": 3,
+      "carrier": "vertex",
+      "tracking_number": "tracking_number_7",
+      "shipped_at": "2026-03-14 13:35:29",
+      "delivered_at": "2025-11-10 09:13:15",
+      "shipment_status": "IN_TRANSIT"
+    },
+    {
+      "shipment_id": 8,
+      "order_id": 1,
+      "carrier": "delta",
+      "tracking_number": "tracking_number_8",
+      "shipped_at": "2026-05-06 13:07:01",
+      "delivered_at": "2026-05-27 19:32:06",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 9,
+      "order_id": 5,
+      "carrier": "harbor",
+      "tracking_number": "tracking_number_9",
+      "shipped_at": "2025-03-14 06:54:28",
+      "delivered_at": "2026-01-18 04:14:29",
+      "shipment_status": "RETURNED"
+    },
+    {
+      "shipment_id": 10,
+      "order_id": 22,
+      "carrier": "matrix",
+      "tracking_number": "tracking_number_10",
+      "shipped_at": "2025-04-09 00:57:41",
+      "delivered_at": "2026-05-18 03:10:14",
+      "shipment_status": "IN_TRANSIT"
+    },
+    {
+      "shipment_id": 11,
+      "order_id": 20,
+      "carrier": "prism",
+      "tracking_number": "tracking_number_11",
+      "shipped_at": "2025-11-18 20:37:06",
+      "delivered_at": "2025-02-09 03:36:57",
+      "shipment_status": "RETURNED"
+    },
+    {
+      "shipment_id": 12,
+      "order_id": 9,
+      "carrier": "alpha",
+      "tracking_number": "tracking_number_12",
+      "shipped_at": "2026-04-02 22:42:57",
+      "delivered_at": "2025-05-03 03:33:06",
+      "shipment_status": "PREPARING"
+    },
+    {
+      "shipment_id": 13,
+      "order_id": 2,
+      "carrier": "zenith",
+      "tracking_number": "tracking_number_13",
+      "shipped_at": "2025-11-05 15:14:36",
+      "delivered_at": "2026-04-16 01:02:32",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 14,
+      "order_id": 21,
+      "carrier": "quartz",
+      "tracking_number": "tracking_number_14",
+      "shipped_at": "2025-06-07 04:59:44",
+      "delivered_at": "2025-06-20 22:27:26",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 15,
+      "order_id": 10,
+      "carrier": "signal",
+      "tracking_number": "tracking_number_15",
+      "shipped_at": "2025-06-06 22:30:52",
+      "delivered_at": "2025-09-19 07:37:54",
+      "shipment_status": "IN_TRANSIT"
+    },
+    {
+      "shipment_id": 16,
+      "order_id": 17,
+      "carrier": "orbit",
+      "tracking_number": "tracking_number_16",
+      "shipped_at": "2025-09-08 00:43:21",
+      "delivered_at": "2025-07-04 20:57:51",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 17,
+      "order_id": 20,
+      "carrier": "summit",
+      "tracking_number": "tracking_number_17",
+      "shipped_at": "2025-10-14 15:12:13",
+      "delivered_at": "2025-03-28 03:52:34",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 18,
+      "order_id": 24,
+      "carrier": "matrix",
+      "tracking_number": "tracking_number_18",
+      "shipped_at": "2025-11-03 07:01:39",
+      "delivered_at": "2025-11-14 23:09:01",
+      "shipment_status": "IN_TRANSIT"
+    },
+    {
+      "shipment_id": 19,
+      "order_id": 18,
+      "carrier": "nova",
+      "tracking_number": "tracking_number_19",
+      "shipped_at": "2025-05-31 01:26:49",
+      "delivered_at": "2026-01-16 15:32:57",
+      "shipment_status": "IN_TRANSIT"
+    },
+    {
+      "shipment_id": 20,
+      "order_id": 23,
+      "carrier": "delta",
+      "tracking_number": "tracking_number_20",
+      "shipped_at": "2026-03-24 09:20:39",
+      "delivered_at": "2025-12-15 18:22:43",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 21,
+      "order_id": 3,
+      "carrier": "signal",
+      "tracking_number": "tracking_number_21",
+      "shipped_at": "2025-01-03 05:07:57",
+      "delivered_at": "2026-04-15 08:32:42",
+      "shipment_status": "DELIVERED"
+    },
+    {
+      "shipment_id": 22,
+      "order_id": 17,
+      "carrier": "willow",
+      "tracking_number": "tracking_number_22",
+      "shipped_at": "2026-01-30 15:57:06",
+      "delivered_at": "2025-03-30 11:11:27",
+      "shipment_status": "PREPARING"
+    },
+    {
+      "shipment_id": 23,
+      "order_id": 14,
+      "carrier": "willow",
+      "tracking_number": "tracking_number_23",
+      "shipped_at": "2025-12-05 16:44:02",
+      "delivered_at": "2025-11-02 06:25:41",
+      "shipment_status": "RETURNED"
+    },
+    {
+      "shipment_id": 24,
+      "order_id": 6,
+      "carrier": "alpha",
+      "tracking_number": "tracking_number_24",
+      "shipped_at": "2025-11-19 07:36:04",
+      "delivered_at": "2026-04-18 05:26:33",
+      "shipment_status": "RETURNED"
+    },
+    {
+      "shipment_id": 25,
+      "order_id": 6,
+      "carrier": "delta",
+      "tracking_number": "tracking_number_25",
+      "shipped_at": "2025-08-02 03:44:29",
+      "delivered_at": "2026-06-25 22:27:43",
+      "shipment_status": "RETURNED"
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": 1,
+      "product_id": 2,
+      "customer_id": 25,
+      "rating": 2,
+      "review_text": "alpha",
+      "created_at": "2025-09-02 19:14:32"
+    },
+    {
+      "review_id": 2,
+      "product_id": 5,
+      "customer_id": 11,
+      "rating": 2,
+      "review_text": "beacon",
+      "created_at": "2026-01-15 04:58:57"
+    },
+    {
+      "review_id": 3,
+      "product_id": 21,
+      "customer_id": 8,
+      "rating": 1,
+      "review_text": "beacon",
+      "created_at": "2026-04-20 09:05:29"
+    },
+    {
+      "review_id": 4,
+      "product_id": 15,
+      "customer_id": 16,
+      "rating": 2,
+      "review_text": "alpha",
+      "created_at": "2026-01-24 11:22:07"
+    },
+    {
+      "review_id": 5,
+      "product_id": 19,
+      "customer_id": 24,
+      "rating": 2,
+      "review_text": "zenith",
+      "created_at": "2025-10-31 10:16:39"
+    },
+    {
+      "review_id": 6,
+      "product_id": 17,
+      "customer_id": 1,
+      "rating": 1,
+      "review_text": "matrix",
+      "created_at": "2025-06-13 12:26:53"
+    },
+    {
+      "review_id": 7,
+      "product_id": 14,
+      "customer_id": 12,
+      "rating": 4,
+      "review_text": "cascade",
+      "created_at": "2026-06-27 19:33:58"
+    },
+    {
+      "review_id": 8,
+      "product_id": 24,
+      "customer_id": 17,
+      "rating": 4,
+      "review_text": "matrix",
+      "created_at": "2026-06-03 05:50:12"
+    },
+    {
+      "review_id": 9,
+      "product_id": 15,
+      "customer_id": 5,
+      "rating": 4,
+      "review_text": "orbit",
+      "created_at": "2025-02-01 00:32:01"
+    },
+    {
+      "review_id": 10,
+      "product_id": 19,
+      "customer_id": 20,
+      "rating": 3,
+      "review_text": "signal",
+      "created_at": "2025-12-07 13:56:33"
+    },
+    {
+      "review_id": 11,
+      "product_id": 13,
+      "customer_id": 8,
+      "rating": 3,
+      "review_text": "matrix",
+      "created_at": "2026-06-07 11:32:06"
+    },
+    {
+      "review_id": 12,
+      "product_id": 25,
+      "customer_id": 7,
+      "rating": 5,
+      "review_text": "prism",
+      "created_at": "2026-01-09 15:39:16"
+    },
+    {
+      "review_id": 13,
+      "product_id": 13,
+      "customer_id": 5,
+      "rating": 1,
+      "review_text": "flux",
+      "created_at": "2026-05-06 08:14:29"
+    },
+    {
+      "review_id": 14,
+      "product_id": 4,
+      "customer_id": 11,
+      "rating": 5,
+      "review_text": "harbor",
+      "created_at": "2025-09-04 07:15:01"
+    },
+    {
+      "review_id": 15,
+      "product_id": 15,
+      "customer_id": 13,
+      "rating": 5,
+      "review_text": "matrix",
+      "created_at": "2026-04-02 18:36:39"
+    },
+    {
+      "review_id": 16,
+      "product_id": 3,
+      "customer_id": 22,
+      "rating": 3,
+      "review_text": "zenith",
+      "created_at": "2025-10-05 19:18:14"
+    },
+    {
+      "review_id": 17,
+      "product_id": 2,
+      "customer_id": 22,
+      "rating": 2,
+      "review_text": "harbor",
+      "created_at": "2026-03-13 06:58:29"
+    },
+    {
+      "review_id": 18,
+      "product_id": 25,
+      "customer_id": 16,
+      "rating": 2,
+      "review_text": "summit",
+      "created_at": "2025-07-15 03:57:31"
+    },
+    {
+      "review_id": 19,
+      "product_id": 16,
+      "customer_id": 10,
+      "rating": 1,
+      "review_text": "orbit",
+      "created_at": "2025-11-21 12:38:03"
+    },
+    {
+      "review_id": 20,
+      "product_id": 11,
+      "customer_id": 10,
+      "rating": 5,
+      "review_text": "ember",
+      "created_at": "2026-06-03 23:04:36"
+    },
+    {
+      "review_id": 21,
+      "product_id": 1,
+      "customer_id": 10,
+      "rating": 4,
+      "review_text": "harbor",
+      "created_at": "2025-07-19 19:59:27"
+    },
+    {
+      "review_id": 22,
+      "product_id": 4,
+      "customer_id": 6,
+      "rating": 3,
+      "review_text": "ember",
+      "created_at": "2025-09-17 06:30:44"
+    },
+    {
+      "review_id": 23,
+      "product_id": 6,
+      "customer_id": 5,
+      "rating": 5,
+      "review_text": "matrix",
+      "created_at": "2025-06-28 15:13:03"
+    },
+    {
+      "review_id": 24,
+      "product_id": 3,
+      "customer_id": 21,
+      "rating": 4,
+      "review_text": "summit",
+      "created_at": "2025-02-22 03:33:13"
+    },
+    {
+      "review_id": 25,
+      "product_id": 24,
+      "customer_id": 12,
+      "rating": 3,
+      "review_text": "pulse",
+      "created_at": "2025-10-01 20:47:52"
+    }
+  ]
+}

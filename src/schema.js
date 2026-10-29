@@ -3,7 +3,7 @@
 // columns, types, PK/FK, NOT NULL, UNIQUE (column + table level),
 // CHECK (col IN (...)), CHECK (col BETWEEN a AND b).
 
-function splitTopLevel(body) {
+export function splitTopLevel(body) {
   const parts = []; let depth = 0, cur = '', inStr = false;
   for (const ch of body) {
     if (ch === "'" ) inStr = !inStr;
@@ -60,14 +60,21 @@ export function parseDDL(sql) {
       const up = part.toUpperCase();
       if (up.startsWith('PRIMARY KEY')) {
         const cols = (part.match(/\(([^)]*)\)/) || [])[1] || '';
-        for (const cn of cols.split(',').map(s => s.trim().replace(/["`]/g, ''))) {
+        const names = cols.split(',').map(s => s.trim().replace(/["`]/g, '')).filter(Boolean);
+        for (const cn of names) {
           const c = table.columns.find(x => x.name === cn);
           if (c) { c.isPk = true; c.notNull = true; }
         }
+        // composite PK is a uniqueness constraint over its columns
+        if (names.length > 1) table.uniqueSets.push(names);
       } else if (up.startsWith('UNIQUE')) {
         const cols = (part.match(/\(([^)]*)\)/) || [])[1] || '';
         const names = cols.split(',').map(s => s.trim().replace(/["`]/g, '')).filter(Boolean);
-        if (names.length) table.uniqueSets.push(names);
+        // single-column table-level UNIQUE == column-level UNIQUE (per-column
+        // handling has the graceful pool-exhaustion fallback)
+        const single = names.length === 1 && table.columns.find(x => x.name === names[0]);
+        if (single) single.unique = true;
+        else if (names.length) table.uniqueSets.push(names);
       } else if (up.startsWith('FOREIGN KEY')) {
         const fk = part.match(/FOREIGN\s+KEY\s*\(([^)]*)\)\s*REFERENCES\s+["`]?(\w+)["`]?\s*(?:\(([^)]*)\))?/i);
         if (fk) {
@@ -116,6 +123,12 @@ export function parseDDL(sql) {
         c.fkColumn = pk ? pk.name : null;
       }
     }
+    // a single-column PK that is also an FK (1:1 child) must be unique;
+    // a single-column non-integer PK (char/varchar/date codes) is unique too —
+    // it can't use the integer sequence generator
+    const pkCols = t.columns.filter(c => c.isPk);
+    if (pkCols.length === 1 && (pkCols[0].fkTable || !/INT|SERIAL/.test(pkCols[0].dtype)))
+      pkCols[0].unique = true;
   }
   return tables;
 }

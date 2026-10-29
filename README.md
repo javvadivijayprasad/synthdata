@@ -26,7 +26,11 @@ npx @vijaypjavvadi/synthdata generate -s schema.sql -P plan.yaml -o data.db --cs
   (`--csv dir`), SQL inserts (`--sql file`), **PostgreSQL load script** (`--pg file.sql`,
   load with `psql -d your_db -f file.sql` — DDL + data in one transaction, identity
   columns handled with `OVERRIDING SYSTEM VALUE` and sequences resumed via `setval`).
-- `--seed 42` → byte-identical output every run.
+  **MySQL / MariaDB load script** (`--mysql file.sql`, load with `mysql your_db < file.sql` —
+  identity → `AUTO_INCREMENT`, inline FKs hoisted to real `FOREIGN KEY` constraints).
+- `--seed 42` → byte-identical output every run. `--table-seed products=7,orders=99`
+  (or `seed:` under a table in the plan) re-rolls **only** those tables — every other
+  table stays byte-identical, foreign keys still resolve.
 - `--profile functional|edge|negative|volume` — the four kinds of test data teams need:
   **functional** realistic happy-path data (default) · **edge** valid boundary data
   (CHECK-range endpoints, max-length strings, NULLs where allowed, every enum value —
@@ -58,6 +62,7 @@ seed: 42
 tables:
   customers:
     rows: 2000
+    seed: 7            # optional per-table seed (CLI --table-seed customers=7 overrides it)
     columns:
       customer_id:  {gen: sequence}
       email:        {gen: template, format: "user{seq}@example.com", unique: true}

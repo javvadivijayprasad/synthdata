@@ -159,11 +159,16 @@ describe('engine: referential integrity across the 3-table graph', () => {
     assertReferentialIntegrity(tables, data);
   });
 
-  it('fails loudly, naming the child column, when the parent has no rows', () => {
-    assert.throws(
-      () => generate(GRAPH, { tables: { customers: { rows: 0 }, orders: { rows: 10 }, order_items: { rows: 10 } } }),
-      /orders\.customer_id: no parent keys for customers\.customer_id/,
-    );
+  it('warns and falls back to int (never aborts) when the parent has no rows — v1.2.2 contract', () => {
+    // Since v1.2.2 an empty/unresolvable FK pool no longer kills the run:
+    // the engine warns on stderr and generates plausible ints, so the other
+    // tables are never lost (dellstore2 / Pagila partitioned-table behaviour).
+    const { data } = generate(GRAPH,
+      { tables: { customers: { rows: 0 }, orders: { rows: 10 }, order_items: { rows: 10 } } });
+    assert.equal(data.customers.length, 0);
+    assert.equal(data.orders.length, 10, 'orders must still generate');
+    assert.equal(data.order_items.length, 10, 'grandchildren must still generate');
+    for (const o of data.orders) assert.equal(typeof o.customer_id, 'number');
   });
 });
 

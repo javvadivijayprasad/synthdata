@@ -1,0 +1,2372 @@
+{
+  "branches": [
+    {
+      "branch_id": 1,
+      "branch_code": "000001",
+      "branch_name": "delta",
+      "ifsc_code": "000001",
+      "city": "vector",
+      "opened_date": "2025-03-14"
+    },
+    {
+      "branch_id": 2,
+      "branch_code": "000002",
+      "branch_name": "meridian",
+      "ifsc_code": "000002",
+      "city": "quartz",
+      "opened_date": "2025-01-03"
+    },
+    {
+      "branch_id": 3,
+      "branch_code": "000003",
+      "branch_name": "orbit",
+      "ifsc_code": "000003",
+      "city": "vertex",
+      "opened_date": "2026-04-14"
+    },
+    {
+      "branch_id": 4,
+      "branch_code": "000004",
+      "branch_name": "ember",
+      "ifsc_code": "000004",
+      "city": "meridian",
+      "opened_date": "2025-12-27"
+    },
+    {
+      "branch_id": 5,
+      "branch_code": "000005",
+      "branch_name": "prism",
+      "ifsc_code": "000005",
+      "city": "matrix",
+      "opened_date": "2025-11-28"
+    },
+    {
+      "branch_id": 6,
+      "branch_code": "000006",
+      "branch_name": "flux",
+      "ifsc_code": "000006",
+      "city": "alpha",
+      "opened_date": "2025-01-28"
+    },
+    {
+      "branch_id": 7,
+      "branch_code": "000007",
+      "branch_name": "beacon",
+      "ifsc_code": "000007",
+      "city": "summit",
+      "opened_date": "2025-06-19"
+    },
+    {
+      "branch_id": 8,
+      "branch_code": "000008",
+      "branch_name": "harbor",
+      "ifsc_code": "000008",
+      "city": "quartz",
+      "opened_date": "2026-03-03"
+    },
+    {
+      "branch_id": 9,
+      "branch_code": "000009",
+      "branch_name": "cascade",
+      "ifsc_code": "000009",
+      "city": "flux",
+      "opened_date": "2025-07-08"
+    },
+    {
+      "branch_id": 10,
+      "branch_code": "000010",
+      "branch_name": "beacon",
+      "ifsc_code": "000010",
+      "city": "flux",
+      "opened_date": "2025-11-04"
+    },
+    {
+      "branch_id": 11,
+      "branch_code": "000011",
+      "branch_name": "orbit",
+      "ifsc_code": "000011",
+      "city": "matrix",
+      "opened_date": "2025-03-09"
+    },
+    {
+      "branch_id": 12,
+      "branch_code": "000012",
+      "branch_name": "delta",
+      "ifsc_code": "000012",
+      "city": "signal",
+      "opened_date": "2026-04-21"
+    },
+    {
+      "branch_id": 13,
+      "branch_code": "000013",
+      "branch_name": "ember",
+      "ifsc_code": "000013",
+      "city": "harbor",
+      "opened_date": "2026-05-06"
+    },
+    {
+      "branch_id": 14,
+      "branch_code": "000014",
+      "branch_name": "meridian",
+      "ifsc_code": "000014",
+      "city": "zenith",
+      "opened_date": "2025-04-21"
+    },
+    {
+      "branch_id": 15,
+      "branch_code": "000015",
+      "branch_name": "willow",
+      "ifsc_code": "000015",
+      "city": "zenith",
+      "opened_date": "2026-06-12"
+    },
+    {
+      "branch_id": 16,
+      "branch_code": "000016",
+      "branch_name": "vertex",
+      "ifsc_code": "000016",
+      "city": "vector",
+      "opened_date": "2026-06-18"
+    },
+    {
+      "branch_id": 17,
+      "branch_code": "000017",
+      "branch_name": "signal",
+      "ifsc_code": "000017",
+      "city": "vertex",
+      "opened_date": "2026-03-21"
+    },
+    {
+      "branch_id": 18,
+      "branch_code": "000018",
+      "branch_name": "quartz",
+      "ifsc_code": "000018",
+      "city": "flux",
+      "opened_date": "2026-04-12"
+    },
+    {
+      "branch_id": 19,
+      "branch_code": "000019",
+      "branch_name": "cascade",
+      "ifsc_code": "000019",
+      "city": "harbor",
+      "opened_date": "2025-10-08"
+    },
+    {
+      "branch_id": 20,
+      "branch_code": "000020",
+      "branch_name": "flux",
+      "ifsc_code": "000020",
+      "city": "zenith",
+      "opened_date": "2025-07-09"
+    },
+    {
+      "branch_id": 21,
+      "branch_code": "000021",
+      "branch_name": "prism",
+      "ifsc_code": "000021",
+      "city": "orbit",
+      "opened_date": "2026-02-01"
+    },
+    {
+      "branch_id": 22,
+      "branch_code": "000022",
+      "branch_name": "orbit",
+      "ifsc_code": "000022",
+      "city": "pulse",
+      "opened_date": "2025-10-25"
+    },
+    {
+      "branch_id": 23,
+      "branch_code": "000023",
+      "branch_name": "pulse",
+      "ifsc_code": "000023",
+      "city": "delta",
+      "opened_date": "2025-01-25"
+    },
+    {
+      "branch_id": 24,
+      "branch_code": "000024",
+      "branch_name": "willow",
+      "ifsc_code": "000024",
+      "city": "willow",
+      "opened_date": "2025-07-19"
+    },
+    {
+      "branch_id": 25,
+      "branch_code": "000025",
+      "branch_name": "ember",
+      "ifsc_code": "000025",
+      "city": "nova",
+      "opened_date": "2025-12-22"
+    }
+  ],
+  "customers": [
+    {
+      "customer_id": 1,
+      "branch_id": 12,
+      "full_name": "summit",
+      "date_of_birth": "2025-02-02",
+      "kyc_status": "PENDING",
+      "risk_rating": "MEDIUM",
+      "email": "email_1",
+      "phone": "nova",
+      "created_at": "2026-03-06 21:11:09"
+    },
+    {
+      "customer_id": 2,
+      "branch_id": 5,
+      "full_name": "delta",
+      "date_of_birth": "2026-02-12",
+      "kyc_status": "REJECTED",
+      "risk_rating": "LOW",
+      "email": "email_2",
+      "phone": "zenith",
+      "created_at": "2026-01-30 07:38:22"
+    },
+    {
+      "customer_id": 3,
+      "branch_id": 25,
+      "full_name": "vector",
+      "date_of_birth": "2025-03-23",
+      "kyc_status": "PENDING",
+      "risk_rating": "MEDIUM",
+      "email": "email_3",
+      "phone": "quartz",
+      "created_at": "2025-02-23 08:54:39"
+    },
+    {
+      "customer_id": 4,
+      "branch_id": 2,
+      "full_name": "summit",
+      "date_of_birth": "2025-08-02",
+      "kyc_status": "REJECTED",
+      "risk_rating": "MEDIUM",
+      "email": "email_4",
+      "phone": "flux",
+      "created_at": "2026-03-03 07:20:13"
+    },
+    {
+      "customer_id": 5,
+      "branch_id": 16,
+      "full_name": "alpha",
+      "date_of_birth": "2026-02-12",
+      "kyc_status": "PENDING",
+      "risk_rating": "LOW",
+      "email": "email_5",
+      "phone": "beacon",
+      "created_at": "2025-05-15 02:18:43"
+    },
+    {
+      "customer_id": 6,
+      "branch_id": 19,
+      "full_name": "harbor",
+      "date_of_birth": "2026-05-20",
+      "kyc_status": "PENDING",
+      "risk_rating": "MEDIUM",
+      "email": "email_6",
+      "phone": "harbor",
+      "created_at": "2026-02-06 04:48:29"
+    },
+    {
+      "customer_id": 7,
+      "branch_id": 13,
+      "full_name": "quartz",
+      "date_of_birth": "2025-01-12",
+      "kyc_status": "REJECTED",
+      "risk_rating": "MEDIUM",
+      "email": "email_7",
+      "phone": "zenith",
+      "created_at": "2025-11-22 06:43:06"
+    },
+    {
+      "customer_id": 8,
+      "branch_id": 10,
+      "full_name": "orbit",
+      "date_of_birth": "2025-12-30",
+      "kyc_status": "PENDING",
+      "risk_rating": "HIGH",
+      "email": "email_8",
+      "phone": "quartz",
+      "created_at": "2026-04-16 03:29:05"
+    },
+    {
+      "customer_id": 9,
+      "branch_id": 16,
+      "full_name": "quartz",
+      "date_of_birth": "2026-02-28",
+      "kyc_status": "VERIFIED",
+      "risk_rating": "MEDIUM",
+      "email": "email_9",
+      "phone": "summit",
+      "created_at": "2025-01-17 03:31:02"
+    },
+    {
+      "customer_id": 10,
+      "branch_id": 6,
+      "full_name": "flux",
+      "date_of_birth": "2025-08-20",
+      "kyc_status": "EXPIRED",
+      "risk_rating": "LOW",
+      "email": "email_10",
+      "phone": "vector",
+      "created_at": "2025-04-05 17:04:04"
+    },
+    {
+      "customer_id": 11,
+      "branch_id": 11,
+      "full_name": "prism",
+      "date_of_birth": "2026-01-09",
+      "kyc_status": "EXPIRED",
+      "risk_rating": "MEDIUM",
+      "email": "email_11",
+      "phone": "pulse",
+      "created_at": "2025-08-07 01:28:21"
+    },
+    {
+      "customer_id": 12,
+      "branch_id": 5,
+      "full_name": "matrix",
+      "date_of_birth": "2025-09-27",
+      "kyc_status": "REJECTED",
+      "risk_rating": "HIGH",
+      "email": "email_12",
+      "phone": "summit",
+      "created_at": "2026-03-14 09:17:52"
+    },
+    {
+      "customer_id": 13,
+      "branch_id": 25,
+      "full_name": "summit",
+      "date_of_birth": "2025-10-07",
+      "kyc_status": "EXPIRED",
+      "risk_rating": "HIGH",
+      "email": "email_13",
+      "phone": "delta",
+      "created_at": "2025-12-03 05:17:14"
+    },
+    {
+      "customer_id": 14,
+      "branch_id": 11,
+      "full_name": "harbor",
+      "date_of_birth": "2026-04-21",
+      "kyc_status": "VERIFIED",
+      "risk_rating": "HIGH",
+      "email": "email_14",
+      "phone": "nova",
+      "created_at": "2025-06-09 09:23:13"
+    },
+    {
+      "customer_id": 15,
+      "branch_id": 5,
+      "full_name": "delta",
+      "date_of_birth": "2025-03-09",
+      "kyc_status": "VERIFIED",
+      "risk_rating": "HIGH",
+      "email": "email_15",
+      "phone": "alpha",
+      "created_at": "2025-03-13 17:13:27"
+    },
+    {
+      "customer_id": 16,
+      "branch_id": 24,
+      "full_name": "summit",
+      "date_of_birth": "2025-04-08",
+      "kyc_status": "EXPIRED",
+      "risk_rating": "HIGH",
+      "email": "email_16",
+      "phone": "signal",
+      "created_at": "2025-10-13 10:11:53"
+    },
+    {
+      "customer_id": 17,
+      "branch_id": 25,
+      "full_name": "prism",
+      "date_of_birth": "2026-01-21",
+      "kyc_status": "EXPIRED",
+      "risk_rating": "MEDIUM",
+      "email": "email_17",
+      "phone": "vector",
+      "created_at": "2025-03-20 03:25:42"
+    },
+    {
+      "customer_id": 18,
+      "branch_id": 7,
+      "full_name": "delta",
+      "date_of_birth": "2025-04-07",
+      "kyc_status": "VERIFIED",
+      "risk_rating": "HIGH",
+      "email": "email_18",
+      "phone": "pulse",
+      "created_at": "2026-01-06 15:15:22"
+    },
+    {
+      "customer_id": 19,
+      "branch_id": 20,
+      "full_name": "ember",
+      "date_of_birth": "2026-05-22",
+      "kyc_status": "EXPIRED",
+      "risk_rating": "HIGH",
+      "email": "email_19",
+      "phone": "signal",
+      "created_at": "2025-04-30 17:03:16"
+    },
+    {
+      "customer_id": 20,
+      "branch_id": 1,
+      "full_name": "zenith",
+      "date_of_birth": "2025-10-27",
+      "kyc_status": "PENDING",
+      "risk_rating": "HIGH",
+      "email": "email_20",
+      "phone": "flux",
+      "created_at": "2025-01-28 18:06:00"
+    },
+    {
+      "customer_id": 21,
+      "branch_id": 4,
+      "full_name": "matrix",
+      "date_of_birth": "2026-01-12",
+      "kyc_status": "PENDING",
+      "risk_rating": "LOW",
+      "email": "email_21",
+      "phone": "signal",
+      "created_at": "2025-05-20 18:53:51"
+    },
+    {
+      "customer_id": 22,
+      "branch_id": 2,
+      "full_name": "vector",
+      "date_of_birth": "2025-11-06",
+      "kyc_status": "VERIFIED",
+      "risk_rating": "HIGH",
+      "email": "email_22",
+      "phone": "zenith",
+      "created_at": "2025-05-18 23:30:22"
+    },
+    {
+      "customer_id": 23,
+      "branch_id": 14,
+      "full_name": "flux",
+      "date_of_birth": "2026-06-19",
+      "kyc_status": "EXPIRED",
+      "risk_rating": "MEDIUM",
+      "email": "email_23",
+      "phone": "nova",
+      "created_at": "2025-11-10 04:25:46"
+    },
+    {
+      "customer_id": 24,
+      "branch_id": 19,
+      "full_name": "delta",
+      "date_of_birth": "2025-04-12",
+      "kyc_status": "VERIFIED",
+      "risk_rating": "LOW",
+      "email": "email_24",
+      "phone": "meridian",
+      "created_at": "2026-06-19 07:25:09"
+    },
+    {
+      "customer_id": 25,
+      "branch_id": 25,
+      "full_name": "summit",
+      "date_of_birth": "2025-07-20",
+      "kyc_status": "PENDING",
+      "risk_rating": "LOW",
+      "email": "email_25",
+      "phone": "vector",
+      "created_at": "2025-01-19 05:39:32"
+    }
+  ],
+  "accounts": [
+    {
+      "account_id": 1,
+      "account_number": "000001",
+      "branch_id": 15,
+      "account_type": "SALARY",
+      "balance": 9783.91,
+      "currency": "sig",
+      "status": "FROZEN",
+      "opened_date": "2025-03-27",
+      "closed_date": "2026-04-26"
+    },
+    {
+      "account_id": 2,
+      "account_number": "000002",
+      "branch_id": 17,
+      "account_type": "CURRENT",
+      "balance": 4886.69,
+      "currency": "del",
+      "status": "FROZEN",
+      "opened_date": "2025-08-20",
+      "closed_date": "2025-06-12"
+    },
+    {
+      "account_id": 3,
+      "account_number": "000003",
+      "branch_id": 22,
+      "account_type": "FIXED_DEP",
+      "balance": 6193.39,
+      "currency": "flu",
+      "status": "DORMANT",
+      "opened_date": "2025-08-14",
+      "closed_date": "2026-06-30"
+    },
+    {
+      "account_id": 4,
+      "account_number": "000004",
+      "branch_id": 24,
+      "account_type": "FIXED_DEP",
+      "balance": 2288.62,
+      "currency": "qua",
+      "status": "CLOSED",
+      "opened_date": "2025-07-31",
+      "closed_date": "2025-02-18"
+    },
+    {
+      "account_id": 5,
+      "account_number": "000005",
+      "branch_id": 19,
+      "account_type": "SAVINGS",
+      "balance": 6048.34,
+      "currency": "emb",
+      "status": "ACTIVE",
+      "opened_date": "2026-01-20",
+      "closed_date": "2026-04-01"
+    },
+    {
+      "account_id": 6,
+      "account_number": "000006",
+      "branch_id": 19,
+      "account_type": "CURRENT",
+      "balance": 3886.12,
+      "currency": "bea",
+      "status": "DORMANT",
+      "opened_date": "2025-08-17",
+      "closed_date": "2025-02-21"
+    },
+    {
+      "account_id": 7,
+      "account_number": "000007",
+      "branch_id": 12,
+      "account_type": "SALARY",
+      "balance": 8181.68,
+      "currency": "del",
+      "status": "DORMANT",
+      "opened_date": "2025-01-11",
+      "closed_date": "2026-02-17"
+    },
+    {
+      "account_id": 8,
+      "account_number": "000008",
+      "branch_id": 2,
+      "account_type": "SAVINGS",
+      "balance": 1803.28,
+      "currency": "vec",
+      "status": "ACTIVE",
+      "opened_date": "2025-10-11",
+      "closed_date": "2025-07-14"
+    },
+    {
+      "account_id": 9,
+      "account_number": "000009",
+      "branch_id": 8,
+      "account_type": "FIXED_DEP",
+      "balance": 2538.27,
+      "currency": "del",
+      "status": "CLOSED",
+      "opened_date": "2025-10-12",
+      "closed_date": "2026-06-29"
+    },
+    {
+      "account_id": 10,
+      "account_number": "000010",
+      "branch_id": 24,
+      "account_type": "CURRENT",
+      "balance": 3645.9,
+      "currency": "zen",
+      "status": "FROZEN",
+      "opened_date": "2025-08-22",
+      "closed_date": "2025-07-31"
+    },
+    {
+      "account_id": 11,
+      "account_number": "000011",
+      "branch_id": 10,
+      "account_type": "FIXED_DEP",
+      "balance": 7448.27,
+      "currency": "sum",
+      "status": "CLOSED",
+      "opened_date": "2026-02-06",
+      "closed_date": "2025-04-06"
+    },
+    {
+      "account_id": 12,
+      "account_number": "000012",
+      "branch_id": 3,
+      "account_type": "FIXED_DEP",
+      "balance": 4027.32,
+      "currency": "sig",
+      "status": "FROZEN",
+      "opened_date": "2025-05-03",
+      "closed_date": "2025-03-23"
+    },
+    {
+      "account_id": 13,
+      "account_number": "000013",
+      "branch_id": 19,
+      "account_type": "SALARY",
+      "balance": 1909.17,
+      "currency": "pri",
+      "status": "CLOSED",
+      "opened_date": "2025-11-25",
+      "closed_date": "2025-07-07"
+    },
+    {
+      "account_id": 14,
+      "account_number": "000014",
+      "branch_id": 21,
+      "account_type": "CURRENT",
+      "balance": 160.2,
+      "currency": "bea",
+      "status": "ACTIVE",
+      "opened_date": "2025-01-06",
+      "closed_date": "2026-02-24"
+    },
+    {
+      "account_id": 15,
+      "account_number": "000015",
+      "branch_id": 13,
+      "account_type": "SAVINGS",
+      "balance": 7895.85,
+      "currency": "emb",
+      "status": "DORMANT",
+      "opened_date": "2026-02-12",
+      "closed_date": "2025-08-03"
+    },
+    {
+      "account_id": 16,
+      "account_number": "000016",
+      "branch_id": 10,
+      "account_type": "SALARY",
+      "balance": 9804.17,
+      "currency": "sum",
+      "status": "DORMANT",
+      "opened_date": "2026-06-20",
+      "closed_date": "2025-12-03"
+    },
+    {
+      "account_id": 17,
+      "account_number": "000017",
+      "branch_id": 19,
+      "account_type": "SALARY",
+      "balance": 2658.88,
+      "currency": "bea",
+      "status": "ACTIVE",
+      "opened_date": "2026-06-21",
+      "closed_date": "2026-03-26"
+    },
+    {
+      "account_id": 18,
+      "account_number": "000018",
+      "branch_id": 13,
+      "account_type": "SALARY",
+      "balance": 2384.57,
+      "currency": "bea",
+      "status": "CLOSED",
+      "opened_date": "2025-06-27",
+      "closed_date": "2026-03-03"
+    },
+    {
+      "account_id": 19,
+      "account_number": "000019",
+      "branch_id": 25,
+      "account_type": "SALARY",
+      "balance": 7318.72,
+      "currency": "ver",
+      "status": "ACTIVE",
+      "opened_date": "2026-06-06",
+      "closed_date": "2026-06-29"
+    },
+    {
+      "account_id": 20,
+      "account_number": "000020",
+      "branch_id": 3,
+      "account_type": "SALARY",
+      "balance": 6274.09,
+      "currency": "alp",
+      "status": "ACTIVE",
+      "opened_date": "2026-02-07",
+      "closed_date": "2025-05-17"
+    },
+    {
+      "account_id": 21,
+      "account_number": "000021",
+      "branch_id": 21,
+      "account_type": "FIXED_DEP",
+      "balance": 5231.11,
+      "currency": "wil",
+      "status": "ACTIVE",
+      "opened_date": "2025-02-05",
+      "closed_date": "2025-02-14"
+    },
+    {
+      "account_id": 22,
+      "account_number": "000022",
+      "branch_id": 3,
+      "account_type": "CURRENT",
+      "balance": 3303.25,
+      "currency": "alp",
+      "status": "FROZEN",
+      "opened_date": "2025-06-09",
+      "closed_date": "2025-03-02"
+    },
+    {
+      "account_id": 23,
+      "account_number": "000023",
+      "branch_id": 21,
+      "account_type": "SALARY",
+      "balance": 7555.35,
+      "currency": "sum",
+      "status": "CLOSED",
+      "opened_date": "2026-01-07",
+      "closed_date": "2026-01-10"
+    },
+    {
+      "account_id": 24,
+      "account_number": "000024",
+      "branch_id": 21,
+      "account_type": "FIXED_DEP",
+      "balance": 8841.93,
+      "currency": "qua",
+      "status": "ACTIVE",
+      "opened_date": "2025-04-08",
+      "closed_date": "2025-05-19"
+    },
+    {
+      "account_id": 25,
+      "account_number": "000025",
+      "branch_id": 15,
+      "account_type": "FIXED_DEP",
+      "balance": 6204.29,
+      "currency": "emb",
+      "status": "ACTIVE",
+      "opened_date": "2025-06-20",
+      "closed_date": "2025-04-07"
+    }
+  ],
+  "account_holders": [
+    {
+      "account_id": 15,
+      "customer_id": 14,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-04-15"
+    },
+    {
+      "account_id": 11,
+      "customer_id": 5,
+      "holder_role": "PRIMARY",
+      "added_date": "2025-04-28"
+    },
+    {
+      "account_id": 4,
+      "customer_id": 11,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-02-23"
+    },
+    {
+      "account_id": 1,
+      "customer_id": 7,
+      "holder_role": "PRIMARY",
+      "added_date": "2026-05-07"
+    },
+    {
+      "account_id": 21,
+      "customer_id": 7,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-05-27"
+    },
+    {
+      "account_id": 15,
+      "customer_id": 7,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-01-09"
+    },
+    {
+      "account_id": 2,
+      "customer_id": 2,
+      "holder_role": "PRIMARY",
+      "added_date": "2026-02-20"
+    },
+    {
+      "account_id": 10,
+      "customer_id": 18,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-03-08"
+    },
+    {
+      "account_id": 15,
+      "customer_id": 20,
+      "holder_role": "NOMINEE",
+      "added_date": "2026-03-02"
+    },
+    {
+      "account_id": 5,
+      "customer_id": 16,
+      "holder_role": "JOINT",
+      "added_date": "2025-09-11"
+    },
+    {
+      "account_id": 10,
+      "customer_id": 7,
+      "holder_role": "JOINT",
+      "added_date": "2026-06-20"
+    },
+    {
+      "account_id": 24,
+      "customer_id": 25,
+      "holder_role": "JOINT",
+      "added_date": "2025-06-08"
+    },
+    {
+      "account_id": 19,
+      "customer_id": 3,
+      "holder_role": "JOINT",
+      "added_date": "2026-05-25"
+    },
+    {
+      "account_id": 19,
+      "customer_id": 8,
+      "holder_role": "NOMINEE",
+      "added_date": "2026-04-19"
+    },
+    {
+      "account_id": 3,
+      "customer_id": 17,
+      "holder_role": "PRIMARY",
+      "added_date": "2026-04-24"
+    },
+    {
+      "account_id": 16,
+      "customer_id": 24,
+      "holder_role": "PRIMARY",
+      "added_date": "2025-12-05"
+    },
+    {
+      "account_id": 13,
+      "customer_id": 24,
+      "holder_role": "PRIMARY",
+      "added_date": "2025-04-30"
+    },
+    {
+      "account_id": 14,
+      "customer_id": 19,
+      "holder_role": "PRIMARY",
+      "added_date": "2025-05-03"
+    },
+    {
+      "account_id": 20,
+      "customer_id": 18,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-07-26"
+    },
+    {
+      "account_id": 4,
+      "customer_id": 5,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-06-17"
+    },
+    {
+      "account_id": 3,
+      "customer_id": 13,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-05-26"
+    },
+    {
+      "account_id": 17,
+      "customer_id": 9,
+      "holder_role": "PRIMARY",
+      "added_date": "2025-03-18"
+    },
+    {
+      "account_id": 1,
+      "customer_id": 3,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-09-01"
+    },
+    {
+      "account_id": 16,
+      "customer_id": 15,
+      "holder_role": "PRIMARY",
+      "added_date": "2026-02-23"
+    },
+    {
+      "account_id": 6,
+      "customer_id": 8,
+      "holder_role": "NOMINEE",
+      "added_date": "2025-08-15"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": 1,
+      "account_id": 11,
+      "txn_timestamp": "2026-06-22 20:14:20",
+      "txn_type": "DEPOSIT",
+      "amount": 331.06,
+      "balance_after": 3755.9,
+      "channel": "NEFT",
+      "reference_no": "reference_no_1",
+      "narration": "quartz"
+    },
+    {
+      "transaction_id": 2,
+      "account_id": 21,
+      "txn_timestamp": "2026-01-13 17:33:30",
+      "txn_type": "INTEREST",
+      "amount": 463.89,
+      "balance_after": 9858.63,
+      "channel": "IMPS",
+      "reference_no": "reference_no_2",
+      "narration": "flux"
+    },
+    {
+      "transaction_id": 3,
+      "account_id": 20,
+      "txn_timestamp": "2026-04-24 04:47:19",
+      "txn_type": "FEE",
+      "amount": 662.42,
+      "balance_after": 847.33,
+      "channel": "CARD",
+      "reference_no": "reference_no_3",
+      "narration": "zenith"
+    },
+    {
+      "transaction_id": 4,
+      "account_id": 2,
+      "txn_timestamp": "2026-06-28 22:46:58",
+      "txn_type": "TRANSFER_IN",
+      "amount": 391.14,
+      "balance_after": 3776.31,
+      "channel": "RTGS",
+      "reference_no": "reference_no_4",
+      "narration": "nova"
+    },
+    {
+      "transaction_id": 5,
+      "account_id": 6,
+      "txn_timestamp": "2025-11-25 02:12:35",
+      "txn_type": "WITHDRAWAL",
+      "amount": 940.55,
+      "balance_after": 7984.19,
+      "channel": "ATM",
+      "reference_no": "reference_no_5",
+      "narration": "alpha"
+    },
+    {
+      "transaction_id": 6,
+      "account_id": 5,
+      "txn_timestamp": "2025-09-30 09:50:21",
+      "txn_type": "TRANSFER_OUT",
+      "amount": 50.95,
+      "balance_after": 4850.85,
+      "channel": "BRANCH",
+      "reference_no": "reference_no_6",
+      "narration": "cascade"
+    },
+    {
+      "transaction_id": 7,
+      "account_id": 5,
+      "txn_timestamp": "2026-05-13 17:31:40",
+      "txn_type": "TRANSFER_OUT",
+      "amount": 508.99,
+      "balance_after": 2931.49,
+      "channel": "CARD",
+      "reference_no": "reference_no_7",
+      "narration": "signal"
+    },
+    {
+      "transaction_id": 8,
+      "account_id": 1,
+      "txn_timestamp": "2025-11-16 00:50:03",
+      "txn_type": "TRANSFER_IN",
+      "amount": 474.01,
+      "balance_after": 1734.6,
+      "channel": "RTGS",
+      "reference_no": "reference_no_8",
+      "narration": "meridian"
+    },
+    {
+      "transaction_id": 9,
+      "account_id": 20,
+      "txn_timestamp": "2025-09-27 22:32:04",
+      "txn_type": "WITHDRAWAL",
+      "amount": 146.05,
+      "balance_after": 6030.84,
+      "channel": "BRANCH",
+      "reference_no": "reference_no_9",
+      "narration": "orbit"
+    },
+    {
+      "transaction_id": 10,
+      "account_id": 14,
+      "txn_timestamp": "2026-04-03 10:42:22",
+      "txn_type": "TRANSFER_IN",
+      "amount": 650.91,
+      "balance_after": 8606.62,
+      "channel": "NEFT",
+      "reference_no": "reference_no_10",
+      "narration": "zenith"
+    },
+    {
+      "transaction_id": 11,
+      "account_id": 12,
+      "txn_timestamp": "2025-08-22 03:29:15",
+      "txn_type": "FEE",
+      "amount": 696.36,
+      "balance_after": 6013.83,
+      "channel": "ATM",
+      "reference_no": "reference_no_11",
+      "narration": "alpha"
+    },
+    {
+      "transaction_id": 12,
+      "account_id": 20,
+      "txn_timestamp": "2025-05-08 02:14:00",
+      "txn_type": "DEPOSIT",
+      "amount": 461.36,
+      "balance_after": 1143.97,
+      "channel": "NEFT",
+      "reference_no": "reference_no_12",
+      "narration": "quartz"
+    },
+    {
+      "transaction_id": 13,
+      "account_id": 25,
+      "txn_timestamp": "2025-08-08 13:02:37",
+      "txn_type": "WITHDRAWAL",
+      "amount": 156.88,
+      "balance_after": 3896.88,
+      "channel": "UPI",
+      "reference_no": "reference_no_13",
+      "narration": "beacon"
+    },
+    {
+      "transaction_id": 14,
+      "account_id": 19,
+      "txn_timestamp": "2026-05-27 14:30:14",
+      "txn_type": "WITHDRAWAL",
+      "amount": 251.79,
+      "balance_after": 3961.73,
+      "channel": "NEFT",
+      "reference_no": "reference_no_14",
+      "narration": "ember"
+    },
+    {
+      "transaction_id": 15,
+      "account_id": 15,
+      "txn_timestamp": "2025-09-17 00:36:26",
+      "txn_type": "TRANSFER_IN",
+      "amount": 835.03,
+      "balance_after": 815.17,
+      "channel": "IMPS",
+      "reference_no": "reference_no_15",
+      "narration": "signal"
+    },
+    {
+      "transaction_id": 16,
+      "account_id": 11,
+      "txn_timestamp": "2026-05-28 17:59:52",
+      "txn_type": "FEE",
+      "amount": 982.51,
+      "balance_after": 260.49,
+      "channel": "UPI",
+      "reference_no": "reference_no_16",
+      "narration": "alpha"
+    },
+    {
+      "transaction_id": 17,
+      "account_id": 15,
+      "txn_timestamp": "2025-11-06 10:27:28",
+      "txn_type": "TRANSFER_IN",
+      "amount": 680.42,
+      "balance_after": 3162.63,
+      "channel": "NEFT",
+      "reference_no": "reference_no_17",
+      "narration": "ember"
+    },
+    {
+      "transaction_id": 18,
+      "account_id": 16,
+      "txn_timestamp": "2025-11-17 08:34:55",
+      "txn_type": "TRANSFER_OUT",
+      "amount": 6.11,
+      "balance_after": 453.28,
+      "channel": "RTGS",
+      "reference_no": "reference_no_18",
+      "narration": "alpha"
+    },
+    {
+      "transaction_id": 19,
+      "account_id": 7,
+      "txn_timestamp": "2025-06-14 01:11:25",
+      "txn_type": "INTEREST",
+      "amount": 864.34,
+      "balance_after": 8845.2,
+      "channel": "RTGS",
+      "reference_no": "reference_no_19",
+      "narration": "cascade"
+    },
+    {
+      "transaction_id": 20,
+      "account_id": 15,
+      "txn_timestamp": "2025-07-25 16:55:13",
+      "txn_type": "TRANSFER_OUT",
+      "amount": 823.35,
+      "balance_after": 6813.22,
+      "channel": "NEFT",
+      "reference_no": "reference_no_20",
+      "narration": "alpha"
+    },
+    {
+      "transaction_id": 21,
+      "account_id": 1,
+      "txn_timestamp": "2025-12-08 21:10:21",
+      "txn_type": "DEPOSIT",
+      "amount": 4.68,
+      "balance_after": 8774.46,
+      "channel": "CARD",
+      "reference_no": "reference_no_21",
+      "narration": "beacon"
+    },
+    {
+      "transaction_id": 22,
+      "account_id": 10,
+      "txn_timestamp": "2025-03-11 20:39:11",
+      "txn_type": "FEE",
+      "amount": 734.06,
+      "balance_after": 2749.79,
+      "channel": "UPI",
+      "reference_no": "reference_no_22",
+      "narration": "zenith"
+    },
+    {
+      "transaction_id": 23,
+      "account_id": 16,
+      "txn_timestamp": "2025-12-23 03:31:39",
+      "txn_type": "TRANSFER_IN",
+      "amount": 274.22,
+      "balance_after": 9784.04,
+      "channel": "UPI",
+      "reference_no": "reference_no_23",
+      "narration": "alpha"
+    },
+    {
+      "transaction_id": 24,
+      "account_id": 24,
+      "txn_timestamp": "2025-03-31 14:58:24",
+      "txn_type": "TRANSFER_IN",
+      "amount": 903.66,
+      "balance_after": 226.78,
+      "channel": "UPI",
+      "reference_no": "reference_no_24",
+      "narration": "vector"
+    },
+    {
+      "transaction_id": 25,
+      "account_id": 4,
+      "txn_timestamp": "2025-12-15 08:52:54",
+      "txn_type": "WITHDRAWAL",
+      "amount": 692.17,
+      "balance_after": 820.58,
+      "channel": "RTGS",
+      "reference_no": "reference_no_25",
+      "narration": "prism"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "beneficiary_id": 1,
+      "customer_id": 1,
+      "nickname": "zenith",
+      "account_number": "cascade",
+      "ifsc_code": "vertex",
+      "added_date": "2025-04-08",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 2,
+      "customer_id": 18,
+      "nickname": "alpha",
+      "account_number": "meridian",
+      "ifsc_code": "signal",
+      "added_date": "2025-05-31",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 3,
+      "customer_id": 20,
+      "nickname": "harbor",
+      "account_number": "alpha",
+      "ifsc_code": "signal",
+      "added_date": "2025-06-05",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 4,
+      "customer_id": 8,
+      "nickname": "vertex",
+      "account_number": "meridian",
+      "ifsc_code": "orbit",
+      "added_date": "2025-05-08",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 5,
+      "customer_id": 1,
+      "nickname": "harbor",
+      "account_number": "willow",
+      "ifsc_code": "zenith",
+      "added_date": "2026-05-30",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 6,
+      "customer_id": 13,
+      "nickname": "alpha",
+      "account_number": "beacon",
+      "ifsc_code": "meridian",
+      "added_date": "2026-05-23",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 7,
+      "customer_id": 4,
+      "nickname": "vertex",
+      "account_number": "cascade",
+      "ifsc_code": "prism",
+      "added_date": "2025-12-19",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 8,
+      "customer_id": 12,
+      "nickname": "willow",
+      "account_number": "delta",
+      "ifsc_code": "meridian",
+      "added_date": "2026-01-30",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 9,
+      "customer_id": 23,
+      "nickname": "harbor",
+      "account_number": "willow",
+      "ifsc_code": "cascade",
+      "added_date": "2026-06-03",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 10,
+      "customer_id": 6,
+      "nickname": "alpha",
+      "account_number": "matrix",
+      "ifsc_code": "matrix",
+      "added_date": "2025-12-28",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 11,
+      "customer_id": 21,
+      "nickname": "willow",
+      "account_number": "prism",
+      "ifsc_code": "meridian",
+      "added_date": "2025-09-23",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 12,
+      "customer_id": 21,
+      "nickname": "orbit",
+      "account_number": "harbor",
+      "ifsc_code": "ember",
+      "added_date": "2025-09-26",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 13,
+      "customer_id": 15,
+      "nickname": "delta",
+      "account_number": "nova",
+      "ifsc_code": "vertex",
+      "added_date": "2026-06-03",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 14,
+      "customer_id": 12,
+      "nickname": "alpha",
+      "account_number": "beacon",
+      "ifsc_code": "signal",
+      "added_date": "2025-10-12",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 15,
+      "customer_id": 16,
+      "nickname": "vertex",
+      "account_number": "ember",
+      "ifsc_code": "prism",
+      "added_date": "2026-05-29",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 16,
+      "customer_id": 2,
+      "nickname": "signal",
+      "account_number": "nova",
+      "ifsc_code": "signal",
+      "added_date": "2026-02-17",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 17,
+      "customer_id": 11,
+      "nickname": "pulse",
+      "account_number": "nova",
+      "ifsc_code": "zenith",
+      "added_date": "2026-03-28",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 18,
+      "customer_id": 14,
+      "nickname": "quartz",
+      "account_number": "nova",
+      "ifsc_code": "flux",
+      "added_date": "2025-12-22",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 19,
+      "customer_id": 16,
+      "nickname": "cascade",
+      "account_number": "willow",
+      "ifsc_code": "cascade",
+      "added_date": "2026-03-09",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 20,
+      "customer_id": 10,
+      "nickname": "orbit",
+      "account_number": "orbit",
+      "ifsc_code": "beacon",
+      "added_date": "2025-04-27",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 21,
+      "customer_id": 22,
+      "nickname": "pulse",
+      "account_number": "vertex",
+      "ifsc_code": "ember",
+      "added_date": "2025-11-21",
+      "is_verified": 0
+    },
+    {
+      "beneficiary_id": 22,
+      "customer_id": 25,
+      "nickname": "delta",
+      "account_number": "willow",
+      "ifsc_code": "prism",
+      "added_date": "2025-08-02",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 23,
+      "customer_id": 15,
+      "nickname": "vector",
+      "account_number": "pulse",
+      "ifsc_code": "cascade",
+      "added_date": "2025-10-11",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 24,
+      "customer_id": 2,
+      "nickname": "cascade",
+      "account_number": "harbor",
+      "ifsc_code": "ember",
+      "added_date": "2025-02-17",
+      "is_verified": 1
+    },
+    {
+      "beneficiary_id": 25,
+      "customer_id": 11,
+      "nickname": "meridian",
+      "account_number": "vertex",
+      "ifsc_code": "ember",
+      "added_date": "2025-10-04",
+      "is_verified": 1
+    }
+  ],
+  "loans": [
+    {
+      "loan_id": 1,
+      "customer_id": 18,
+      "branch_id": 20,
+      "loan_type": "HOME",
+      "principal": 10.89,
+      "interest_rate": 2.95,
+      "tenure_months": 317,
+      "disbursed_date": "2026-01-22",
+      "loan_status": "APPLIED"
+    },
+    {
+      "loan_id": 2,
+      "customer_id": 7,
+      "branch_id": 11,
+      "loan_type": "AUTO",
+      "principal": 251.78,
+      "interest_rate": 7.1,
+      "tenure_months": 47,
+      "disbursed_date": "2025-06-01",
+      "loan_status": "REJECTED"
+    },
+    {
+      "loan_id": 3,
+      "customer_id": 1,
+      "branch_id": 8,
+      "loan_type": "EDUCATION",
+      "principal": 928.6,
+      "interest_rate": 23.47,
+      "tenure_months": 245,
+      "disbursed_date": "2026-05-24",
+      "loan_status": "CLOSED"
+    },
+    {
+      "loan_id": 4,
+      "customer_id": 23,
+      "branch_id": 16,
+      "loan_type": "HOME",
+      "principal": 980.07,
+      "interest_rate": 2.84,
+      "tenure_months": 198,
+      "disbursed_date": "2026-03-24",
+      "loan_status": "APPLIED"
+    },
+    {
+      "loan_id": 5,
+      "customer_id": 4,
+      "branch_id": 14,
+      "loan_type": "PERSONAL",
+      "principal": 845.61,
+      "interest_rate": 18.15,
+      "tenure_months": 282,
+      "disbursed_date": "2026-02-21",
+      "loan_status": "CLOSED"
+    },
+    {
+      "loan_id": 6,
+      "customer_id": 12,
+      "branch_id": 20,
+      "loan_type": "PERSONAL",
+      "principal": 499.81,
+      "interest_rate": 0.66,
+      "tenure_months": 143,
+      "disbursed_date": "2026-01-31",
+      "loan_status": "REJECTED"
+    },
+    {
+      "loan_id": 7,
+      "customer_id": 11,
+      "branch_id": 3,
+      "loan_type": "PERSONAL",
+      "principal": 684.45,
+      "interest_rate": 3.79,
+      "tenure_months": 264,
+      "disbursed_date": "2025-11-23",
+      "loan_status": "APPLIED"
+    },
+    {
+      "loan_id": 8,
+      "customer_id": 7,
+      "branch_id": 23,
+      "loan_type": "HOME",
+      "principal": 17.95,
+      "interest_rate": 12.81,
+      "tenure_months": 232,
+      "disbursed_date": "2025-11-02",
+      "loan_status": "DEFAULTED"
+    },
+    {
+      "loan_id": 9,
+      "customer_id": 23,
+      "branch_id": 24,
+      "loan_type": "PERSONAL",
+      "principal": 465.11,
+      "interest_rate": 5.22,
+      "tenure_months": 186,
+      "disbursed_date": "2026-04-24",
+      "loan_status": "APPLIED"
+    },
+    {
+      "loan_id": 10,
+      "customer_id": 2,
+      "branch_id": 2,
+      "loan_type": "GOLD",
+      "principal": 811.55,
+      "interest_rate": 28.52,
+      "tenure_months": 282,
+      "disbursed_date": "2026-02-18",
+      "loan_status": "CLOSED"
+    },
+    {
+      "loan_id": 11,
+      "customer_id": 3,
+      "branch_id": 2,
+      "loan_type": "GOLD",
+      "principal": 101,
+      "interest_rate": 22.65,
+      "tenure_months": 26,
+      "disbursed_date": "2025-02-07",
+      "loan_status": "DEFAULTED"
+    },
+    {
+      "loan_id": 12,
+      "customer_id": 3,
+      "branch_id": 4,
+      "loan_type": "GOLD",
+      "principal": 857.83,
+      "interest_rate": 9.39,
+      "tenure_months": 85,
+      "disbursed_date": "2026-01-24",
+      "loan_status": "REJECTED"
+    },
+    {
+      "loan_id": 13,
+      "customer_id": 11,
+      "branch_id": 2,
+      "loan_type": "AUTO",
+      "principal": 915.4,
+      "interest_rate": 8.76,
+      "tenure_months": 136,
+      "disbursed_date": "2025-10-04",
+      "loan_status": "CLOSED"
+    },
+    {
+      "loan_id": 14,
+      "customer_id": 3,
+      "branch_id": 18,
+      "loan_type": "HOME",
+      "principal": 765.11,
+      "interest_rate": 13.33,
+      "tenure_months": 219,
+      "disbursed_date": "2025-12-11",
+      "loan_status": "REJECTED"
+    },
+    {
+      "loan_id": 15,
+      "customer_id": 10,
+      "branch_id": 1,
+      "loan_type": "GOLD",
+      "principal": 211.92,
+      "interest_rate": 18.93,
+      "tenure_months": 137,
+      "disbursed_date": "2025-04-05",
+      "loan_status": "APPROVED"
+    },
+    {
+      "loan_id": 16,
+      "customer_id": 19,
+      "branch_id": 20,
+      "loan_type": "HOME",
+      "principal": 814.45,
+      "interest_rate": 26.64,
+      "tenure_months": 287,
+      "disbursed_date": "2025-02-05",
+      "loan_status": "APPLIED"
+    },
+    {
+      "loan_id": 17,
+      "customer_id": 24,
+      "branch_id": 20,
+      "loan_type": "EDUCATION",
+      "principal": 313.82,
+      "interest_rate": 24.94,
+      "tenure_months": 185,
+      "disbursed_date": "2026-04-14",
+      "loan_status": "DISBURSED"
+    },
+    {
+      "loan_id": 18,
+      "customer_id": 18,
+      "branch_id": 7,
+      "loan_type": "GOLD",
+      "principal": 258.02,
+      "interest_rate": 26.99,
+      "tenure_months": 44,
+      "disbursed_date": "2025-03-17",
+      "loan_status": "APPLIED"
+    },
+    {
+      "loan_id": 19,
+      "customer_id": 14,
+      "branch_id": 20,
+      "loan_type": "PERSONAL",
+      "principal": 429.75,
+      "interest_rate": 3.54,
+      "tenure_months": 63,
+      "disbursed_date": "2026-04-01",
+      "loan_status": "APPROVED"
+    },
+    {
+      "loan_id": 20,
+      "customer_id": 6,
+      "branch_id": 8,
+      "loan_type": "GOLD",
+      "principal": 481.96,
+      "interest_rate": 24.38,
+      "tenure_months": 268,
+      "disbursed_date": "2025-11-20",
+      "loan_status": "APPLIED"
+    },
+    {
+      "loan_id": 21,
+      "customer_id": 12,
+      "branch_id": 23,
+      "loan_type": "AUTO",
+      "principal": 598.2,
+      "interest_rate": 16.44,
+      "tenure_months": 157,
+      "disbursed_date": "2026-06-17",
+      "loan_status": "CLOSED"
+    },
+    {
+      "loan_id": 22,
+      "customer_id": 15,
+      "branch_id": 6,
+      "loan_type": "HOME",
+      "principal": 434.19,
+      "interest_rate": 7.47,
+      "tenure_months": 342,
+      "disbursed_date": "2026-05-10",
+      "loan_status": "REJECTED"
+    },
+    {
+      "loan_id": 23,
+      "customer_id": 6,
+      "branch_id": 17,
+      "loan_type": "EDUCATION",
+      "principal": 753.07,
+      "interest_rate": 14.89,
+      "tenure_months": 277,
+      "disbursed_date": "2025-07-27",
+      "loan_status": "DEFAULTED"
+    },
+    {
+      "loan_id": 24,
+      "customer_id": 18,
+      "branch_id": 18,
+      "loan_type": "HOME",
+      "principal": 937.35,
+      "interest_rate": 28.09,
+      "tenure_months": 176,
+      "disbursed_date": "2025-08-12",
+      "loan_status": "REJECTED"
+    },
+    {
+      "loan_id": 25,
+      "customer_id": 7,
+      "branch_id": 21,
+      "loan_type": "AUTO",
+      "principal": 644.79,
+      "interest_rate": 23.93,
+      "tenure_months": 322,
+      "disbursed_date": "2026-06-08",
+      "loan_status": "REJECTED"
+    }
+  ],
+  "loan_payments": [
+    {
+      "payment_id": 1,
+      "loan_id": 6,
+      "due_date": "2025-05-19",
+      "paid_date": "2025-08-27",
+      "emi_amount": 573.62,
+      "principal_part": 2834.01,
+      "interest_part": 3133.56,
+      "payment_status": "LATE"
+    },
+    {
+      "payment_id": 2,
+      "loan_id": 17,
+      "due_date": "2026-02-20",
+      "paid_date": "2026-05-05",
+      "emi_amount": 733.74,
+      "principal_part": 4461.99,
+      "interest_part": 2016.23,
+      "payment_status": "MISSED"
+    },
+    {
+      "payment_id": 3,
+      "loan_id": 11,
+      "due_date": "2025-05-12",
+      "paid_date": "2025-11-12",
+      "emi_amount": 431.71,
+      "principal_part": 4462.81,
+      "interest_part": 7518.7,
+      "payment_status": "LATE"
+    },
+    {
+      "payment_id": 4,
+      "loan_id": 10,
+      "due_date": "2025-02-16",
+      "paid_date": "2026-02-21",
+      "emi_amount": 902.27,
+      "principal_part": 528.04,
+      "interest_part": 7983.89,
+      "payment_status": "MISSED"
+    },
+    {
+      "payment_id": 5,
+      "loan_id": 16,
+      "due_date": "2026-04-13",
+      "paid_date": "2025-08-30",
+      "emi_amount": 101.39,
+      "principal_part": 850.17,
+      "interest_part": 9587.67,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 6,
+      "loan_id": 14,
+      "due_date": "2025-02-22",
+      "paid_date": "2025-08-19",
+      "emi_amount": 261.22,
+      "principal_part": 8476.4,
+      "interest_part": 3100.86,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 7,
+      "loan_id": 10,
+      "due_date": "2026-06-09",
+      "paid_date": "2025-04-21",
+      "emi_amount": 637.64,
+      "principal_part": 3119.97,
+      "interest_part": 8208.95,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 8,
+      "loan_id": 7,
+      "due_date": "2026-06-30",
+      "paid_date": "2025-10-23",
+      "emi_amount": 672.85,
+      "principal_part": 4123.61,
+      "interest_part": 3010.46,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 9,
+      "loan_id": 13,
+      "due_date": "2026-03-11",
+      "paid_date": "2025-03-14",
+      "emi_amount": 722.99,
+      "principal_part": 9155.14,
+      "interest_part": 924,
+      "payment_status": "MISSED"
+    },
+    {
+      "payment_id": 10,
+      "loan_id": 10,
+      "due_date": "2025-05-12",
+      "paid_date": "2025-02-09",
+      "emi_amount": 666.67,
+      "principal_part": 361.81,
+      "interest_part": 9425.18,
+      "payment_status": "DUE"
+    },
+    {
+      "payment_id": 11,
+      "loan_id": 3,
+      "due_date": "2026-01-31",
+      "paid_date": "2025-11-14",
+      "emi_amount": 50.22,
+      "principal_part": 309.75,
+      "interest_part": 4931.25,
+      "payment_status": "MISSED"
+    },
+    {
+      "payment_id": 12,
+      "loan_id": 21,
+      "due_date": "2025-05-05",
+      "paid_date": "2025-08-17",
+      "emi_amount": 370.85,
+      "principal_part": 5565.82,
+      "interest_part": 6540.89,
+      "payment_status": "DUE"
+    },
+    {
+      "payment_id": 13,
+      "loan_id": 24,
+      "due_date": "2025-05-19",
+      "paid_date": "2025-03-18",
+      "emi_amount": 98.32,
+      "principal_part": 2393.84,
+      "interest_part": 2129.61,
+      "payment_status": "MISSED"
+    },
+    {
+      "payment_id": 14,
+      "loan_id": 7,
+      "due_date": "2025-02-22",
+      "paid_date": "2025-09-26",
+      "emi_amount": 863.62,
+      "principal_part": 4940.51,
+      "interest_part": 3747.17,
+      "payment_status": "DUE"
+    },
+    {
+      "payment_id": 15,
+      "loan_id": 10,
+      "due_date": "2025-09-28",
+      "paid_date": "2026-03-29",
+      "emi_amount": 735.58,
+      "principal_part": 2968.4,
+      "interest_part": 835.65,
+      "payment_status": "LATE"
+    },
+    {
+      "payment_id": 16,
+      "loan_id": 15,
+      "due_date": "2026-01-24",
+      "paid_date": "2025-11-30",
+      "emi_amount": 206.27,
+      "principal_part": 826.27,
+      "interest_part": 1572.22,
+      "payment_status": "MISSED"
+    },
+    {
+      "payment_id": 17,
+      "loan_id": 5,
+      "due_date": "2025-03-29",
+      "paid_date": "2025-03-18",
+      "emi_amount": 852.67,
+      "principal_part": 746.42,
+      "interest_part": 7647.85,
+      "payment_status": "DUE"
+    },
+    {
+      "payment_id": 18,
+      "loan_id": 16,
+      "due_date": "2026-01-24",
+      "paid_date": "2025-12-23",
+      "emi_amount": 577.94,
+      "principal_part": 7182.03,
+      "interest_part": 7711.3,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 19,
+      "loan_id": 19,
+      "due_date": "2025-12-09",
+      "paid_date": "2026-03-13",
+      "emi_amount": 694.15,
+      "principal_part": 8239.76,
+      "interest_part": 3640.3,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 20,
+      "loan_id": 4,
+      "due_date": "2026-03-30",
+      "paid_date": "2025-07-23",
+      "emi_amount": 993.12,
+      "principal_part": 2742.73,
+      "interest_part": 2028.8,
+      "payment_status": "LATE"
+    },
+    {
+      "payment_id": 21,
+      "loan_id": 17,
+      "due_date": "2026-03-03",
+      "paid_date": "2025-07-07",
+      "emi_amount": 391.67,
+      "principal_part": 5428.05,
+      "interest_part": 8424.76,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 22,
+      "loan_id": 19,
+      "due_date": "2025-09-11",
+      "paid_date": "2025-02-17",
+      "emi_amount": 608,
+      "principal_part": 5321.52,
+      "interest_part": 7215.91,
+      "payment_status": "DUE"
+    },
+    {
+      "payment_id": 23,
+      "loan_id": 1,
+      "due_date": "2025-06-16",
+      "paid_date": "2025-01-08",
+      "emi_amount": 347.33,
+      "principal_part": 2326.4,
+      "interest_part": 3498.18,
+      "payment_status": "PAID"
+    },
+    {
+      "payment_id": 24,
+      "loan_id": 18,
+      "due_date": "2026-06-25",
+      "paid_date": "2025-10-12",
+      "emi_amount": 486.76,
+      "principal_part": 7081.5,
+      "interest_part": 1303.74,
+      "payment_status": "DUE"
+    },
+    {
+      "payment_id": 25,
+      "loan_id": 12,
+      "due_date": "2026-05-05",
+      "paid_date": "2026-05-15",
+      "emi_amount": 278.81,
+      "principal_part": 5781.78,
+      "interest_part": 1726.98,
+      "payment_status": "DUE"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": 1,
+      "account_id": 14,
+      "card_type": "CREDIT",
+      "masked_number": "matrix",
+      "expiry_date": "2025-09-05",
+      "credit_limit": 798.81,
+      "card_status": "HOTLISTED"
+    },
+    {
+      "card_id": 2,
+      "account_id": 13,
+      "card_type": "DEBIT",
+      "masked_number": "matrix",
+      "expiry_date": "2026-01-17",
+      "credit_limit": 754.5,
+      "card_status": "HOTLISTED"
+    },
+    {
+      "card_id": 3,
+      "account_id": 11,
+      "card_type": "CREDIT",
+      "masked_number": "pulse",
+      "expiry_date": "2026-02-01",
+      "credit_limit": 877.98,
+      "card_status": "ACTIVE"
+    },
+    {
+      "card_id": 4,
+      "account_id": 22,
+      "card_type": "DEBIT",
+      "masked_number": "meridian",
+      "expiry_date": "2025-06-11",
+      "credit_limit": 92.01,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 5,
+      "account_id": 14,
+      "card_type": "DEBIT",
+      "masked_number": "pulse",
+      "expiry_date": "2026-05-21",
+      "credit_limit": 355.13,
+      "card_status": "EXPIRED"
+    },
+    {
+      "card_id": 6,
+      "account_id": 12,
+      "card_type": "DEBIT",
+      "masked_number": "pulse",
+      "expiry_date": "2025-01-09",
+      "credit_limit": 548.65,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 7,
+      "account_id": 16,
+      "card_type": "CREDIT",
+      "masked_number": "zenith",
+      "expiry_date": "2026-06-22",
+      "credit_limit": 489.24,
+      "card_status": "EXPIRED"
+    },
+    {
+      "card_id": 8,
+      "account_id": 11,
+      "card_type": "CREDIT",
+      "masked_number": "willow",
+      "expiry_date": "2025-12-26",
+      "credit_limit": 668.74,
+      "card_status": "HOTLISTED"
+    },
+    {
+      "card_id": 9,
+      "account_id": 22,
+      "card_type": "DEBIT",
+      "masked_number": "flux",
+      "expiry_date": "2025-06-06",
+      "credit_limit": 329.01,
+      "card_status": "ACTIVE"
+    },
+    {
+      "card_id": 10,
+      "account_id": 9,
+      "card_type": "DEBIT",
+      "masked_number": "harbor",
+      "expiry_date": "2025-01-09",
+      "credit_limit": 784.51,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 11,
+      "account_id": 3,
+      "card_type": "DEBIT",
+      "masked_number": "quartz",
+      "expiry_date": "2026-06-26",
+      "credit_limit": 826.44,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 12,
+      "account_id": 1,
+      "card_type": "DEBIT",
+      "masked_number": "summit",
+      "expiry_date": "2025-08-14",
+      "credit_limit": 269.91,
+      "card_status": "EXPIRED"
+    },
+    {
+      "card_id": 13,
+      "account_id": 4,
+      "card_type": "CREDIT",
+      "masked_number": "signal",
+      "expiry_date": "2026-06-19",
+      "credit_limit": 703.6,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 14,
+      "account_id": 2,
+      "card_type": "CREDIT",
+      "masked_number": "vector",
+      "expiry_date": "2025-10-25",
+      "credit_limit": 433.65,
+      "card_status": "EXPIRED"
+    },
+    {
+      "card_id": 15,
+      "account_id": 18,
+      "card_type": "CREDIT",
+      "masked_number": "nova",
+      "expiry_date": "2026-03-12",
+      "credit_limit": 509.15,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 16,
+      "account_id": 9,
+      "card_type": "CREDIT",
+      "masked_number": "nova",
+      "expiry_date": "2025-12-22",
+      "credit_limit": 87.84,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 17,
+      "account_id": 1,
+      "card_type": "CREDIT",
+      "masked_number": "harbor",
+      "expiry_date": "2026-02-25",
+      "credit_limit": 817.58,
+      "card_status": "EXPIRED"
+    },
+    {
+      "card_id": 18,
+      "account_id": 2,
+      "card_type": "CREDIT",
+      "masked_number": "ember",
+      "expiry_date": "2025-04-12",
+      "credit_limit": 607.66,
+      "card_status": "ACTIVE"
+    },
+    {
+      "card_id": 19,
+      "account_id": 16,
+      "card_type": "DEBIT",
+      "masked_number": "vertex",
+      "expiry_date": "2025-10-10",
+      "credit_limit": 287.39,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 20,
+      "account_id": 21,
+      "card_type": "DEBIT",
+      "masked_number": "summit",
+      "expiry_date": "2025-05-24",
+      "credit_limit": 593.68,
+      "card_status": "ACTIVE"
+    },
+    {
+      "card_id": 21,
+      "account_id": 12,
+      "card_type": "DEBIT",
+      "masked_number": "matrix",
+      "expiry_date": "2025-07-27",
+      "credit_limit": 975.2,
+      "card_status": "BLOCKED"
+    },
+    {
+      "card_id": 22,
+      "account_id": 4,
+      "card_type": "DEBIT",
+      "masked_number": "harbor",
+      "expiry_date": "2025-09-06",
+      "credit_limit": 349.24,
+      "card_status": "EXPIRED"
+    },
+    {
+      "card_id": 23,
+      "account_id": 5,
+      "card_type": "CREDIT",
+      "masked_number": "meridian",
+      "expiry_date": "2025-02-26",
+      "credit_limit": 733.5,
+      "card_status": "EXPIRED"
+    },
+    {
+      "card_id": 24,
+      "account_id": 5,
+      "card_type": "CREDIT",
+      "masked_number": "signal",
+      "expiry_date": "2026-02-08",
+      "credit_limit": 879.68,
+      "card_status": "ACTIVE"
+    },
+    {
+      "card_id": 25,
+      "account_id": 19,
+      "card_type": "DEBIT",
+      "masked_number": "beacon",
+      "expiry_date": "2025-10-02",
+      "credit_limit": 646.02,
+      "card_status": "BLOCKED"
+    }
+  ],
+  "fraud_alerts": [
+    {
+      "alert_id": 1,
+      "transaction_id": 8,
+      "alert_timestamp": "2026-05-24 21:42:42",
+      "alert_type": "DEVICE_CHANGE",
+      "severity": "LOW",
+      "resolution": "OPEN"
+    },
+    {
+      "alert_id": 2,
+      "transaction_id": 8,
+      "alert_timestamp": "2025-10-30 11:05:09",
+      "alert_type": "VELOCITY",
+      "severity": "MEDIUM",
+      "resolution": "FALSE_POS"
+    },
+    {
+      "alert_id": 3,
+      "transaction_id": 11,
+      "alert_timestamp": "2025-03-31 04:31:14",
+      "alert_type": "VELOCITY",
+      "severity": "HIGH",
+      "resolution": "OPEN"
+    },
+    {
+      "alert_id": 4,
+      "transaction_id": 15,
+      "alert_timestamp": "2025-07-19 12:54:26",
+      "alert_type": "DEVICE_CHANGE",
+      "severity": "HIGH",
+      "resolution": "ESCALATED"
+    },
+    {
+      "alert_id": 5,
+      "transaction_id": 23,
+      "alert_timestamp": "2026-05-16 15:48:39",
+      "alert_type": "DEVICE_CHANGE",
+      "severity": "MEDIUM",
+      "resolution": "FALSE_POS"
+    },
+    {
+      "alert_id": 6,
+      "transaction_id": 6,
+      "alert_timestamp": "2025-05-07 09:02:48",
+      "alert_type": "LARGE_AMOUNT",
+      "severity": "HIGH",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 7,
+      "transaction_id": 6,
+      "alert_timestamp": "2025-02-20 02:44:16",
+      "alert_type": "GEO_ANOMALY",
+      "severity": "HIGH",
+      "resolution": "ESCALATED"
+    },
+    {
+      "alert_id": 8,
+      "transaction_id": 5,
+      "alert_timestamp": "2025-04-11 11:34:26",
+      "alert_type": "PATTERN",
+      "severity": "LOW",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 9,
+      "transaction_id": 5,
+      "alert_timestamp": "2025-07-30 07:49:41",
+      "alert_type": "LARGE_AMOUNT",
+      "severity": "MEDIUM",
+      "resolution": "OPEN"
+    },
+    {
+      "alert_id": 10,
+      "transaction_id": 21,
+      "alert_timestamp": "2025-07-31 12:22:46",
+      "alert_type": "PATTERN",
+      "severity": "LOW",
+      "resolution": "ESCALATED"
+    },
+    {
+      "alert_id": 11,
+      "transaction_id": 25,
+      "alert_timestamp": "2026-05-14 10:09:46",
+      "alert_type": "PATTERN",
+      "severity": "HIGH",
+      "resolution": "ESCALATED"
+    },
+    {
+      "alert_id": 12,
+      "transaction_id": 19,
+      "alert_timestamp": "2026-01-09 13:52:36",
+      "alert_type": "PATTERN",
+      "severity": "HIGH",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 13,
+      "transaction_id": 24,
+      "alert_timestamp": "2025-08-04 01:31:31",
+      "alert_type": "GEO_ANOMALY",
+      "severity": "HIGH",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 14,
+      "transaction_id": 25,
+      "alert_timestamp": "2025-10-19 21:45:25",
+      "alert_type": "PATTERN",
+      "severity": "MEDIUM",
+      "resolution": "ESCALATED"
+    },
+    {
+      "alert_id": 15,
+      "transaction_id": 16,
+      "alert_timestamp": "2025-04-06 08:10:14",
+      "alert_type": "LARGE_AMOUNT",
+      "severity": "HIGH",
+      "resolution": "FALSE_POS"
+    },
+    {
+      "alert_id": 16,
+      "transaction_id": 7,
+      "alert_timestamp": "2026-06-20 08:41:58",
+      "alert_type": "LARGE_AMOUNT",
+      "severity": "LOW",
+      "resolution": "OPEN"
+    },
+    {
+      "alert_id": 17,
+      "transaction_id": 3,
+      "alert_timestamp": "2025-04-14 12:18:33",
+      "alert_type": "GEO_ANOMALY",
+      "severity": "LOW",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 18,
+      "transaction_id": 18,
+      "alert_timestamp": "2026-06-20 14:43:49",
+      "alert_type": "LARGE_AMOUNT",
+      "severity": "LOW",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 19,
+      "transaction_id": 19,
+      "alert_timestamp": "2025-09-15 17:09:31",
+      "alert_type": "LARGE_AMOUNT",
+      "severity": "HIGH",
+      "resolution": "FALSE_POS"
+    },
+    {
+      "alert_id": 20,
+      "transaction_id": 4,
+      "alert_timestamp": "2025-11-09 13:16:11",
+      "alert_type": "VELOCITY",
+      "severity": "MEDIUM",
+      "resolution": "OPEN"
+    },
+    {
+      "alert_id": 21,
+      "transaction_id": 5,
+      "alert_timestamp": "2025-10-27 16:52:39",
+      "alert_type": "PATTERN",
+      "severity": "MEDIUM",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 22,
+      "transaction_id": 14,
+      "alert_timestamp": "2025-05-03 05:57:15",
+      "alert_type": "VELOCITY",
+      "severity": "HIGH",
+      "resolution": "CONFIRMED"
+    },
+    {
+      "alert_id": 23,
+      "transaction_id": 18,
+      "alert_timestamp": "2026-01-26 07:53:15",
+      "alert_type": "GEO_ANOMALY",
+      "severity": "MEDIUM",
+      "resolution": "OPEN"
+    },
+    {
+      "alert_id": 24,
+      "transaction_id": 17,
+      "alert_timestamp": "2025-01-23 08:42:50",
+      "alert_type": "GEO_ANOMALY",
+      "severity": "HIGH",
+      "resolution": "OPEN"
+    },
+    {
+      "alert_id": 25,
+      "transaction_id": 3,
+      "alert_timestamp": "2025-11-16 00:41:00",
+      "alert_type": "VELOCITY",
+      "severity": "LOW",
+      "resolution": "ESCALATED"
+    }
+  ]
+}

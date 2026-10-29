@@ -15,3 +15,6 @@ ci_out.sql
 
 # local execution plan (not public)
 ROADMAP.md
+
+# scratch space for one-off generator scripts (not part of the package)
+.scratch/

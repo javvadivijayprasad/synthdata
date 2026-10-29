@@ -1,6 +1,6 @@
 {
   "name": "@vijaypjavvadi/synthdata",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "description": "SynthData (TestForge AI) \u2014 schema + business case + LLM key -> realistic, relationally consistent synthetic test data. No production data required.",
   "type": "module",
   "bin": {
@@ -12,7 +12,7 @@
     "README.md"
   ],
   "scripts": {
-    "test": "node --test test/ri.test.mjs test/ri-resolver.test.js"
+    "test": "node --test test/ri.test.mjs test/ri-resolver.test.js test/llm-parser.test.mjs test/real-world.test.mjs test/table-seed.test.mjs test/golden-files.test.mjs test/mysql-export.test.mjs test/edge-rows.test.mjs test/llm-contract.test.mjs"
   },
   "engines": {
     "node": ">=18"
