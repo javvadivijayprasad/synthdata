@@ -1,7 +1,20 @@
 # @vijaypjavvadi/synthdata
 
+[![npm](https://img.shields.io/npm/v/@vijaypjavvadi/synthdata)](https://www.npmjs.com/package/@vijaypjavvadi/synthdata)
+[![CI](https://github.com/javvadivijayprasad/synthdata/actions/workflows/ci.yml/badge.svg)](https://github.com/javvadivijayprasad/synthdata/actions)
+[![good first issues](https://img.shields.io/github/issues/javvadivijayprasad/synthdata/good%20first%20issue?color=7057ff&label=good%20first%20issues)](https://github.com/javvadivijayprasad/synthdata/labels/good%20first%20issue)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+
 **SynthData (TestForge AI)** — schema + business case + your LLM API key → realistic,
 relationally consistent synthetic test data. No production data required.
+
+**What it is:** a deterministic test-data generator driven by your `CREATE TABLE`
+DDL — every foreign key resolves, CHECK/UNIQUE/length constraints hold, same seed
+reproduces byte-identical data. An LLM (optional, bring your own key) writes the
+generation plan from a plain-English business case; without a key, `auto` mode
+generates structurally valid data from the schema alone.
+**What it isn't:** an ML model trained on your production data — no real data is
+ever needed or accepted.
 
 Part of the TestForge toolchain: [sel2pw](https://www.npmjs.com/package/@vijaypjavvadi/sel2pw) ·
 [bdd2pw](https://www.npmjs.com/package/@vijaypjavvadi/bdd2pw) ·
@@ -9,16 +22,39 @@ Part of the TestForge toolchain: [sel2pw](https://www.npmjs.com/package/@vijaypj
 [usagecontract](https://www.npmjs.com/package/@vijaypjavvadi/usagecontract) ·
 **synthdata**
 
-## CLI
+## Quick start
+
+Prerequisite: Node.js 18+ (`node --version`).
 
 ```bash
-# author a plan with AI, then generate — one command
+# no LLM, no key, no config — structurally valid data from your schema alone
+npx @vijaypjavvadi/synthdata auto -s schema.sql -o data.db --rows 500
+
+# author a plan with AI, then generate — one command (your key, Claude or OpenAI)
 npx @vijaypjavvadi/synthdata run -s schema.sql -c business_case.txt -o data.db -k sk-ant-...
 
 # or step by step
 npx @vijaypjavvadi/synthdata plan     -s schema.sql -c business_case.txt -o plan.yaml
 npx @vijaypjavvadi/synthdata generate -s schema.sql -P plan.yaml -o data.db --csv out/
 ```
+
+**What to do with the output:** open the `.db` in
+[DB Browser for SQLite](https://sqlitebrowser.org/) (Browse Data tab) or query it with
+`sqlite3 data.db "SELECT ..."`; load `--pg` output with `psql -d db -f file.sql`;
+load `--mysql` output with `mysql db < file.sql`; point your test suite at the CSVs.
+
+## Try it on the bundled sample
+
+```bash
+git clone https://github.com/javvadivijayprasad/synthdata.git
+cd synthdata
+node bin/cli.js auto -s examples/schema_ecommerce.sql -o demo.db --rows 200 --seed 42
+# -> OK: 10 tables, 2,000 rows (seed=42) -> demo.db   (zero FK violations, verified on write)
+```
+
+With an API key, the same schema plus `examples/ecommerce_business_case.txt` produces
+business-realistic distributions (customer tiers, payment-method mix, zipf-skewed heavy
+buyers) — compare `examples/ecommerce_plan.yaml` to see what the AI authors.
 
 - Providers: **Claude** (`sk-ant-...` / `ANTHROPIC_API_KEY`) and **OpenAI** (`sk-...` /
   `OPENAI_API_KEY`); auto-detected from the key, or force with `-p`, model with `-m`.
@@ -90,5 +126,37 @@ src/export.js    SQLite (sql.js) / CSV / SQL inserts / PostgreSQL script
 web/index.html   the whole web app (static, single file)
 deploy/          nginx config + steps for synthdata.testforge-ai.com
 ```
+
+## Known limitations
+
+- The DDL parser is regex-based: standard PostgreSQL/MySQL/SQLite DDL parses well;
+  exotic dialect features (partitioning clauses, expression indexes) are ignored.
+- `expr` runs JavaScript from the plan — review plans from untrusted sources
+  (see [SECURITY.md](SECURITY.md)).
+- Open issues are tracked with honest labels:
+  [good first issues](https://github.com/javvadivijayprasad/synthdata/labels/good%20first%20issue) ·
+  [all issues](https://github.com/javvadivijayprasad/synthdata/issues).
+
+## Contributing
+
+New contributors are very welcome — setup takes about five minutes:
+
+```bash
+git clone https://github.com/javvadivijayprasad/synthdata.git
+cd synthdata && npm install
+npm test                    # 60+ unit tests, node:test, no extra tooling
+node bin/cli.js auto -s examples/schema_ecommerce.sql -o check.db --rows 100
+```
+
+Start with a [good first issue](https://github.com/javvadivijayprasad/synthdata/labels/good%20first%20issue)
+and see [CONTRIBUTING.md](CONTRIBUTING.md) for the ground rules (zero runtime
+dependencies beyond `sql.js` + `yaml`; determinism is a contract).
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=javvadivijayprasad/synthdata)](https://github.com/javvadivijayprasad/synthdata/graphs/contributors)
+
+Your name could be next — pick a
+[good first issue](https://github.com/javvadivijayprasad/synthdata/labels/good%20first%20issue).
 
 MIT © Vijay Prasad Javvadi

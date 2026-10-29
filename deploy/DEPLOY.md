@@ -90,7 +90,7 @@ Choose "redirect HTTP to HTTPS" when asked. Certbot auto-renews via its systemd 
 From your PC (PowerShell or CMD):
 
 ```cmd
-scp E:\Sy\testforge\web\index.html <user>@<vps-ip>:/tmp/index.html
+scp <repo>\web\index.html <user>@<vps-ip>:/tmp/index.html
 ```
 
 Then on the VPS:

@@ -16,8 +16,8 @@ Two pieces:
 
 ```bash
 # 1. copy the code up (from your PC)
-scp -r E:\Sy\testforge\standalone E:\Sy\testforge\src <user>@66.55.65.18:/opt/synthdata/
-scp E:\Sy\testforge\web\index.html <user>@66.55.65.18:/var/www/synthdata/index.html
+scp -r <repo>\standalone <repo>\src <user>@<vps-ip>:/opt/synthdata/
+scp <repo>\web\index.html <user>@<vps-ip>:/var/www/synthdata/index.html
 
 # 2. on the VPS
 cd /opt/synthdata/standalone
