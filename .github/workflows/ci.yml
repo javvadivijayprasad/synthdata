@@ -29,6 +29,8 @@ jobs:
           for f in test/*.js test/*.mjs; do node --check "$f"; done
       - name: Unit tests — referential-integrity resolver
         run: npm test
+      - name: Web engine parity check
+        run: node web/parity-check.mjs
       - name: Smoke test — auto mode (no LLM)
         run: |
           node bin/cli.js auto -s examples/schema_ecommerce.sql -o ci.db --rows 200
