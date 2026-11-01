@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- chore(ci): web engine parity check runs on every push/PR across the full
+  OS × Node matrix. Fixes #2. Thanks to @Toufiqul-27 — synthdata's first outside
+  contributor! ([#6](https://github.com/javvadivijayprasad/synthdata/pull/6))
+
 ## 1.3.0 — 2026-10-29
 
 - test: LLM output-shape contract tests (`test/llm-contract.test.mjs`) — offline stubs of the
