@@ -155,7 +155,8 @@ dependencies beyond `sql.js` + `yaml`; determinism is a contract).
 ## Contributors
 
 - [@Toufiqul-27](https://github.com/Toufiqul-27) — wired the web-engine parity check
-  into CI, so every PR now proves the browser and npm engines stay byte-identical (#6)
+  into CI (#6) and brought the MySQL script download to the web app, matching the CLI
+  exporter line-for-line (#7)
 
 [![Contributors](https://contrib.rocks/image?repo=javvadivijayprasad/synthdata)](https://github.com/javvadivijayprasad/synthdata/graphs/contributors)
 

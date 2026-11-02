@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- feat(web): MySQL/MariaDB script download in the web app — browser-side port of the
+  CLI exporter, verified line-for-line identical output. Fixes #3. Thanks to
+  @Toufiqul-27 ([#7](https://github.com/javvadivijayprasad/synthdata/pull/7))
 - chore(ci): web engine parity check runs on every push/PR across the full
   OS × Node matrix. Fixes #2. Thanks to @Toufiqul-27 — synthdata's first outside
   contributor! ([#6](https://github.com/javvadivijayprasad/synthdata/pull/6))
